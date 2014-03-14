@@ -1,0 +1,9 @@
+Simple Install
+1. Login to WordPress and go to Plugins > Add New > Upload
+2. Upload media-manager-plus.zip and activate
+3. Access Media Manager Plus settings from the "Media" menu
+
+Manual Install
+1. Upload the media-manager-plus folder to your /wp-content/plugins/ directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Access Media Manager Plus settings from the "Media" menu
