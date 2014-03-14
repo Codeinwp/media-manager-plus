@@ -84,6 +84,12 @@ Take a look at more sources as premium extensions available here - [http://dev7s
 
 == Changelog ==
 
+**1.5 (2014.03.14)**
+
+ * [Fixed] Loading image sources now only looks for PHP files in sources folder
+ * [Fixed] Language domain as a variable
+ * [Changed] Coded changed to WP coding standards
+
 **1.4.2 (2014.02.05)**
 
  * [Fixed] Script loading errors, fixing conflicts with other plugins
