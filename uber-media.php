@@ -18,7 +18,6 @@ class uber_media {
 	private $p1ugin_folder;
 	private $plugin_path;
 	private $plugin_version;
-	private $plugin_l10n;
 	private $extensions_url;
 	private $callback;
 
@@ -27,7 +26,6 @@ class uber_media {
 		$this->plugin_version = '1.4.2';
 		$this->plugin_folder  = basename( plugin_dir_path( __FILE__ ) );
 		$this->plugin_path    = plugin_dir_path( __FILE__ );
-		$this->plugin_l10n    = 'uber-media';
 		$this->extensions_url = 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1';
 		$this->callback       = get_admin_url() . 'upload.php?page=uber-media';
 
@@ -46,14 +44,14 @@ class uber_media {
 
 		add_action( 'wp_ajax_uber_disconnect', array( $this, 'disconnect_source' ) );
 		add_action( 'wp_ajax_uber_check', array( $this, 'connect_check' ) );
-		add_action( 'wp_ajax_uber_load_images', array( &$this, 'load_images' ) );
-		add_action( 'wp_ajax_uber_param_choices', array( &$this, 'param_choices' ) );
+		add_action( 'wp_ajax_uber_load_images', array( $this, 'load_images' ) );
+		add_action( 'wp_ajax_uber_param_choices', array( $this, 'param_choices' ) );
 
-		add_action( 'wp_ajax_uber_pre_insert', array( &$this, 'pre_insert' ) );
+		add_action( 'wp_ajax_uber_pre_insert', array( $this, 'pre_insert' ) );
 
 		$this->include_sources();
 
-		load_plugin_textdomain( $this->plugin_l10n, false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
+		load_plugin_textdomain( 'media-manager-plus', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
 
 		require_once( $this->plugin_path . 'includes/wp-settings-framework.php' );
 		$this->wpsf = new ubermediaWordPressSettingsFramework( $this->plugin_path . 'includes/uber-media-settings.php', '' );
@@ -134,25 +132,25 @@ class uber_media {
 	public function welcome_screen() {
 		?>
 		<div class="wrap about-wrap mmp-welcome">
-			<h1><?php printf( __( 'Welcome to Media Manager Plus', $this->plugin_l10n ), $this->plugin_version ); ?></h1>
+			<h1><?php printf( __( 'Welcome to Media Manager Plus', 'media-manager-plus' ), $this->plugin_version ); ?></h1>
 
-			<div class="about-text"><?php printf( __( 'Thank you for updating to the latest version! Media Manager Plus %s upgrades the WordPress media manager with third party image sources.', $this->plugin_l10n ), $this->plugin_version ); ?></div>
+			<div class="about-text"><?php printf( __( 'Thank you for updating to the latest version! Media Manager Plus %s upgrades the WordPress media manager with third party image sources.', 'media-manager-plus' ), $this->plugin_version ); ?></div>
 
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab nav-tab-active" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-welcome' ), 'index.php' ) ) ); ?>">
-					<?php _e( "What's New", $this->plugin_l10n ); ?>
+					<?php _e( "What's New", 'media-manager-plus' ); ?>
 				</a>
 				<a class="nav-tab" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-support' ), 'index.php' ) ) ); ?>">
-					<?php _e( 'Support', $this->plugin_l10n ); ?>
+					<?php _e( 'Support', 'media-manager-plus' ); ?>
 				</a>
 			</h2>
 
 			<div class="changelog">
-				<h3><?php _e( 'Introducing Extensions', $this->plugin_l10n ); ?></h3>
+				<h3><?php _e( 'Introducing Extensions', 'media-manager-plus' ); ?></h3>
 				<?php $this->get_extensions(); ?>
 			</div>
 			<div class="return-to-dashboard">
-				<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'uber-media' ), 'upload.php' ) ) ); ?>"><?php _e( 'Go to Media Manager Plus Settings', $this->plugin_l10n ); ?></a>
+				<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'uber-media' ), 'upload.php' ) ) ); ?>"><?php _e( 'Go to Media Manager Plus Settings', 'media-manager-plus' ); ?></a>
 			</div>
 		</div>
 	<?php
@@ -161,47 +159,47 @@ class uber_media {
 	public function support_screen() {
 		?>
 		<div class="wrap about-wrap">
-			<h1><?php printf( __( 'Welcome to Media Manager Plus', $this->plugin_l10n ), $this->plugin_version ); ?></h1>
+			<h1><?php printf( __( 'Welcome to Media Manager Plus', 'media-manager-plus' ), $this->plugin_version ); ?></h1>
 
-			<div class="about-text"><?php printf( __( 'Thank you for updating to the latest version! Media Manager Plus %s upgrades the WordPress media manager with third party image sources.', $this->plugin_l10n ), $this->plugin_version ); ?></div>
+			<div class="about-text"><?php printf( __( 'Thank you for updating to the latest version! Media Manager Plus %s upgrades the WordPress media manager with third party image sources.', 'media-manager-plus' ), $this->plugin_version ); ?></div>
 
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-welcome' ), 'index.php' ) ) ); ?>">
-					<?php _e( "What's New", $this->plugin_l10n ); ?>
+					<?php _e( "What's New", 'media-manager-plus' ); ?>
 				</a>
 				<a class="nav-tab nav-tab-active" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-support' ), 'index.php' ) ) ); ?>">
-					<?php _e( 'Support', $this->plugin_l10n ); ?>
+					<?php _e( 'Support', 'media-manager-plus' ); ?>
 				</a>
 			</h2>
 
 			<div class="changelog">
-				<h3><?php _e( 'Get Some Help', $this->plugin_l10n ); ?></h3>
+				<h3><?php _e( 'Get Some Help', 'media-manager-plus' ); ?></h3>
 
 				<div class="feature-section col three-col">
 					<div>
-						<h4><?php _e( 'Website', $this->plugin_l10n ); ?></h4>
+						<h4><?php _e( 'Website', 'media-manager-plus' ); ?></h4>
 
 						<p>
 							<a target="_blank" href="http://dev7studios.com/media-manager-plus">Media Manager Plus</a>
 						</p>
-						<h4><?php _e( 'Created by', $this->plugin_l10n ); ?></h4>
+						<h4><?php _e( 'Created by', 'media-manager-plus' ); ?></h4>
 
 						<p>
 							<a target="_blank" href="http://dev7studios.com">Dev7studios</a>
 						</p>
-						<h4><?php _e( 'Support', $this->plugin_l10n ); ?></h4>
+						<h4><?php _e( 'Support', 'media-manager-plus' ); ?></h4>
 
 						<p>
 							<a target="_blank" href="http://support.dev7studios.com/discussions/media-manager-plus-wordpress-plugin">Support Forums</a>
 						</p>
-						<h4><?php _e( 'Changelog', $this->plugin_l10n ); ?></h4>
+						<h4><?php _e( 'Changelog', 'media-manager-plus' ); ?></h4>
 
 						<p>
 							<a target="_blank" href="http://wordpress.org/extend/plugins/uber-media/changelog">Changelog</a>
 						</p>
 					</div>
 					<div>
-						<h4><?php _e( 'Watch The Video', $this->plugin_l10n ); ?></h4>
+						<h4><?php _e( 'Watch The Video', 'media-manager-plus' ); ?></h4>
 
 						<div class='video'>
 							<object width='532' height='325'>
@@ -215,7 +213,7 @@ class uber_media {
 				</div>
 			</div>
 			<div class="return-to-dashboard">
-				<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'uber-media' ), 'upload.php' ) ) ); ?>"><?php _e( 'Go to Media Manager Plus Settings', $this->plugin_l10n ); ?></a>
+				<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'uber-media' ), 'upload.php' ) ) ); ?>"><?php _e( 'Go to Media Manager Plus Settings', 'media-manager-plus' ); ?></a>
 			</div>
 		</div>
 	<?php
@@ -232,7 +230,7 @@ class uber_media {
 		?>
 		<div class="wrap">
 			<div id="icon-upload" class="icon32"></div>
-			<h2><?php _e( 'Media Manager Plus', $this->plugin_l10n ); ?>
+			<h2><?php _e( 'Media Manager Plus', 'media-manager-plus' ); ?>
 				<span class="uber-version">v <?php echo $this->plugin_version; ?></span></h2>
 
 			<h2 class="nav-tab-wrapper">
@@ -330,7 +328,7 @@ class uber_media {
 			$html .= '</div>';
 		}
 		if ( $html == '' ) {
-			$html = __( 'No available sources', $this->plugin_l10n );
+			$html = __( 'No available sources', 'media-manager-plus' );
 		}
 		echo $html;
 	}
@@ -385,7 +383,7 @@ class uber_media {
 			$html .= '</div>';
 		}
 		if ( $html == '' || $count == 0 ) {
-			$html = __( 'No new extensions available, you must have installed them all. Nice.', $this->plugin_l10n );
+			$html = __( 'No new extensions available, you must have installed them all. Nice.', 'media-manager-plus' );
 		}
 		echo $html;
 	}
@@ -613,10 +611,10 @@ class uber_media {
 	function custom_media_string( $strings, $post ) {
 		$hier                       = $post && is_post_type_hierarchical( $post->post_type );
 		$strings['ubermedia']       = $this->get_sources( true );
-		$strings['ubermediaButton'] = $hier ? __( 'Insert into page', $this->plugin_l10n ) : __( 'Insert into post', $this->plugin_l10n );
-		$strings['mmpImportButton'] = __( 'Import', $this->plugin_l10n );
+		$strings['ubermediaButton'] = $hier ? __( 'Insert into page', 'media-manager-plus' ) : __( 'Insert into post', 'media-manager-plus' );
+		$strings['mmpImportButton'] = __( 'Import', 'media-manager-plus' );
 		$strings['mmp_menu']        = apply_filters( 'mmp_default_menu', 'default' );
-		$strings['mmp_menu_prefix'] = apply_filters( 'mmp_menu_prefix', __( 'Insert from ', $this->plugin_l10n ) );
+		$strings['mmp_menu_prefix'] = apply_filters( 'mmp_menu_prefix', __( 'Insert from ', 'media-manager-plus' ) );
 		$strings['mmp_defaults']    = apply_filters( 'mmp_default_settings', array() );
 		$strings['mmp_extensions']  = $this->get_installed_extensions();
 
@@ -664,21 +662,21 @@ class uber_media {
 			<?php do_action('uber_media_settings_before'); ?>
 			<?php if ( ! apply_filters( 'disable_captions', '' ) ) : ?>
 				<label class="setting caption">
-				<span><?php _e('Caption', $this->plugin_l10n); ?></span>
+				<span><?php _e('Caption', 'media-manager-plus'); ?></span>
 				<textarea id="caption-uber" data-setting="caption"></textarea>
 			</label>
 			<?php endif; ?>
 			<label class="setting alt-text">
-				<span><?php _e('Title', $this->plugin_l10n); ?></span>
+				<span><?php _e('Title', 'media-manager-plus'); ?></span>
 				<input id="title-uber" type="text" data-setting="title" value="{{{ data.selected_image.title }}}" />
 				<input name="original-title" type="hidden" value="{{{ data.selected_image.title }}}" />
 			</label>
 			<label class="setting alt-text">
-				<span><?php _e('Alt Text', $this->plugin_l10n); ?></span>
+				<span><?php _e('Alt Text', 'media-manager-plus'); ?></span>
 				<input id="alt-uber" type="text" data-setting="alt" value="{{{ data.selected_image.title }}}" />
 			</label>
 			<div class="setting align">
-				<span><?php _e('Align', $this->plugin_l10n); ?></span>
+				<span><?php _e('Align', 'media-manager-plus'); ?></span>
 				<select class="alignment" data-setting="align" name="uber-align">
 					<option value="left"> <?php esc_attr_e('Left'); ?> </option>
 					<option value="center"> <?php esc_attr_e('Center'); ?> </option>
@@ -687,7 +685,7 @@ class uber_media {
 				</select>
 			</div>
 			<div class="setting link-to">
-				<span><?php _e('Link To', $this->plugin_l10n); ?></span>
+				<span><?php _e('Link To', 'media-manager-plus'); ?></span>
 				<select class="link-to" data-setting="link-to" name="uber-link">
 					<option value="{{ data.selected_image.dataset.full }}"> <?php esc_attr_e('Image URL'); ?> </option>
 					<option value="{{ data.selected_image.dataset.link }}"> <?php esc_attr_e('Page URL'); ?> </option>
