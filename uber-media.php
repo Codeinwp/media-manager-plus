@@ -334,7 +334,7 @@ class uber_media {
 	
 	function include_sources() {
 		require_once( dirname(__FILE__) . '/includes/oauth/provider.php' );
-		$source_dir = glob(dirname(__FILE__) .'/includes/sources/*');
+		$source_dir = glob(dirname(__FILE__) .'/includes/sources/*.php');
 		if ($source_dir) {
 			foreach($source_dir as $dir) include_once($dir);
 		}
