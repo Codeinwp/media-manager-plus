@@ -6,6 +6,8 @@ Description: Upgrade the WordPress Media Manager and add support for Flickr, Ins
 Version: 1.5
 Author: Dev7studios
 Author URI: http://dev7studios.com
+Text Domain: media-manager-plus
+Domain Path: /lang
 */
 
 if ( ! session_id() ) {
@@ -30,6 +32,9 @@ class uber_media {
 		$this->callback       = get_admin_url() . 'upload.php?page=uber-media';
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
+
+		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
+
 		add_action( 'admin_init', array( $this, 'upgrade_check' ) );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
@@ -50,8 +55,6 @@ class uber_media {
 		add_action( 'wp_ajax_uber_pre_insert', array( $this, 'pre_insert' ) );
 
 		$this->include_sources();
-
-		load_plugin_textdomain( 'media-manager-plus', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
 
 		require_once( $this->plugin_path . 'includes/wp-settings-framework.php' );
 		$this->wpsf = new ubermediaWordPressSettingsFramework( $this->plugin_path . 'includes/uber-media-settings.php', '' );
@@ -93,22 +96,25 @@ class uber_media {
 
 	function admin_menu() {
 		add_media_page(
-			'Media Manager Plus', 'Media Manager Plus', 'read', 'uber-media', array(
-				$this,
-				'settings_page'
-			)
+			__( 'Media Manager Plus', 'media-manager-plus' ),
+			__( 'Media Manager Plus', 'media-manager-plus' ),
+			'read',
+			'uber-media',
+			array( $this, 'settings_page' )
 		);
 		add_dashboard_page(
-			'Welcome to Media Manager Plus', 'Media Manager Plus', 'read', 'mmp-welcome', array(
-				$this,
-				'welcome_screen'
-			)
+			__( 'Welcome to Media Manager Plus', 'media-manager-plus' ),
+			__( 'Media Manager Plus', 'media-manager-plus' ),
+			'read',
+			'mmp-welcome',
+			array( $this, 'welcome_screen' )
 		);
 		add_dashboard_page(
-			'Welcome to Media Manager Plus', 'Media Manager Plus', 'read', 'mmp-support', array(
-				$this,
-				'support_screen'
-			)
+			__( 'Welcome to Media Manager Plus', 'media-manager-plus' ),
+			__( 'Media Manager Plus', 'media-manager-plus' ),
+			'read',
+			'mmp-support',
+			array( $this, 'support_screen' )
 		);
 	}
 
@@ -190,12 +196,12 @@ class uber_media {
 						<h4><?php _e( 'Support', 'media-manager-plus' ); ?></h4>
 
 						<p>
-							<a target="_blank" href="http://support.dev7studios.com/discussions/media-manager-plus-wordpress-plugin">Support Forums</a>
+							<a target="_blank" href="http://support.dev7studios.com/discussions/media-manager-plus-wordpress-plugin"><?php _e( 'Support Forums', 'media-manager-plus' ); ?></a>
 						</p>
 						<h4><?php _e( 'Changelog', 'media-manager-plus' ); ?></h4>
 
 						<p>
-							<a target="_blank" href="http://wordpress.org/extend/plugins/uber-media/changelog">Changelog</a>
+							<a target="_blank" href="http://wordpress.org/extend/plugins/uber-media/changelog"><?php _e( 'Changelog', 'media-manager-plus' ); ?></a>
 						</p>
 					</div>
 					<div>
@@ -696,6 +702,28 @@ class uber_media {
 		</script>
 	<?php
 	}
+
+	/**
+	 * Load the plugin's textdomain hooked to 'plugins_loaded'.
+	 *
+	 * @since	1.5.0
+	 * @access	public
+	 *
+	 * @see		load_plugin_textdomain()
+	 * @see		plugin_basename()
+	 * @action	plugins_loaded
+	 *
+	 * @return	void
+	 */
+	public function load_plugin_textdomain() {
+
+		load_plugin_textdomain(
+			'media-manager-plus',
+			false,
+			dirname( plugin_basename( __FILE__ ) ) . '/lang/'
+		);
+
+	} // END load_plugin_textdomain()
 }
 
 ?>

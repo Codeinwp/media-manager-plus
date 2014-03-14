@@ -45,36 +45,36 @@ class media_manager_plus_source_dribbble extends media_manager_plus_source {
 	private $popup_width = 1;
 	private $popup_height = 1;
 
-	private $settings = array(
-		'getPopular'      => array(
-			'name'  => 'Popular Shots',
-			'param' => false
-		),
-		'getEveryone'     => array(
-			'name'  => "Everyone's Shots",
-			'param' => false
-		),
-		'getDebuts'       => array(
-			'name'  => "Debut Shots",
-			'param' => false
-		),
-		'getPlayers'      => array(
-			'name'       => "Player's Shots",
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => "Enter a player's name"
-		),
-		'getPlayersLikes' => array(
-			'name'       => "Player's Liked Shots",
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => "Enter a player's name"
-		),
-
-
-	);
+	private $settings = array();
 
 	function __construct( $oauth_token = null, $oauth_token_secret = null ) {
+
+		$this->settings = array(
+			'getPopular' => array(
+				'name' => __( 'Popular Shots', 'media-manager-plus' ),
+				'param' => false,
+			),
+			'getEveryone' => array(
+				'name' => __( "Everyone's Shots", 'media-manager-plus' ),
+				'param' => false,
+			),
+			'getDebuts' => array(
+				'name' => __( 'Debut Shots', 'media-manager-plus' ),
+				'param' => false,
+			),
+			'getPlayers' => array(
+				'name' => __( "Player's Shots", 'media-manager-plus' ),
+				'param' => true,
+				'param_type' => 'text',
+				'param_desc' => __( "Enter a player's name", 'media-manager-plus' ),
+			),
+			'getPlayersLikes' => array(
+				'name' => __( "Player's Liked Shots", 'media-manager-plus' ),
+				'param' => true,
+				'param_type' => 'text',
+				'param_desc' => __( "Enter a player's name", 'media-manager-plus' ),
+			),
+		);
 
 		parent::__construct(
 			  $this->host,

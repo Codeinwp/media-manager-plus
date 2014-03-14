@@ -28,7 +28,7 @@ add_filter( 'uber_media_sources', 'add_uber_media_500px', 10 );
 
 function mmp_settings_500px( $wpsf_ubermedia_settings ) {
 	$choices  = array(
-		'-1' => 'Any License',
+		'-1' => __( 'Any License', 'media-manager-plus' ),
 		'0'  => 'Standard 500px License',
 		'1'  => 'Attribution-NonCommercial 3.0',
 		'2'  => 'Attribution-NonCommercial-NoDerivs 3.0',
@@ -72,28 +72,28 @@ class media_manager_plus_source_500px extends media_manager_plus_source {
 	private $popup_width = 800;
 	private $popup_height = 500;
 
-	private $settings = array(
-		'getTaggedImages' => array(
-			'name'       => 'Tagged Images',
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => 'Enter a hashtag without the #'
-		),
-		'getUsersImages'  => array(
-			'name'       => 'User Images',
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => 'Enter a username'
-		),
-		'getPopular'      => array(
-			'name'  => 'Popular Images',
-			'param' => false
-		),
-
-
-	);
+	private $settings = array();
 
 	function __construct( $oauth_token = null, $oauth_token_secret = null ) {
+
+		$this->settings = array(
+			'getTaggedImages' => array(
+				'name'			=> __( 'Tagged Images', 'media-manager-plus' ),
+				'param'			=> true,
+				'param_type'	=> 'text',
+				'param_desc'	=> __( 'Enter a hashtag without the #', 'media-manager-plus' ),
+			),
+			'getUsersImages' => array(
+				'name'			=> __( 'User Images', 'media-manager-plus' ),
+				'param'			=> true,
+				'param_type'	=> 'text',
+				'param_desc'	=> __( 'Enter a username', 'media-manager-plus' ),
+			),
+			'getPopular' => array(
+				'name'	=> __( 'Popular Images', 'media-manager-plus' ),
+				'param'	=> false,
+			),
+		);
 
 		parent::__construct(
 			  $this->host,

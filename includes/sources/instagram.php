@@ -45,37 +45,39 @@ class media_manager_plus_source_instagram extends media_manager_plus_source {
 	private $popup_width = 500;
 	private $popup_height = 500;
 
-	private $settings = array(
-		'getOwnImages'      => array(
-			'name'  => 'My Images',
-			'param' => false
-		),
-		'getUsersImages'    => array(
-			'name'       => 'User Images',
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => 'Enter a username'
-		),
-		'getTaggedImages'   => array(
-			'name'       => 'Tagged Images',
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => 'Enter a hashtag without the #'
-		),
-		'getLocationImages' => array(
-			'name'       => 'Location Images',
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => 'Enter a latitude and longitude, eg. 51.4638, 0.1677'
-		),
-		'getPopular'        => array(
-			'name'    => 'Popular Images',
-			'param'   => false,
-			'nopagin' => true
-		),
-	);
+	private $settings = array();
 
 	function __construct( $oauth_token = null, $oauth_token_secret = null ) {
+
+		$this->settings = array(
+			'getOwnImages' => array(
+				'name' => __( 'My Images', 'media-manager-plus' ),
+				'param' => false,
+			),
+			'getUsersImages' => array(
+				'name' => __( 'User Images', 'media-manager-plus' ),
+				'param' => true,
+				'param_type' => 'text',
+				'param_desc' => __( 'Enter a username', 'media-manager-plus' ),
+			),
+			'getTaggedImages' => array(
+				'name' => __( 'Tagged Images', 'media-manager-plus' ),
+				'param' => true,
+				'param_type' => 'text',
+				'param_desc' => __( 'Enter a hashtag without the #', 'media-manager-plus' ),
+			),
+			'getLocationImages' => array(
+				'name' => __( 'Location Images', 'media-manager-plus' ),
+				'param' => true,
+				'param_type' => 'text',
+				'param_desc' => __( 'Enter a latitude and longitude, eg. 51.4638, 0.1677', 'media-manager-plus' ),
+			),
+			'getPopular' => array(
+				'name' => __( 'Popular Images', 'media-manager-plus' ),
+				'param' => false,
+				'nopagin' => true,
+			),
+		);
 
 		parent::__construct(
 			  $this->host,

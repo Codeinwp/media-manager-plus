@@ -68,26 +68,28 @@ class media_manager_plus_source_flickr extends media_manager_plus_source {
 	private $popup_width = 700;
 	private $popup_height = 600;
 
-	private $settings = array(
-		'getTaggedImages' => array(
-			'name'       => 'Tagged Images',
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => 'Enter a hashtag without the #'
-		),
-		'getUsersImages'  => array(
-			'name'       => 'User Images',
-			'param'      => true,
-			'param_type' => 'text',
-			'param_desc' => 'Enter a username'
-		),
-		'getRecent'       => array(
-			'name'  => 'Recent Images (All Licenses)',
-			'param' => false
-		),
-	);
+	private $settings = array();
 
 	function __construct( $oauth_token = null, $oauth_token_secret = null ) {
+
+		$this->settings = array(
+			'getTaggedImages' => array(
+				'name' => __( 'Tagged Images', 'media-manager-plus' ),
+				'param' => true,
+				'param_type' => 'text',
+				'param_desc' => __( 'Enter a hashtag without the #', 'media-manager-plus' ),
+			),
+			'getUsersImages' => array(
+				'name' => __( 'User Images', 'media-manager-plus' ),
+				'param' => true,
+				'param_type' => 'text',
+				'param_desc' => __( 'Enter a username', 'media-manager-plus' ),
+			),
+			'getRecent' => array(
+				'name' => __( 'Recent Images (All Licenses)', 'media-manager-plus' ),
+				'param' => false,
+			),
+		);
 
 		parent::__construct(
 			  $this->host,
