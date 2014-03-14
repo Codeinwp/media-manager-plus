@@ -743,5 +743,3 @@ class uber_media {
 
 	} // END load_plugin_textdomain()
 }
-
-?>
