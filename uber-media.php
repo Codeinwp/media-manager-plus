@@ -697,5 +697,3 @@ class uber_media {
 	<?php
 	}
 }
-
-?>
