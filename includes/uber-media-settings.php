@@ -4,7 +4,7 @@ global $wpsf_ubermedia_settings;
 
 $wpsf_ubermedia_settings[] = array(
 	'section_id'    => 'sources',
-	'section_title' => 'Available Sources',
+	'section_title' => __( 'Available Sources', 'media-manager-plus' ),
 	'section_order' => 1,
 	'fields'        => array(
 		array(
@@ -19,7 +19,7 @@ $wpsf_ubermedia_settings[] = array(
 
 $wpsf_ubermedia_settings[] = array(
 	'section_id'    => 'extensions',
-	'section_title' => 'Extensions',
+	'section_title' => __( 'Extensions', 'media-manager-plus' ),
 	'section_order' => 2,
 	'fields'        => array(
 		array(
@@ -34,7 +34,7 @@ $wpsf_ubermedia_settings[] = array(
 
 $wpsf_ubermedia_settings[] = array(
 	'section_id'    => 'general',
-	'section_title' => 'General Settings',
+	'section_title' => __( 'General Settings', 'media-manager-plus' ),
 	'section_order' => 3,
 	'fields'        => array(
 		array(

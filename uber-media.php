@@ -96,22 +96,25 @@ class uber_media {
 
 	function admin_menu() {
 		add_media_page(
-			'Media Manager Plus', 'Media Manager Plus', 'read', 'uber-media', array(
-				$this,
-				'settings_page'
-			)
+			__( 'Media Manager Plus', 'media-manager-plus' ),
+			__( 'Media Manager Plus', 'media-manager-plus' ),
+			'read',
+			'uber-media',
+			array( $this, 'settings_page' )
 		);
 		add_dashboard_page(
-			'Welcome to Media Manager Plus', 'Media Manager Plus', 'read', 'mmp-welcome', array(
-				$this,
-				'welcome_screen'
-			)
+			__( 'Welcome to Media Manager Plus', 'media-manager-plus' ),
+			__( 'Media Manager Plus', 'media-manager-plus' ),
+			'read',
+			'mmp-welcome',
+			array( $this, 'welcome_screen' )
 		);
 		add_dashboard_page(
-			'Welcome to Media Manager Plus', 'Media Manager Plus', 'read', 'mmp-support', array(
-				$this,
-				'support_screen'
-			)
+			__( 'Welcome to Media Manager Plus', 'media-manager-plus' ),
+			__( 'Media Manager Plus', 'media-manager-plus' ),
+			'read',
+			'mmp-support',
+			array( $this, 'support_screen' )
 		);
 	}
 
@@ -193,12 +196,12 @@ class uber_media {
 						<h4><?php _e( 'Support', 'media-manager-plus' ); ?></h4>
 
 						<p>
-							<a target="_blank" href="http://support.dev7studios.com/discussions/media-manager-plus-wordpress-plugin">Support Forums</a>
+							<a target="_blank" href="http://support.dev7studios.com/discussions/media-manager-plus-wordpress-plugin"><?php _e( 'Support Forums', 'media-manager-plus' ); ?></a>
 						</p>
 						<h4><?php _e( 'Changelog', 'media-manager-plus' ); ?></h4>
 
 						<p>
-							<a target="_blank" href="http://wordpress.org/extend/plugins/uber-media/changelog">Changelog</a>
+							<a target="_blank" href="http://wordpress.org/extend/plugins/uber-media/changelog"><?php _e( 'Changelog', 'media-manager-plus' ); ?></a>
 						</p>
 					</div>
 					<div>
