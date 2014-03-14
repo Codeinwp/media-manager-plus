@@ -97,11 +97,12 @@ class uber_media {
 		$pages       = array( 'media_page_uber-media', 'post.php', 'post-new.php' );
 		$admin_pages = apply_filters( 'uber_media_enqueue_pages', $pages );
 		$dev         = apply_filters( 'uber_media_debug_mode', SCRIPT_DEBUG ) ? '' : '.min';
+		$dev_dir     = apply_filters( 'uber_media_debug_mode', SCRIPT_DEBUG ) ? '' : '/min';
 
 		if ( in_array( $hook, $admin_pages ) ) {
 
 			wp_enqueue_media();
-			wp_register_script( 'uber-media-js', plugins_url( "assets/js/uber-media{$dev}.js" , __FILE__ ), array( 'media-views' ), $this->plugin_version );
+			wp_register_script( 'uber-media-js', plugins_url( "assets/js{$dev_dir}/uber-media{$dev}.js" , __FILE__ ), array( 'media-views' ), $this->plugin_version );
 			wp_enqueue_script( 'uber-media-js' );
 			wp_localize_script( 'uber-media-js', 'uber_media', array( 'nonce' => wp_create_nonce( 'uber_media' ) ));
 
