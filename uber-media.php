@@ -728,8 +728,7 @@ class uber_media {
 			<?php do_action('uber_media_settings_after'); ?>
 		</script>
 	<?php
-<<<<<<< HEAD
-	}
+	} // END print_media_templates()
 
 	/**
 	 * Load the plugin's textdomain hooked to 'plugins_loaded'.
@@ -752,7 +751,5 @@ class uber_media {
 		);
 
 	} // END load_plugin_textdomain()
-=======
-	} // END print_media_templates()
->>>>>>> 682db68... some additional docblock
-}
+
+} // END class uber_media
