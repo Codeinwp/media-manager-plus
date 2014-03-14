@@ -15,7 +15,7 @@ if ( ! session_id() ) {
 $uber_media = new uber_media();
 class uber_media {
 
-	private $p1ugin_folder;
+	private $plugin_folder;
 	private $plugin_path;
 	private $plugin_version;
 	private $extensions_url;
