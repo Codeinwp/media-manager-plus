@@ -400,7 +400,7 @@ class uber_media {
 				if ( version_compare( $this->plugin_version, $extension_data->requires, '<' ) ) {
 					$html .= '<p><strong>Requires Version ' . $extension_data->requires . '</strong></p>';
 				}
-				$html .= '<a target="_blank" class="button button-primary" title="Buy the ' . $extension_data->name . ' extension for $' . $extension_data->price . '" href="' . $extension_data->link . '">$' . $extension_data->price . ' Buy</a>';
+				$html .= '<a target="_blank" class="button button-primary" title="' . sprintf( __( 'Buy the %s extension for $%s', 'media-manager-plus' ), $extension_data->name, $extension_data->price ) . '" href="' . $extension_data->link . '">' . sprintf( __( '$%s Buy', 'media-manager-plus' ), $extension_data->price ) . '</a>';
 				$html .= '</li>';
 			}
 			$html .= '</ul>';
