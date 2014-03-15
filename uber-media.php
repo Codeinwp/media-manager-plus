@@ -254,8 +254,10 @@ class uber_media {
 		?>
 		<div class="wrap">
 			<div id="icon-upload" class="icon32"></div>
-			<h2><?php _e( 'Media Manager Plus', 'media-manager-plus' ); ?>
-				<span class="uber-version">v <?php echo $this->plugin_version; ?></span></h2>
+			<h2>
+				<?php _e( 'Media Manager Plus', 'media-manager-plus' ); ?>
+				<?php echo apply_filters( 'uber_media_title_version', "<span class='uber-version'>v {$this->plugin_version}</span>" ); ?>
+			</h2>
 
 			<h2 class="nav-tab-wrapper">
 				<?php foreach ( $wpsf_ubermedia_settings as $tab ) { ?>
