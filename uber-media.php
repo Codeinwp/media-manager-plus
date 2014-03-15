@@ -34,6 +34,7 @@ class uber_media {
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 
 		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'add_action_links' ) );
 
 		add_action( 'admin_init', array( $this, 'upgrade_check' ) );
 
@@ -742,6 +743,29 @@ class uber_media {
 		);
 
 	} // END load_plugin_textdomain()
+
+	/**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since    1.5.0
+	 * @access   public
+	 *
+	 * @see      admin_url()
+	 *
+	 * @param    array $links Array of links
+	 * @return   array Array of links
+	 */
+	public function add_action_links( $links ) {
+
+		return array_merge(
+			array(
+				'settings' => '<a href="' . add_query_arg( array( 'page' => 'uber-media' ), admin_url( 'upload.php' ) ) . '">' . __( 'Settings' ) . '</a>'
+			),
+			$links
+		);
+
+	} // END add_action_links()
+
 }
 
 ?>
