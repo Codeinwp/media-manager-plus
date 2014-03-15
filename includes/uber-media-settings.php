@@ -2,7 +2,7 @@
 
 global $wpsf_ubermedia_settings;
 
-$wpsf_ubermedia_settings[] = array(
+$wpsf_ubermedia_settings['sources'] = array(
 	'section_id'    => 'sources',
 	'section_title' => __( 'Available Sources', 'media-manager-plus' ),
 	'section_order' => 1,
@@ -17,7 +17,7 @@ $wpsf_ubermedia_settings[] = array(
 	)
 );
 
-$wpsf_ubermedia_settings[] = array(
+$wpsf_ubermedia_settings['extensions'] = array(
 	'section_id'    => 'extensions',
 	'section_title' => __( 'Extensions', 'media-manager-plus' ),
 	'section_order' => 2,
@@ -32,7 +32,7 @@ $wpsf_ubermedia_settings[] = array(
 	)
 );
 
-$wpsf_ubermedia_settings[] = array(
+$wpsf_ubermedia_settings['general'] = array(
 	'section_id'    => 'general',
 	'section_title' => __( 'General Settings', 'media-manager-plus' ),
 	'section_order' => 3,
@@ -54,7 +54,7 @@ $wpsf_ubermedia_settings[] = array(
 	)
 );
 
-$wpsf_ubermedia_settings[] = array(
+$wpsf_ubermedia_settings['support'] = array(
 	'section_id'    => 'support',
 	'section_title' => 'Support',
 	'section_order' => 4,
