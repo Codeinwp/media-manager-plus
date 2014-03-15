@@ -7,15 +7,15 @@ module.exports = function (grunt) {
 					'<%= grunt.template.today("yyyy-mm-dd") %> */'
 			},
 			files: {
-				src: 'assets/js/*.js',
-				dest: 'assets/js/min',
+				src: 'assets/js/uber-media.js',
+				dest: 'assets/js/',
 				expand: true,
 				flatten: true,
 				ext: '.min.js'
 			}
 		},
 		watch: {
-			js:  { files: 'assets/js/*.js', tasks: [ 'uglify' ] }
+			js:  { files: 'assets/js/uber-media.js', tasks: [ 'uglify' ] }
 		}
 	});
 
