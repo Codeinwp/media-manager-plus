@@ -28,76 +28,84 @@ add_filter( 'uber_media_sources', 'add_uber_media_instagram', 40 );
 
 class media_manager_plus_source_instagram extends media_manager_plus_source {
 
-	public $host = 'https://api.instagram.com/v1/';
 	public $format;
-	private $access_token_url = 'https://api.instagram.com/oauth/access_token/';
+	public $host                    = 'https://api.instagram.com/v1/';
+	private $access_token_url       = 'https://api.instagram.com/oauth/access_token/';
 	private $authenticate_token_url = '';
-	private $authorize_url = 'https://api.instagram.com/oauth/authorize/';
-	private $request_token_url = '';
+	private $authorize_url          = 'https://api.instagram.com/oauth/authorize/';
+	private $request_token_url      = '';
 
-	private $consumer_key = 'eacdd3e6e3d4415abd86c5ad624bd78e';
-	private $consumer_secret = 'c5b92234d33c413ca4691ee5a9b50fd9';
-	private $redirect_uri = 'http://dev7studios.com/oauth/instagram.php';
+	private $consumer_key, $consumer_secret, $redirect_uri = '';
 
-	private $max_count = 40;
+	private $max_count     = 40;
 	private $default_count = 20;
 
-	private $popup_width = 500;
+	private $popup_width  = 500;
 	private $popup_height = 500;
 
 	private $settings = array();
 
 	function __construct( $oauth_token = null, $oauth_token_secret = null ) {
 
+		$this->prepare_variables();
+
+		parent::__construct(
+			$this->host,
+			$this->format,
+			$this->access_token_url,
+			$this->authenticate_token_url,
+			$this->authorize_url,
+			$this->request_token_url,
+			$this->consumer_key,
+			$this->consumer_secret,
+			$this->settings,
+			$this->max_count,
+			$this->default_count,
+			$this->popup_width,
+			$this->popup_height,
+			$oauth_token,
+			$oauth_token_secret
+		);
+
+	} // END __construct()
+
+	private function prepare_variables() {
+
 		$this->settings = array(
-			'getOwnImages' => array(
-				'name' => __( 'My Images', 'media-manager-plus' ),
+			'getOwnImages'      => array(
+				'name'  => __( 'My Images', 'media-manager-plus' ),
 				'param' => false,
 			),
-			'getUsersImages' => array(
-				'name' => __( 'User Images', 'media-manager-plus' ),
-				'param' => true,
+			'getUsersImages'    => array(
+				'name'       => __( 'User Images', 'media-manager-plus' ),
+				'param'      => true,
 				'param_type' => 'text',
 				'param_desc' => __( 'Enter a username', 'media-manager-plus' ),
 			),
-			'getTaggedImages' => array(
-				'name' => __( 'Tagged Images', 'media-manager-plus' ),
-				'param' => true,
+			'getTaggedImages'   => array(
+				'name'       => __( 'Tagged Images', 'media-manager-plus' ),
+				'param'      => true,
 				'param_type' => 'text',
 				'param_desc' => __( 'Enter a hashtag without the #', 'media-manager-plus' ),
 			),
 			'getLocationImages' => array(
-				'name' => __( 'Location Images', 'media-manager-plus' ),
-				'param' => true,
+				'name'       => __( 'Location Images', 'media-manager-plus' ),
+				'param'      => true,
 				'param_type' => 'text',
 				'param_desc' => __( 'Enter a latitude and longitude, eg. 51.4638, 0.1677', 'media-manager-plus' ),
 			),
-			'getPopular' => array(
-				'name' => __( 'Popular Images', 'media-manager-plus' ),
-				'param' => false,
+			'getPopular'        => array(
+				'name'    => __( 'Popular Images', 'media-manager-plus' ),
+				'param'   => false,
 				'nopagin' => true,
 			),
 		);
 
-		parent::__construct(
-			  $this->host,
-				  $this->format,
-				  $this->access_token_url,
-				  $this->authenticate_token_url,
-				  $this->authorize_url,
-				  $this->request_token_url,
-				  $this->consumer_key,
-				  $this->consumer_secret,
-				  $this->settings,
-				  $this->max_count,
-				  $this->default_count,
-				  $this->popup_width,
-				  $this->popup_height,
-				  $oauth_token,
-				  $oauth_token_secret
-		);
+		$this->consumer_key    = apply_filters( 'mmp_instagram_key', 'eacdd3e6e3d4415abd86c5ad624bd78e' );
+		$this->consumer_secret = apply_filters( 'mmp_instagram_secret', 'c5b92234d33c413ca4691ee5a9b50fd9' );
+		$this->redirect_uri    = apply_filters( 'mmp_instagram_redirect', 'http://dev7studios.com/oauth/instagram.php' );
 
-	}
+	} // END prepare_variables()
 
 	function getFormat( $url ) {
 		return "{$this->host}{$url}";
