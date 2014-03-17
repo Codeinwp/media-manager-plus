@@ -14,7 +14,9 @@ if ( ! session_id() ) {
 	session_start();
 }
 
-$uber_media = new uber_media();
+/**
+ * Class uber_media
+ */
 class uber_media {
 
 	private $plugin_folder;
@@ -776,5 +778,5 @@ class uber_media {
 		);
 
 	} // END add_action_links()
-
-}
+} // END class uber_media
+$uber_media = new uber_media();
