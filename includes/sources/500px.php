@@ -37,7 +37,7 @@ function mmp_settings_500px( $wpsf_ubermedia_settings ) {
 		'5'  => 'Attribution-NoDerivs 3.0',
 		'6'  => 'Attribution-ShareAlike 3.0'
 	);
-	$fields   = $wpsf_ubermedia_settings[2]['fields'];
+	$fields   = $wpsf_ubermedia_settings['general']['fields'];
 	$fields[] = array(
 		'id'      => '500px-license',
 		'title'   => __( '500px License Options' ),
@@ -47,7 +47,7 @@ function mmp_settings_500px( $wpsf_ubermedia_settings ) {
 		'std'     => '-1'
 	);
 
-	$wpsf_ubermedia_settings[2]['fields'] = $fields;
+	$wpsf_ubermedia_settings['general']['fields'] = $fields;
 
 	return $wpsf_ubermedia_settings;
 }

@@ -33,7 +33,7 @@ function flickr_mmp_settings( $wpsf_ubermedia_settings ) {
 	foreach ( $licenses as $license ) {
 		$choices[$license->id] = $license->name;
 	}
-	$fields   = $wpsf_ubermedia_settings[2]['fields'];
+	$fields   = $wpsf_ubermedia_settings['general']['fields'];
 	$fields[] = array(
 		'id'      => 'flickr-license',
 		'title'   => __( 'Flickr License Options' ),
@@ -43,7 +43,7 @@ function flickr_mmp_settings( $wpsf_ubermedia_settings ) {
 		'std'     => ''
 	);
 
-	$wpsf_ubermedia_settings[2]['fields'] = $fields;
+	$wpsf_ubermedia_settings['general']['fields'] = $fields;
 
 	return $wpsf_ubermedia_settings;
 }
