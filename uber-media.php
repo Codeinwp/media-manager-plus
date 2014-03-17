@@ -22,6 +22,7 @@ class uber_media {
 	private $plugin_folder;
 	private $plugin_path;
 	private $plugin_version;
+	private $js_l10n;
 	private $extensions_url;
 	private $callback;
 
@@ -58,6 +59,8 @@ class uber_media {
 		add_action( 'wp_ajax_uber_pre_insert', array( $this, 'pre_insert' ) );
 
 		$this->include_sources();
+
+		$this->set_js_l10n();
 
 		require_once( $this->plugin_path . 'includes/wp-settings-framework.php' );
 		$this->wpsf = new ubermediaWordPressSettingsFramework( $this->plugin_path . 'includes/uber-media-settings.php', '' );
@@ -115,7 +118,15 @@ class uber_media {
 			wp_enqueue_media();
 			wp_register_script( 'uber-media-js', plugins_url( "assets/js/uber-media{$dev}.js" , __FILE__ ), array( 'media-views' ), $this->plugin_version );
 			wp_enqueue_script( 'uber-media-js' );
-			wp_localize_script( 'uber-media-js', 'uber_media', array( 'nonce' => wp_create_nonce( 'uber_media' ) ));
+
+			wp_localize_script(
+				'uber-media-js',
+				'uber_media',
+				array(
+					'nonce' => 	wp_create_nonce( 'uber_media' ),
+					'l10n'	=>	$this->js_l10n
+				)
+			);
 
 			wp_register_style( 'uber-media-css', plugins_url( "assets/css/uber-media{$dev}.css" , __FILE__ ), array(), $this->plugin_version );
 			wp_enqueue_style( 'uber-media-css' );
@@ -255,6 +266,21 @@ class uber_media {
 	<?php
 	} // END support_screen()
 
+	/**
+	 * Sets the translatable strings for the javascript file
+	 */
+	public function set_js_l10n(){
+		$this->js_l10n = array(
+			'disconnect'	=>	__( 'Disconnect', 'media-manager-plus' ),
+			'connect'		=> 	__( 'Connect', 'media-manager-plus' ),
+			'connecting'	=>	__( 'Connecting', 'media-manager-plus' ),
+			'importing'		=>	__( 'Importing', 'media-manager-plus' ),
+			'inserting'		=>	__( 'Inserting', 'media-manager-plus' ),
+			'imported'		=>	__( 'imported', 'media-manager-plus' ),
+			'image'			=>	__( 'image', 'media-manager-plus' ),
+			'images'		=>	__( 'images', 'media-manager-plus' ),
+		);
+	} // END js_l10n()
 
 	public function settings_page() {
 		if ( ! current_user_can( 'manage_options' ) ) {
@@ -344,16 +370,20 @@ class uber_media {
 			$html .= '<ul>';
 			foreach ( $sources as $source => $source_data ) {
 				$class    = ( $source_data['url'] == '#' ) ? 'disconnect' : 'connect';
-				$text     = ucfirst( $class );
+				if ( $class == 'connect' ) {
+					$text = __( 'Connect', 'media-manager-plus' );
+				} else {
+					$text = __( 'Disconnect', 'media-manager-plus' );
+				}
+				$title = $text . ' ' . $source_data['name'];
 				$disabled = '';
-				$title    = ucfirst( $class ) . ' ' . $source_data['name'];
 				$btnclass = ( $source_data['url'] == '#' ) ? '' : ' button-primary';
 				if ( $source_data['url'] == '' ) {
-					$text     = 'API Unavailable';
+					$text     = __( 'API Unavailable', 'media-manager-plus' );
 					$class    = 'disconnect';
 					$disabled = 'disabled="disabled" ';
 					$btnclass = '';
-					$title    = $source_data['name'] . ' API Unavailable';
+					$title    = $source_data['name'] . ' '. __( 'API Unavailable', 'media-manager-plus' );
 				}
 
 				$width  = ( isset( $source_data['w'] ) ) ? 'data-w="' . $source_data['w'] . '" ' : '';
@@ -412,7 +442,7 @@ class uber_media {
 				$html .= '<a href="' . $extension_data->link . '" target="_blank"><img src="' . $extension_data->image . '" alt="' . $extension_data->name . ' logo"></a>';
 				$html .= '<p>' . $extension_data->description . '</p>';
 				if ( version_compare( $this->plugin_version, $extension_data->requires, '<' ) ) {
-					$html .= '<p><strong>Requires Version ' . $extension_data->requires . '</strong></p>';
+					$html .= '<p><strong>'. sprintf( __( 'Requires Version %s', 'media-manager-plus' ), $extension_data->requires ) .'</strong></p>';
 				}
 				$html .= '<a target="_blank" class="button button-primary" title="' . sprintf( __( 'Buy the %s extension for $%s', 'media-manager-plus' ), $extension_data->name, $extension_data->price ) . '" href="' . $extension_data->link . '">' . sprintf( __( '$%s Buy', 'media-manager-plus' ), $extension_data->price ) . '</a>';
 				$html .= '</li>';
@@ -778,5 +808,7 @@ class uber_media {
 		);
 
 	} // END add_action_links()
+
 } // END class uber_media
+
 $uber_media = new uber_media();
