@@ -124,7 +124,7 @@ if ( ! class_exists( 'ubermediaWordPressSettingsFramework' ) ) {
 			$wpsf_ubermedia_settings = apply_filters( 'uber_media_settings', $wpsf_ubermedia_settings );
 
 			if ( ! empty( $wpsf_ubermedia_settings ) ) {
-				usort( $wpsf_ubermedia_settings, array( &$this, 'sort_array' ) );
+				//usort( $wpsf_ubermedia_settings, array( &$this, 'sort_array' ) );
 				foreach ( $wpsf_ubermedia_settings as $section ) {
 					if ( isset( $section['section_id'] ) && $section['section_id'] && isset( $section['section_title'] ) ) {
 						add_settings_section(
