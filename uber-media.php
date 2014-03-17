@@ -7,7 +7,7 @@
  * Author URI: http://dev7studios.com
  * Version: 1.5
  * Text Domain: media-manager-plus
- * Domain Path: /language
+ * Domain Path: /languages
  *
  * Media Manager Plus is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
