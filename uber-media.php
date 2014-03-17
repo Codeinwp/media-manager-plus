@@ -752,7 +752,7 @@ class uber_media {
 		load_plugin_textdomain(
 			'media-manager-plus',
 			false,
-			dirname( plugin_basename( __FILE__ ) ) . '/lang/'
+			dirname( plugin_basename( __FILE__ ) ) . '/language/'
 		);
 
 	} // END load_plugin_textdomain()
