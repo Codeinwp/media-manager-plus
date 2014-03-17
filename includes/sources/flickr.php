@@ -52,63 +52,71 @@ add_filter( 'uber_media_settings', 'flickr_mmp_settings' );
 
 class media_manager_plus_source_flickr extends media_manager_plus_source {
 
-	public $host = 'http://api.flickr.com/services/rest/';
-	public $format = 'json';
-	private $access_token_url = 'http://www.flickr.com/services/oauth/access_token';
+	public $format                  = 'json';
+	public $host                    = 'http://api.flickr.com/services/rest/';
+	private $access_token_url       = 'http://www.flickr.com/services/oauth/access_token';
 	private $authenticate_token_url = 'http://www.flickr.com/services/oauth/authorize';
-	private $authorize_url = 'http://www.flickr.com/services/oauth/authorize';
-	private $request_token_url = 'http://www.flickr.com/services/oauth/request_token';
+	private $authorize_url          = 'http://www.flickr.com/services/oauth/authorize';
+	private $request_token_url      = 'http://www.flickr.com/services/oauth/request_token';
 
-	private $consumer_key = 'd95b51541ae40a9950bea98e24a27cfd';
-	private $consumer_secret = 'ae1b30477cc1bdfb';
+	private $consumer_key, $consumer_secret = '';
 
-	private $max_count = 500;
+	private $max_count     = 500;
 	private $default_count = 20;
 
-	private $popup_width = 700;
+	private $popup_width  = 700;
 	private $popup_height = 600;
 
 	private $settings = array();
 
 	function __construct( $oauth_token = null, $oauth_token_secret = null ) {
 
+		$this->prepare_variables();
+
+		parent::__construct(
+			$this->host,
+			$this->format,
+			$this->access_token_url,
+			$this->authenticate_token_url,
+			$this->authorize_url,
+			$this->request_token_url,
+			$this->consumer_key,
+			$this->consumer_secret,
+			$this->settings,
+			$this->max_count,
+			$this->default_count,
+			$this->popup_width,
+			$this->popup_height,
+			$oauth_token,
+			$oauth_token_secret
+		);
+	}
+
+	private function prepare_variables() {
+
 		$this->settings = array(
 			'getTaggedImages' => array(
-				'name' => __( 'Tagged Images', 'media-manager-plus' ),
-				'param' => true,
+				'name'       => __( 'Tagged Images', 'media-manager-plus' ),
+				'param'      => true,
 				'param_type' => 'text',
 				'param_desc' => __( 'Enter a hashtag without the #', 'media-manager-plus' ),
 			),
-			'getUsersImages' => array(
-				'name' => __( 'User Images', 'media-manager-plus' ),
-				'param' => true,
+			'getUsersImages'  => array(
+				'name'       => __( 'User Images', 'media-manager-plus' ),
+				'param'      => true,
 				'param_type' => 'text',
 				'param_desc' => __( 'Enter a username', 'media-manager-plus' ),
 			),
-			'getRecent' => array(
-				'name' => __( 'Recent Images (All Licenses)', 'media-manager-plus' ),
+			'getRecent'       => array(
+				'name'  => __( 'Recent Images (All Licenses)', 'media-manager-plus' ),
 				'param' => false,
 			),
 		);
 
-		parent::__construct(
-			  $this->host,
-				  $this->format,
-				  $this->access_token_url,
-				  $this->authenticate_token_url,
-				  $this->authorize_url,
-				  $this->request_token_url,
-				  $this->consumer_key,
-				  $this->consumer_secret,
-				  $this->settings,
-				  $this->max_count,
-				  $this->default_count,
-				  $this->popup_width,
-				  $this->popup_height,
-				  $oauth_token,
-				  $oauth_token_secret
-		);
-	}
+		$this->consumer_key    = apply_filters( 'mmp_flickr_key', 'd95b51541ae40a9950bea98e24a27cfd' );
+		$this->consumer_secret = apply_filters( 'mmp_flickr_secret', 'ae1b30477cc1bdfb' );
+
+	} // END prepare_variables()
 
 	function getFormat( $url ) {
 		return "{$this->host}{$url}?format={$this->format}&nojsoncallback=1";
