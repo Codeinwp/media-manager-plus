@@ -1,0 +1,273 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Media Manager Plus\n"
+"POT-Creation-Date: 2014-03-17 09:41-0000\n"
+"PO-Revision-Date: 2014-03-17 09:42-0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/sources/500px.php:31
+msgid "Any License"
+msgstr ""
+
+#: includes/sources/500px.php:43
+msgid "500px License Options"
+msgstr ""
+
+#: includes/sources/500px.php:44
+msgid "Select the license type of images returned from 500px"
+msgstr ""
+
+#: includes/sources/500px.php:104 includes/sources/flickr.php:99
+#: includes/sources/instagram.php:86
+msgid "Tagged Images"
+msgstr ""
+
+#: includes/sources/500px.php:107 includes/sources/flickr.php:102
+#: includes/sources/instagram.php:89
+msgid "Enter a hashtag without the #"
+msgstr ""
+
+#: includes/sources/500px.php:110 includes/sources/flickr.php:105
+#: includes/sources/instagram.php:80
+msgid "User Images"
+msgstr ""
+
+#: includes/sources/500px.php:113 includes/sources/flickr.php:108
+#: includes/sources/instagram.php:83
+msgid "Enter a username"
+msgstr ""
+
+#: includes/sources/500px.php:116 includes/sources/instagram.php:98
+msgid "Popular Images"
+msgstr ""
+
+#: includes/sources/dribbble.php:54
+msgid "Popular Shots"
+msgstr ""
+
+#: includes/sources/dribbble.php:58
+msgid "Everyone's Shots"
+msgstr ""
+
+#: includes/sources/dribbble.php:62
+msgid "Debut Shots"
+msgstr ""
+
+#: includes/sources/dribbble.php:66
+msgid "Player's Shots"
+msgstr ""
+
+#: includes/sources/dribbble.php:69 includes/sources/dribbble.php:75
+msgid "Enter a player's name"
+msgstr ""
+
+#: includes/sources/dribbble.php:72
+msgid "Player's Liked Shots"
+msgstr ""
+
+#: includes/sources/flickr.php:39
+msgid "Flickr License Options"
+msgstr ""
+
+#: includes/sources/flickr.php:40
+msgid "Select the license types of images returned from Flickr"
+msgstr ""
+
+#: includes/sources/flickr.php:111
+msgid "Recent Images (All Licenses)"
+msgstr ""
+
+#: includes/sources/instagram.php:76
+msgid "My Images"
+msgstr ""
+
+#: includes/sources/instagram.php:92
+msgid "Location Images"
+msgstr ""
+
+#: includes/sources/instagram.php:95
+msgid "Enter a latitude and longitude, eg. 51.4638, 0.1677"
+msgstr ""
+
+#: includes/uber-media-settings.php:7
+msgid "Available Sources"
+msgstr ""
+
+#: includes/uber-media-settings.php:22
+msgid "Extensions"
+msgstr ""
+
+#: includes/uber-media-settings.php:37
+msgid "General Settings"
+msgstr ""
+
+#: includes/uber-media-settings.php:42
+msgid "Show Connected Sources"
+msgstr ""
+
+#: includes/uber-media-settings.php:43
+msgid "Only show connected sources in side menu of the media popup"
+msgstr ""
+
+#: includes/uber-media-settings.php:49
+msgid "Safe Mode"
+msgstr ""
+
+#: includes/uber-media-settings.php:50
+msgid "Safe mode filters sources for nude, explicit or NSFW media"
+msgstr ""
+
+#: includes/wp-settings-framework.php:321
+msgid "Save All Changes"
+msgstr ""
+
+#: uber-media.php:129 uber-media.php:130 uber-media.php:137 uber-media.php:144
+#: uber-media.php:270
+msgid "Media Manager Plus"
+msgstr ""
+
+#: uber-media.php:136 uber-media.php:143 uber-media.php:171 uber-media.php:198
+msgid "Welcome to Media Manager Plus"
+msgstr ""
+
+#: uber-media.php:173 uber-media.php:200
+#, php-format
+msgid ""
+"Thank you for updating to the latest version! Media Manager Plus %s upgrades "
+"the WordPress media manager with third party image sources."
+msgstr ""
+
+#: uber-media.php:177 uber-media.php:204
+msgid "What's New"
+msgstr ""
+
+#: uber-media.php:180 uber-media.php:207 uber-media.php:226
+msgid "Support"
+msgstr ""
+
+#: uber-media.php:185
+msgid "Introducing Extensions"
+msgstr ""
+
+#: uber-media.php:189 uber-media.php:252
+msgid "Go to Media Manager Plus Settings"
+msgstr ""
+
+#: uber-media.php:212
+msgid "Get Some Help"
+msgstr ""
+
+#: uber-media.php:216
+msgid "Website"
+msgstr ""
+
+#: uber-media.php:221
+msgid "Created by"
+msgstr ""
+
+#: uber-media.php:229
+msgid "Support Forums"
+msgstr ""
+
+#: uber-media.php:231 uber-media.php:234
+msgid "Changelog"
+msgstr ""
+
+#: uber-media.php:238
+msgid "Watch The Video"
+msgstr ""
+
+#: uber-media.php:369
+msgid "No available sources"
+msgstr ""
+
+#: uber-media.php:417
+#, php-format
+msgid "Buy the %s extension for $%s"
+msgstr ""
+
+#: uber-media.php:417
+#, php-format
+msgid "$%s Buy"
+msgstr ""
+
+#: uber-media.php:424
+msgid "No new extensions available, you must have installed them all. Nice."
+msgstr ""
+
+#: uber-media.php:652
+msgid "Insert into page"
+msgstr ""
+
+#: uber-media.php:652
+msgid "Insert into post"
+msgstr ""
+
+#: uber-media.php:653
+msgid "Import"
+msgstr ""
+
+#: uber-media.php:655
+msgid "Insert from "
+msgstr ""
+
+#: uber-media.php:703
+msgid "Caption"
+msgstr ""
+
+#: uber-media.php:708
+msgid "Title"
+msgstr ""
+
+#: uber-media.php:713
+msgid "Alt Text"
+msgstr ""
+
+#: uber-media.php:717
+msgid "Align"
+msgstr ""
+
+#: uber-media.php:719
+msgid "Left"
+msgstr ""
+
+#: uber-media.php:720
+msgid "Center"
+msgstr ""
+
+#: uber-media.php:721
+msgid "Right"
+msgstr ""
+
+#: uber-media.php:722 uber-media.php:730
+msgid "None"
+msgstr ""
+
+#: uber-media.php:726
+msgid "Link To"
+msgstr ""
+
+#: uber-media.php:728
+msgid "Image URL"
+msgstr ""
+
+#: uber-media.php:729
+msgid "Page URL"
+msgstr ""
+
+#: uber-media.php:775
+msgid "Settings"
+msgstr ""
