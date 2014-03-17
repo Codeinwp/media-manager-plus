@@ -1,14 +1,32 @@
 <?php
-/*
-Plugin Name: Media Manager Plus
-Plugin URI: http://dev7studios.com/media-manager-plus
-Description: Upgrade the WordPress Media Manager and add support for Flickr, Instagram, 500px etc.
-Version: 1.5
-Author: Dev7studios
-Author URI: http://dev7studios.com
-Text Domain: media-manager-plus
-Domain Path: /lang
-*/
+/**
+ * Plugin Name: Media Manager Plus
+ * Plugin URI: http://dev7studios.com/plugins/media-manager-plus/
+ * Description: Upgrade the WordPress Media Manager and add support for Flickr, Instagram, 500px etc.
+ * Author: Dev7studios
+ * Author URI: http://dev7studios.com
+ * Version: 1.5
+ * Text Domain: media-manager-plus
+ * Domain Path: /language
+ *
+ * Media Manager Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * Media Manager Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Media Manager Plus. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @package MMP
+ * @category Core
+ * @author Dev7studios
+ * @version 1.5
+ */
 
 if ( ! session_id() ) {
 	session_start();

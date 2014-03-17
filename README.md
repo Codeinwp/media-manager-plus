@@ -4,8 +4,8 @@
 **Requires at least:** 3.5  
 **Tested up to:** 3.6  
 **Stable tag:** 1.4.2  
-**License:** GPLv2  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
+**License:** GPLv3
+**License URI:** http://www.gnu.org/licenses/gpl.html
 
 Upgrade the WordPress Media Manager and add support for Flickr, Instagram, 500px, Facebook etc.
 
