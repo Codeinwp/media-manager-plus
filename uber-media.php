@@ -732,7 +732,6 @@ class uber_media {
 		</script>
 	<?php
 	} // END print_media_templates()
-	}
 
 	/**
 	 * Load the plugin's textdomain hooked to 'plugins_loaded'.
