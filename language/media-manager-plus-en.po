@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Media Manager Plus\n"
-"POT-Creation-Date: 2014-03-17 09:41-0000\n"
-"PO-Revision-Date: 2014-03-17 09:42-0000\n"
+"POT-Creation-Date: 2014-03-17 10:53-0000\n"
+"PO-Revision-Date: 2014-03-17 10:53-0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -134,140 +134,181 @@ msgstr ""
 msgid "Save All Changes"
 msgstr ""
 
-#: uber-media.php:129 uber-media.php:130 uber-media.php:137 uber-media.php:144
-#: uber-media.php:270
+#: uber-media.php:140 uber-media.php:141 uber-media.php:148 uber-media.php:155
+#: uber-media.php:296
 msgid "Media Manager Plus"
 msgstr ""
 
-#: uber-media.php:136 uber-media.php:143 uber-media.php:171 uber-media.php:198
+#: uber-media.php:147 uber-media.php:154 uber-media.php:182 uber-media.php:209
 msgid "Welcome to Media Manager Plus"
 msgstr ""
 
-#: uber-media.php:173 uber-media.php:200
+#: uber-media.php:184 uber-media.php:211
 #, php-format
 msgid ""
 "Thank you for updating to the latest version! Media Manager Plus %s upgrades "
 "the WordPress media manager with third party image sources."
 msgstr ""
 
-#: uber-media.php:177 uber-media.php:204
+#: uber-media.php:188 uber-media.php:215
 msgid "What's New"
 msgstr ""
 
-#: uber-media.php:180 uber-media.php:207 uber-media.php:226
+#: uber-media.php:191 uber-media.php:218 uber-media.php:237
 msgid "Support"
 msgstr ""
 
-#: uber-media.php:185
+#: uber-media.php:196
 msgid "Introducing Extensions"
 msgstr ""
 
-#: uber-media.php:189 uber-media.php:252
+#: uber-media.php:200 uber-media.php:263
 msgid "Go to Media Manager Plus Settings"
 msgstr ""
 
-#: uber-media.php:212
+#: uber-media.php:223
 msgid "Get Some Help"
 msgstr ""
 
-#: uber-media.php:216
+#: uber-media.php:227
 msgid "Website"
 msgstr ""
 
-#: uber-media.php:221
+#: uber-media.php:232
 msgid "Created by"
 msgstr ""
 
-#: uber-media.php:229
+#: uber-media.php:240
 msgid "Support Forums"
 msgstr ""
 
-#: uber-media.php:231 uber-media.php:234
+#: uber-media.php:242 uber-media.php:245
 msgid "Changelog"
 msgstr ""
 
-#: uber-media.php:238
+#: uber-media.php:249
 msgid "Watch The Video"
 msgstr ""
 
-#: uber-media.php:369
+#: uber-media.php:274 uber-media.php:376
+msgid "Disconnect"
+msgstr ""
+
+#: uber-media.php:275 uber-media.php:374
+msgid "Connect"
+msgstr ""
+
+#: uber-media.php:276
+msgid "Connecting"
+msgstr ""
+
+#: uber-media.php:277
+msgid "Importing"
+msgstr ""
+
+#: uber-media.php:278
+msgid "Inserting"
+msgstr ""
+
+#: uber-media.php:279
+msgid "imported"
+msgstr ""
+
+#: uber-media.php:280
+msgid "image"
+msgstr ""
+
+#: uber-media.php:281
+msgid "images"
+msgstr ""
+
+#: uber-media.php:382 uber-media.php:386
+msgid "API Unavailable"
+msgstr ""
+
+#: uber-media.php:399
 msgid "No available sources"
 msgstr ""
 
-#: uber-media.php:417
+#: uber-media.php:445
+#, php-format
+msgid "Requires Version %s"
+msgstr ""
+
+#: uber-media.php:447
 #, php-format
 msgid "Buy the %s extension for $%s"
 msgstr ""
 
-#: uber-media.php:417
+#: uber-media.php:447
 #, php-format
 msgid "$%s Buy"
 msgstr ""
 
-#: uber-media.php:424
+#: uber-media.php:454
 msgid "No new extensions available, you must have installed them all. Nice."
 msgstr ""
 
-#: uber-media.php:652
+#: uber-media.php:682
 msgid "Insert into page"
 msgstr ""
 
-#: uber-media.php:652
+#: uber-media.php:682
 msgid "Insert into post"
 msgstr ""
 
-#: uber-media.php:653
+#: uber-media.php:683
 msgid "Import"
 msgstr ""
 
-#: uber-media.php:655
+#: uber-media.php:685
 msgid "Insert from "
 msgstr ""
 
-#: uber-media.php:703
+#: uber-media.php:733
 msgid "Caption"
 msgstr ""
 
-#: uber-media.php:708
+#: uber-media.php:738
 msgid "Title"
 msgstr ""
 
-#: uber-media.php:713
+#: uber-media.php:743
 msgid "Alt Text"
 msgstr ""
 
-#: uber-media.php:717
+#: uber-media.php:747
 msgid "Align"
 msgstr ""
 
-#: uber-media.php:719
+#: uber-media.php:749
 msgid "Left"
 msgstr ""
 
-#: uber-media.php:720
+#: uber-media.php:750
 msgid "Center"
 msgstr ""
 
-#: uber-media.php:721
+#: uber-media.php:751
 msgid "Right"
 msgstr ""
 
-#: uber-media.php:722 uber-media.php:730
+#: uber-media.php:752 uber-media.php:760
 msgid "None"
 msgstr ""
 
-#: uber-media.php:726
+#: uber-media.php:756
 msgid "Link To"
 msgstr ""
 
-#: uber-media.php:728
+#: uber-media.php:758
 msgid "Image URL"
 msgstr ""
 
-#: uber-media.php:729
+#: uber-media.php:759
 msgid "Page URL"
 msgstr ""
 
-#: uber-media.php:775
+#: uber-media.php:805
 msgid "Settings"
 msgstr ""
