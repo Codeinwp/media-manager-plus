@@ -62,11 +62,20 @@ class uber_media {
 		add_filter( $this->wpsf->get_option_group() . '_settings_validate', array( $this, 'validate_settings' ) );
 		$this->settings = wpsf_get_settings( $this->plugin_path . 'includes/uber-media-settings.php' );
 
-	}
+	} // END __construct()
 
+	/**
+	 * Fired when plugin is activated
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @param bool $network_wide TRUE if WPMU 'super admin' uses Network Activate option
+	 * @return void
+	 */
 	function activate( $network_wide ) {
 		set_transient( '_mmp_activation_redirect', true, 30 );
-	}
+	} // END activate()
 
 	function upgrade_check() {
 		if ( ! get_option( 'mmp_version' ) ) {
@@ -82,7 +91,7 @@ class uber_media {
 			}
 			update_option( 'mmp_version', $this->plugin_version );
 		}
-	}
+	} // END upgrade_check()
 
 	/**
 	 * Register and enqueue admin-specific assets.
@@ -135,12 +144,12 @@ class uber_media {
 			'mmp-support',
 			array( $this, 'support_screen' )
 		);
-	}
+	} // END admin_menu()
 
 	public function admin_head() {
 		remove_submenu_page( 'index.php', 'mmp-welcome' );
 		remove_submenu_page( 'index.php', 'mmp-support' );
-	}
+	} // END admin_head()
 
 	public function welcome() {
 		if ( ! get_transient( '_mmp_activation_redirect' ) ) {
@@ -152,7 +161,7 @@ class uber_media {
 		}
 		wp_safe_redirect( admin_url( 'index.php?page=mmp-welcome' ) );
 		exit;
-	}
+	} // END welcome()
 
 	public function welcome_screen() {
 		?>
@@ -179,7 +188,7 @@ class uber_media {
 			</div>
 		</div>
 	<?php
-	}
+	} // END welcome()
 
 	public function support_screen() {
 		?>
@@ -242,7 +251,7 @@ class uber_media {
 			</div>
 		</div>
 	<?php
-	}
+	} // END support_screen()
 
 
 	public function settings_page() {
@@ -272,7 +281,7 @@ class uber_media {
 			</form>
 		</div>
 	<?php
-	}
+	} // END settings_page()
 
 	function do_settings_sections( $page ) {
 		global $wp_settings_sections, $wp_settings_fields;
@@ -304,7 +313,7 @@ class uber_media {
 			}
 			echo '</div>';
 		}
-	}
+	} // END do_settings_sections()
 
 	function validate_settings( $input ) {
 		if ( isset( $input['sources'] ) ) {
@@ -314,7 +323,7 @@ class uber_media {
 		}
 
 		return $input;
-	}
+	} // END validate_settings()
 
 	function default_val( $options, $value, $default = '' ) {
 		if ( ! isset( $options[$value] ) ) {
@@ -322,7 +331,7 @@ class uber_media {
 		} else {
 			return $options[$value];
 		}
-	}
+	} // END default_val()
 
 	function setting_image_sources() {
 		$sources = $this->get_sources();
@@ -358,11 +367,11 @@ class uber_media {
 			$html = __( 'No available sources', 'media-manager-plus' );
 		}
 		echo $html;
-	}
+	} // END setting_image_sources()
 
 	function setting_extensions() {
 		$this->get_extensions();
-	}
+	} // END setting_extensions()
 
 	function get_installed_extensions() {
 		$extensions = array();
@@ -375,7 +384,7 @@ class uber_media {
 		}
 
 		return $extensions;
-	}
+	} // END get_installed_extensions()
 
 	function get_extensions() {
 		$result     = wp_remote_get( $this->extensions_url );
@@ -413,7 +422,7 @@ class uber_media {
 			$html = __( 'No new extensions available, you must have installed them all. Nice.', 'media-manager-plus' );
 		}
 		echo $html;
-	}
+	} // END
 
 	function include_sources() {
 		require_once( dirname( __FILE__ ) . '/includes/oauth/provider.php' );
@@ -423,7 +432,7 @@ class uber_media {
 				include_once( $dir );
 			}
 		}
-	}
+	} // END get_extensions()
 
 	function get_sources( $popup = false ) {
 		$options        = $this->default_val( $this->settings, 'ubermediasettings_sources_available', array() );
@@ -465,7 +474,7 @@ class uber_media {
 		ksort( $sources );
 
 		return $sources;
-	}
+	} // END get_sources()
 
 	function disconnect_source() {
 		if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'uber_media' ) ) {
@@ -487,7 +496,7 @@ class uber_media {
 		}
 		echo json_encode( $response );
 		die;
-	}
+	} // END disconnect_source()
 
 	function connect_check() {
 		if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'uber_media' ) ) {
@@ -505,7 +514,7 @@ class uber_media {
 		}
 		echo json_encode( $response );
 		die;
-	}
+	} // END connect_check()
 
 	function image_sources_header() {
 		if ( isset( $_GET['page'] ) && $_GET['page'] == 'uber-media' && isset( $_GET['type'] ) ) {
@@ -546,7 +555,7 @@ class uber_media {
 			</script>
 		<?php
 		}
-	}
+	} // END image_sources_header()
 
 	function param_choices() {
 		if ( ! isset( $_POST['method'] ) || ! isset( $_POST['source'] ) ) {
@@ -578,7 +587,7 @@ class uber_media {
 		$response['choices'] = $choices;
 		echo json_encode( $response );
 		die;
-	}
+	} // END param_choices()
 
 	function load_images() {
 		if ( ! isset( $_POST['param'] ) || ! isset( $_POST['method'] ) || ! isset( $_POST['source'] ) ) {
@@ -633,7 +642,7 @@ class uber_media {
 
 		echo json_encode( $response );
 		die;
-	}
+	} // END load_images()
 
 	function custom_media_string( $strings, $post ) {
 		$hier                       = $post && is_post_type_hierarchical( $post->post_type );
@@ -646,7 +655,7 @@ class uber_media {
 		$strings['mmp_extensions']  = $this->get_installed_extensions();
 
 		return $strings;
-	}
+	} // END custom_media_string()
 
 	function pre_insert() {
 		if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'uber_media' ) ) {
@@ -663,7 +672,7 @@ class uber_media {
 
 		echo json_encode( apply_filters( 'uber_media_pre_insert', $response ) );
 		die;
-	}
+	} // END pre_insert()
 
 	function print_media_templates() {
 		?>
@@ -722,6 +731,7 @@ class uber_media {
 			<?php do_action('uber_media_settings_after'); ?>
 		</script>
 	<?php
+	} // END print_media_templates()
 	}
 
 	/**
@@ -769,5 +779,3 @@ class uber_media {
 	} // END add_action_links()
 
 }
-
-?>

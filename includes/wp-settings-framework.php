@@ -250,7 +250,7 @@ if ( ! class_exists( 'ubermediaWordPressSettingsFramework' ) ) {
 						echo '<p class="description">' . $desc . '</p>';
 					}
 					echo '<script type="text/javascript">
-    		        jQuery(document).ready(function($){ 
+    		        jQuery(document).ready(function($){
                         var colorPicker = $("#' . $el_id . '_cp");
                         colorPicker.farbtastic("#' . $el_id . '");
                         colorPicker.hide();
@@ -396,5 +396,3 @@ if ( ! function_exists( 'wpsf_delete_settings' ) ) {
 		delete_option( $opt_group . '_settings' );
 	}
 }
-
-?>
