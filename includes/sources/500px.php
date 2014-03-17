@@ -56,25 +56,48 @@ add_filter( 'uber_media_settings', 'mmp_settings_500px' );
 
 class media_manager_plus_source_500px extends media_manager_plus_source {
 
-	public $host = 'https://api.500px.com/v1/';
-	public $format = 'json';
-	private $access_token_url = 'https://api.500px.com/v1/oauth/access_token';
+	public $format                  = 'json';
+	public $host                    = 'https://api.500px.com/v1/';
+	private $access_token_url       = 'https://api.500px.com/v1/oauth/access_token';
 	private $authenticate_token_url = 'https://api.500px.com/v1/oauth/authorize';
-	private $authorize_url = 'https://api.500px.com/v1/oauth/authorize';
-	private $request_token_url = 'https://api.500px.com/v1/oauth/request_token';
+	private $authorize_url          = 'https://api.500px.com/v1/oauth/authorize';
+	private $request_token_url      = 'https://api.500px.com/v1/oauth/request_token';
 
-	private $consumer_key = 'sjQOB4EmdL7zg6BZK5XIhxhSVrC2y82pz1eBbzk6';
-	private $consumer_secret = 'VtMOtA0Keirpo7oOTftJcq88uKLLLN2RfxV2X7Xp';
+	private $consumer_key, $consumer_secret = '';
 
-	private $max_count = 100;
+	private $max_count     = 100;
 	private $default_count = 20;
 
-	private $popup_width = 800;
+	private $popup_width  = 800;
 	private $popup_height = 500;
 
 	private $settings = array();
 
 	function __construct( $oauth_token = null, $oauth_token_secret = null ) {
+
+		$this->prepare_variables();
+
+		parent::__construct(
+			$this->host,
+			$this->format,
+			$this->access_token_url,
+			$this->authenticate_token_url,
+			$this->authorize_url,
+			$this->request_token_url,
+			$this->consumer_key,
+			$this->consumer_secret,
+			$this->settings,
+			$this->max_count,
+			$this->default_count,
+			$this->popup_width,
+			$this->popup_height,
+			$oauth_token,
+			$oauth_token_secret
+		);
+
+	} // END __construct()
+
+	private function prepare_variables() {
 
 		$this->settings = array(
 			'getTaggedImages' => array(
@@ -89,31 +112,16 @@ class media_manager_plus_source_500px extends media_manager_plus_source {
 				'param_type'	=> 'text',
 				'param_desc'	=> __( 'Enter a username', 'media-manager-plus' ),
 			),
-			'getPopular' => array(
+			'getPopular'     => array(
 				'name'	=> __( 'Popular Images', 'media-manager-plus' ),
 				'param'	=> false,
 			),
 		);
 
-		parent::__construct(
-			  $this->host,
-				  $this->format,
-				  $this->access_token_url,
-				  $this->authenticate_token_url,
-				  $this->authorize_url,
-				  $this->request_token_url,
-				  $this->consumer_key,
-				  $this->consumer_secret,
-				  $this->settings,
-				  $this->max_count,
-				  $this->default_count,
-				  $this->popup_width,
-				  $this->popup_height,
-				  $oauth_token,
-				  $oauth_token_secret
-		);
+		$this->consumer_key    = apply_filters( 'mmp_500px_key', 'sjQOB4EmdL7zg6BZK5XIhxhSVrC2y82pz1eBbzk6' );
+		$this->consumer_secret = apply_filters( 'mmp_500px_secret', 'VtMOtA0Keirpo7oOTftJcq88uKLLLN2RfxV2X7Xp' );
 
-	}
+	} // END prepare_variables()
 
 	private function addLicenseParam( $params ) {
 		$mmp_options = get_option( 'ubermediasettings_settings', array() );
