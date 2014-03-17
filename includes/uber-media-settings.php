@@ -9,8 +9,8 @@ $wpsf_ubermedia_settings['sources'] = array(
 	'fields'        => array(
 		array(
 			'id'    => 'available',
-			'title' => __( '', 'media-manager-plus' ),
-			'desc'  => __( '', 'media-manager-plus' ),
+			'title' => '',
+			'desc'  => '',
 			'type'  => 'custom',
 			'std'   => ''
 		),
