@@ -70,9 +70,14 @@ jQuery(document).ready(function($){
 		originalTrigger.apply(this, Array.prototype.slice.call(arguments));
 	}
 	*/
-	
+
 	var extensions = wp.media.view.l10n.mmp_extensions;
-	var importer = ($.inArray('media-manager-plus-importer', extensions) > 0) ? true : false;
+	var importer = false
+	$.each( extensions, function(index, extension) {
+		if ( 'media-manager-plus-importer' == extension ) {
+			importer = true;
+		}
+	});
 
 	var UberImage = Backbone.Model.extend({
 	});
