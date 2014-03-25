@@ -40,7 +40,6 @@ class uber_media {
 	private $plugin_folder;
 	private $plugin_path;
 	private $plugin_version;
-	private $js_l10n;
 	private $extensions_url;
 	private $callback;
 
@@ -77,8 +76,6 @@ class uber_media {
 		add_action( 'wp_ajax_uber_pre_insert', array( $this, 'pre_insert' ) );
 
 		$this->include_sources();
-
-		$this->set_js_l10n();
 
 		require_once( $this->plugin_path . 'includes/wp-settings-framework.php' );
 		$this->wpsf = new ubermediaWordPressSettingsFramework( $this->plugin_path . 'includes/uber-media-settings.php', '' );
@@ -141,8 +138,7 @@ class uber_media {
 				'uber-media-js',
 				'uber_media',
 				array(
-					'nonce' => 	wp_create_nonce( 'uber_media' ),
-					'l10n'	=>	$this->js_l10n
+					'nonce' => 	wp_create_nonce( 'uber_media' )
 				)
 			);
 
@@ -285,10 +281,10 @@ class uber_media {
 	} // END support_screen()
 
 	/**
-	 * Sets the translatable strings for the javascript file
+	 * Gets the translatable strings for the javascript file
 	 */
-	public function set_js_l10n(){
-		$this->js_l10n = array(
+	public function get_js_l10n(){
+		return array(
 			'disconnect'	=>	__( 'Disconnect', 'media-manager-plus' ),
 			'connect'		=> 	__( 'Connect', 'media-manager-plus' ),
 			'connecting'	=>	__( 'Connecting', 'media-manager-plus' ),
@@ -298,7 +294,7 @@ class uber_media {
 			'image'			=>	__( 'image', 'media-manager-plus' ),
 			'images'		=>	__( 'images', 'media-manager-plus' ),
 		);
-	} // END js_l10n()
+	} // END get_js_l10n()
 
 	public function settings_page() {
 		if ( ! current_user_can( 'manage_options' ) ) {
@@ -720,6 +716,7 @@ class uber_media {
 		$strings['mmp_menu_prefix'] = apply_filters( 'mmp_menu_prefix', __( 'Insert from ', 'media-manager-plus' ) );
 		$strings['mmp_defaults']    = apply_filters( 'mmp_default_settings', array() );
 		$strings['mmp_extensions']  = $this->get_installed_extensions();
+		$strings['mmp_l10n']		= $this->get_js_l10n();
 
 		return $strings;
 	} // END custom_media_string()

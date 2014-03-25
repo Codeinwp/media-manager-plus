@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
 				params = 'location=0,status=0,width=' + w + ',height=' + h + ',top=' + top + ', left=' + left;
 			$(this).removeClass('connect');
 			$(this).removeClass('button-primary');
-			$('[data-source="' + source + '"]').text( uber_media.l10n.connecting + '...');
+			$('[data-source="' + source + '"]').text( wp.media.view.l10n.mmp_l10n.connecting + '...');
 			this.oauth_window = window.open(this.href, 'Connect', params);
 
 			this.interval = window.setInterval((function() {
@@ -25,13 +25,13 @@ jQuery(document).ready(function($){
 			              source: source },
 			            function(data){
 			               if(data.message == 'success') {
-			               		$('[data-source="' + source + '"]').text( uber_media.l10n.disconnect );
+			               		$('[data-source="' + source + '"]').text( wp.media.view.l10n.mmp_l10n.disconnect );
 			               		$('[data-source="' + source + '"]').addClass('disconnect');
 			               		var sourceTitle = $('[data-source="' + source + '"]').prop('title');
-			               		$('[data-source="' + source + '"]').prop('title', sourceTitle.replace( uber_media.l10n.connect, uber_media.l10n.disconnect ));
+			               		$('[data-source="' + source + '"]').prop('title', sourceTitle.replace( wp.media.view.l10n.mmp_l10n.connect, wp.media.view.l10n.mmp_l10n.disconnect ));
 			               		$('[data-source="' + source + '"]').prop('href', '#');
 			               } else {
-			               	$('[data-source="' + source + '"]').text( uber_media.l10n.connect );
+			               	$('[data-source="' + source + '"]').text( wp.media.view.l10n.mmp_l10n.connect );
 			               	$('[data-source="' + source + '"]').addClass('connect');
 			               	$('[data-source="' + source + '"]').addClass('button-primary');
 			               }
@@ -70,7 +70,7 @@ jQuery(document).ready(function($){
 		originalTrigger.apply(this, Array.prototype.slice.call(arguments));
 	}
 	*/
-
+	
 	var extensions = wp.media.view.l10n.mmp_extensions;
 	var importer = ($.inArray('media-manager-plus-importer', extensions) > 0) ? true : false;
 
@@ -216,7 +216,7 @@ jQuery(document).ready(function($){
 
 			$('#mmp-import-button').attr("disabled", 'disabled');
 			$('#uber-button').attr("disabled", 'disabled');
-		    $("#mmp-import-button").text( uber_media.l10n.importing + '...');
+		    $("#mmp-import-button").text( wp.media.view.l10n.mmp_l10n.importing + '...');
 
 			var selectedimages = this.props.get( 'custom_data' );
 		    var selection = new SelectedImages(selectedimages.models);
@@ -255,7 +255,7 @@ jQuery(document).ready(function($){
 			    that.props.set('custom_data', '');
 				that.props.set( 'selected_id', '' );
 				that.props.set( 'selected_image', '' );
-			    $("#mmp-import-button").text( count + ( (count > 1) ? ' ' + uber_media.l10n.images : ' ' + uber_media.l10n.image) + ' ' + uber_media.l10n.imported );
+			    $("#mmp-import-button").text( count + ( (count > 1) ? ' ' + wp.media.view.l10n.mmp_l10n.images : ' ' + wp.media.view.l10n.mmp_l10n.image) + ' ' + wp.media.view.l10n.mmp_l10n.imported );
 
 			    setTimeout(function() {
 				     $("ul#uberimages li").removeClass("selected").removeClass("details");
@@ -277,7 +277,7 @@ jQuery(document).ready(function($){
 
 		    $('#uber-button').attr("disabled", 'disabled');
 		    if(importer) $('#mmp-import-button').attr("disabled", 'disabled');
-		    $("#uber-button").text( uber_media.l10n.inserting + '...' );
+		    $("#uber-button").text( wp.media.view.l10n.mmp_l10n.inserting + '...' );
 
 		    var uberimage = this.props.get('custom_data');
 
@@ -412,7 +412,7 @@ jQuery(document).ready(function($){
 			}
 			else if	(show && importer) {
 				$("#mmp-import-button").removeAttr('disabled');
-				var imgtext = (selection.length > 1) ? ' ' + uber_media.l10n.images : ' ' + uber_media.l10n.image;
+				var imgtext = (selection.length > 1) ? ' ' + wp.media.view.l10n.mmp_l10n.images : ' ' + wp.media.view.l10n.mmp_l10n.image;
 				$("#mmp-import-button").text(wp.media.view.l10n.mmpImportButton + ' ' + selection.length + imgtext);
 			}
 
@@ -763,10 +763,9 @@ jQuery(document).ready(function($){
 			}
 			else if (show && importer) {
 				$("#mmp-import-button").removeAttr('disabled');
-				var imgtext = (selection.length > 1) ? ' ' + uber_media.l10n.images : ' ' + uber_media.l10n.image;
+				var imgtext = (selection.length > 1) ? ' ' + wp.media.view.l10n.mmp_l10n.images : ' ' + wp.media.view.l10n.mmp_l10n.image;
 				$("#mmp-import-button").text(wp.media.view.l10n.mmpImportButton + ' ' + selection.length + imgtext);
 			}
-
 		},
 
 		removeFromSelection: function( event ) {
