@@ -283,16 +283,19 @@ class uber_media {
 	/**
 	 * Gets the translatable strings for the javascript file
 	 */
-	public function get_js_l10n(){
+	public function get_js_l10n( $post ){
+		$hier = $post && is_post_type_hierarchical( $post->post_type );
 		return array(
 			'disconnect'	=>	__( 'Disconnect', 'media-manager-plus' ),
 			'connect'		=> 	__( 'Connect', 'media-manager-plus' ),
 			'connecting'	=>	__( 'Connecting', 'media-manager-plus' ),
 			'importing'		=>	__( 'Importing', 'media-manager-plus' ),
 			'inserting'		=>	__( 'Inserting', 'media-manager-plus' ),
+			'insert'		=>	$hier ? __( 'Insert into page', 'media-manager-plus' ) : __( 'Insert into post', 'media-manager-plus' ),
 			'imported'		=>	__( 'imported', 'media-manager-plus' ),
+			'import'		=>	__( 'Import', 'media-manager-plus' ),
 			'image'			=>	__( 'image', 'media-manager-plus' ),
-			'images'		=>	__( 'images', 'media-manager-plus' ),
+			'images'		=>	__( 'images', 'media-manager-plus' )
 		);
 	} // END get_js_l10n()
 
@@ -708,15 +711,12 @@ class uber_media {
 	} // END load_images()
 
 	function custom_media_string( $strings, $post ) {
-		$hier                       = $post && is_post_type_hierarchical( $post->post_type );
-		$strings['ubermedia']       = $this->get_sources( true );
-		$strings['ubermediaButton'] = $hier ? __( 'Insert into page', 'media-manager-plus' ) : __( 'Insert into post', 'media-manager-plus' );
-		$strings['mmpImportButton'] = __( 'Import', 'media-manager-plus' );
+		$strings['mmp_sources']     = $this->get_sources( true );
 		$strings['mmp_menu']        = apply_filters( 'mmp_default_menu', 'default' );
 		$strings['mmp_menu_prefix'] = apply_filters( 'mmp_menu_prefix', __( 'Insert from ', 'media-manager-plus' ) );
 		$strings['mmp_defaults']    = apply_filters( 'mmp_default_settings', array() );
 		$strings['mmp_extensions']  = $this->get_installed_extensions();
-		$strings['mmp_l10n']		= $this->get_js_l10n();
+		$strings['mmp_l10n']		= $this->get_js_l10n( $post );
 
 		return $strings;
 	} // END custom_media_string()
