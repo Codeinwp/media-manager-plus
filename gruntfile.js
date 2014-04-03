@@ -28,6 +28,12 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		po2mo: {
+			files: {
+				src: 'languages/*.po',
+				expand: true,
+			},
+		},
 		watch: {
 			js:  {
 				files: 'assets/js/uber-media.js',
@@ -36,6 +42,10 @@ module.exports = function (grunt) {
 			sass: {
 				files: 'assets/css/scss/*.scss',
 				tasks: ['sass']
+			},
+			po2mo: {
+				files: 'languages/*.po',
+				tasks: ['po2mo']
 			}
 		},
 		makepot: {
@@ -69,6 +79,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-wp-i18n');
+	grunt.loadNpmTasks('grunt-po2mo');
 
 // register at least this one task
 	grunt.registerTask('default', [ 'watch' ]);
