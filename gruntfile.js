@@ -2,6 +2,9 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
+			options: {
+				banner: '/*! Media Manager Plus <%= pkg.version %> - JS */\n'
+			},
 			files: {
 				src: 'assets/js/uber-media.js',
 				dest: 'assets/js/',
@@ -13,7 +16,8 @@ module.exports = function (grunt) {
 		sass: {
 			dist: {
 				options: {
-					style: 'expanded'
+					style: 'expanded',
+					banner: '/* Media Manager Plus <%= pkg.version %> - CSS */'
 				},
 				files: {
 					'assets/css/uber-media.css' : 'assets/css/scss/uber-media.scss'
@@ -21,7 +25,8 @@ module.exports = function (grunt) {
 			},
 			dist2: {
 				options: {
-					style: 'compressed'
+					style: 'compressed',
+					banner: '/* Media Manager Plus <%= pkg.version %> - CSS */'
 				},
 				files: {
 					'assets/css/uber-media.min.css' : 'assets/css/scss/uber-media.scss'
