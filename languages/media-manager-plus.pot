@@ -1,22 +1,28 @@
+# Copyright (C) 2014 Media Manager Plus
+# This file is distributed under the same license as the Media Manager Plus package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Media Manager Plus\n"
-"POT-Creation-Date: 2014-03-17 10:53-0000\n"
-"PO-Revision-Date: 2014-03-17 10:53-0000\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: en\n"
+"Project-Id-Version: Media Manager Plus 1.5\n"
+"Report-Msgid-Bugs-To: "
+"https://github.com/Dev7studios/media-manager-plus/issues\n"
+"POT-Creation-Date: 2014-04-03 13:53:43+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: .\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: polevaultweb <iain@polevaultweb.com>\n"
+"Language-Team: polevaultweb <iain@polevaultweb.com>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-Sourcecharset: utf-8\n"
+"X-Poedit-Keywordslist: "
+"__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_"
+"x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-Searchpath-0: .\n"
+"X-Textdomain-Support: yes\n"
 
 #: includes/sources/500px.php:31
 msgid "Any License"
@@ -134,181 +140,194 @@ msgstr ""
 msgid "Save All Changes"
 msgstr ""
 
-#: uber-media.php:140 uber-media.php:141 uber-media.php:148 uber-media.php:155
-#: uber-media.php:296
+#. Plugin Name of the plugin/theme
 msgid "Media Manager Plus"
 msgstr ""
 
-#: uber-media.php:147 uber-media.php:154 uber-media.php:182 uber-media.php:209
+#: uber-media.php:161 uber-media.php:168 uber-media.php:196 uber-media.php:223
 msgid "Welcome to Media Manager Plus"
 msgstr ""
 
-#: uber-media.php:184 uber-media.php:211
-#, php-format
+#: uber-media.php:198 uber-media.php:225
 msgid ""
-"Thank you for updating to the latest version! Media Manager Plus %s upgrades "
-"the WordPress media manager with third party image sources."
+"Thank you for updating to the latest version! Media Manager Plus %s "
+"upgrades the WordPress media manager with third party image sources."
 msgstr ""
 
-#: uber-media.php:188 uber-media.php:215
+#: uber-media.php:202 uber-media.php:229
 msgid "What's New"
 msgstr ""
 
-#: uber-media.php:191 uber-media.php:218 uber-media.php:237
+#: uber-media.php:205 uber-media.php:232 uber-media.php:251
 msgid "Support"
 msgstr ""
 
-#: uber-media.php:196
+#: uber-media.php:210
 msgid "Introducing Extensions"
 msgstr ""
 
-#: uber-media.php:200 uber-media.php:263
+#: uber-media.php:214 uber-media.php:277
 msgid "Go to Media Manager Plus Settings"
 msgstr ""
 
-#: uber-media.php:223
+#: uber-media.php:237
 msgid "Get Some Help"
 msgstr ""
 
-#: uber-media.php:227
+#: uber-media.php:241
 msgid "Website"
 msgstr ""
 
-#: uber-media.php:232
+#: uber-media.php:246
 msgid "Created by"
 msgstr ""
 
-#: uber-media.php:240
+#: uber-media.php:254
 msgid "Support Forums"
 msgstr ""
 
-#: uber-media.php:242 uber-media.php:245
+#: uber-media.php:256 uber-media.php:259
 msgid "Changelog"
 msgstr ""
 
-#: uber-media.php:249
+#: uber-media.php:263
 msgid "Watch The Video"
 msgstr ""
 
-#: uber-media.php:274 uber-media.php:376
+#: uber-media.php:289 uber-media.php:393
 msgid "Disconnect"
 msgstr ""
 
-#: uber-media.php:275 uber-media.php:374
+#: uber-media.php:290 uber-media.php:391
 msgid "Connect"
 msgstr ""
 
-#: uber-media.php:276
+#: uber-media.php:291
 msgid "Connecting"
 msgstr ""
 
-#: uber-media.php:277
+#: uber-media.php:292
 msgid "Importing"
 msgstr ""
 
-#: uber-media.php:278
+#: uber-media.php:293
 msgid "Inserting"
 msgstr ""
 
-#: uber-media.php:279
-msgid "imported"
-msgstr ""
-
-#: uber-media.php:280
-msgid "image"
-msgstr ""
-
-#: uber-media.php:281
-msgid "images"
-msgstr ""
-
-#: uber-media.php:382 uber-media.php:386
-msgid "API Unavailable"
-msgstr ""
-
-#: uber-media.php:399
-msgid "No available sources"
-msgstr ""
-
-#: uber-media.php:445
-#, php-format
-msgid "Requires Version %s"
-msgstr ""
-
-#: uber-media.php:447
-#, php-format
-msgid "Buy the %s extension for $%s"
-msgstr ""
-
-#: uber-media.php:447
-#, php-format
-msgid "$%s Buy"
-msgstr ""
-
-#: uber-media.php:454
-msgid "No new extensions available, you must have installed them all. Nice."
-msgstr ""
-
-#: uber-media.php:682
+#: uber-media.php:294
 msgid "Insert into page"
 msgstr ""
 
-#: uber-media.php:682
+#: uber-media.php:294
 msgid "Insert into post"
 msgstr ""
 
-#: uber-media.php:683
+#: uber-media.php:295
+msgid "imported"
+msgstr ""
+
+#: uber-media.php:296
 msgid "Import"
 msgstr ""
 
-#: uber-media.php:685
+#: uber-media.php:297
+msgid "image"
+msgstr ""
+
+#: uber-media.php:298
+msgid "images"
+msgstr ""
+
+#: uber-media.php:399 uber-media.php:403
+msgid "API Unavailable"
+msgstr ""
+
+#: uber-media.php:416
+msgid "No available sources"
+msgstr ""
+
+#: uber-media.php:462
+msgid "Requires Version %s"
+msgstr ""
+
+#: uber-media.php:464
+msgid "Buy the %s extension for $%s"
+msgstr ""
+
+#: uber-media.php:464
+msgid "$%s Buy"
+msgstr ""
+
+#: uber-media.php:471
+msgid "No new extensions available, you must have installed them all. Nice."
+msgstr ""
+
+#: uber-media.php:716
 msgid "Insert from "
 msgstr ""
 
-#: uber-media.php:733
+#: uber-media.php:765
 msgid "Caption"
 msgstr ""
 
-#: uber-media.php:738
+#: uber-media.php:770
 msgid "Title"
 msgstr ""
 
-#: uber-media.php:743
+#: uber-media.php:775
 msgid "Alt Text"
 msgstr ""
 
-#: uber-media.php:747
+#: uber-media.php:779
 msgid "Align"
 msgstr ""
 
-#: uber-media.php:749
+#: uber-media.php:781
 msgid "Left"
 msgstr ""
 
-#: uber-media.php:750
+#: uber-media.php:782
 msgid "Center"
 msgstr ""
 
-#: uber-media.php:751
+#: uber-media.php:783
 msgid "Right"
 msgstr ""
 
-#: uber-media.php:752 uber-media.php:760
+#: uber-media.php:784 uber-media.php:792
 msgid "None"
 msgstr ""
 
-#: uber-media.php:756
+#: uber-media.php:788
 msgid "Link To"
 msgstr ""
 
-#: uber-media.php:758
+#: uber-media.php:790
 msgid "Image URL"
 msgstr ""
 
-#: uber-media.php:759
+#: uber-media.php:791
 msgid "Page URL"
 msgstr ""
 
-#: uber-media.php:805
+#: uber-media.php:837
 msgid "Settings"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://dev7studios.com/plugins/media-manager-plus/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Upgrade the WordPress Media Manager and add support for Flickr, Instagram, "
+"500px etc."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Dev7studios"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://dev7studios.com"
 msgstr ""
