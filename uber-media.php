@@ -475,23 +475,7 @@ class uber_media {
 
 	function include_sources() {
 		require_once( dirname( __FILE__ ) . '/includes/oauth/provider.php' );
-
 		$source_dir = glob( dirname( __FILE__ ) . '/includes/sources/*.php' );
-
-		$upload_dir     = wp_upload_dir();
-		$upload_path    = $upload_dir['basedir'];
-		if ( strpos( $upload_path, 'uploads/sites/' ) !== false && is_multisite() ) {
-			$upload_path = substr( $upload_path, 0, strpos( $upload_path, '/sites/' ) );
-		}
-		$custom_dir = glob( $upload_path . '/mmp-sources/*.php' );
-
-		if ( ! is_array( $source_dir ) ) {
-			$source_dir = array();
-		}
-		if ( ! is_array( $custom_dir ) ) {
-			$custom_dir = array();
-		}
-		$source_dir = array_merge( $source_dir, $custom_dir );
 
 		if ( $source_dir ) {
 			foreach ( $source_dir as $dir ) {
