@@ -315,7 +315,13 @@ class uber_media {
 			</h2>
 
 			<h2 class="nav-tab-wrapper">
-				<?php foreach ( $wpsf_ubermedia_settings as $tab ) { ?>
+				<?php foreach ( $wpsf_ubermedia_settings as $tab ) {
+					// Hide Extensions tab if none available
+					$extensions = $this->available_extensions();
+					if ( count( $extensions ) == 0 && $tab['section_id'] == 'extensions' ) {
+						continue;
+					}
+					?>
 					<a href="?page=<?php echo $_GET['page']; ?>&tab=<?php echo $tab['section_id']; ?>" class="nav-tab<?php echo( $active_tab == $tab['section_id'] ? ' nav-tab-active' : '' ); ?>"><?php echo $tab['section_title']; ?></a>
 				<?php } ?>
 			</h2>
@@ -436,24 +442,12 @@ class uber_media {
 	} // END get_installed_extensions()
 
 	function get_extensions() {
-		$result     = wp_remote_get( $this->extensions_url );
-		$extensions = array();
-		if ( 200 == $result['response']['code'] ) {
-			$json       = json_decode( $result['body'] );
-			$extensions = $json->extensions;
-		}
 		$html = '';
-		if ( $extensions ) {
+		$extensions = $this->available_extensions();
+		if ( count( $extensions ) > 0 ) {
 			$html .= '<div id="uber-media-extensions">';
 			$html .= '<ul>';
-			$count = 0;
 			foreach ( $extensions as $extension_data ) {
-				$plugin_name     = $extension_data->pluginFile;
-				$validate_plugin = validate_plugin( $plugin_name );
-				if ( ! is_wp_error( $validate_plugin ) && $validate_plugin == 0 ) {
-					continue;
-				}
-				$count ++;
 				$html .= '<li>';
 				$html .= '<h3><a href="' . $extension_data->link . '" target="_blank">' . $extension_data->name . '</a></h3>';
 				$html .= '<a href="' . $extension_data->link . '" target="_blank"><img src="' . $extension_data->image . '" alt="' . $extension_data->name . ' logo"></a>';
@@ -466,12 +460,41 @@ class uber_media {
 			}
 			$html .= '</ul>';
 			$html .= '</div>';
+		} else {
+			$html = __( 'No new extensions available, you must have installed them all. Nice.', 'media-manager-plus' );
 		}
-		if ( $html == '' || $count == 0 ) {
-			$html = __( 'No new extensions available, you must have installed them all. Nice work.', 'media-manager-plus' );
-		}
+
 		echo $html;
-	} // END
+	} // END get_extensions
+
+	function available_extensions() {
+		if ( false === ( $available_extensions = get_transient( 'mmp_available_extensions' ) ) ) {
+			$result     = wp_remote_get( $this->extensions_url );
+			$extensions = array();
+			$available_extensions = array();
+			if ( 200 == $result['response']['code'] ) {
+				$json       = json_decode( $result['body'] );
+				$extensions = $json->extensions;
+			}
+			if ( $extensions ) {
+				foreach ( $extensions as $extension_data ) {
+					$plugin_name     = $extension_data->pluginFile;
+					$validate_plugin = validate_plugin( $plugin_name );
+					if ( ! is_wp_error( $validate_plugin ) && $validate_plugin == 0 ) {
+						continue;
+					}
+					$available_extensions[] = $extension_data;
+				}
+				// If Bundle is the obnly extension not installed remove from extension array
+				if ( count ( $available_extensions ) == 1 && $available_extensions[0]->name == 'Bundle' ) {
+					unset( $available_extensions[0] );
+				}
+			}
+			set_transient( 'mmp_available_extensions', $available_extensions, 12 * HOUR_IN_SECONDS );
+		}
+
+		return $available_extensions;
+	} // END available_extensions
 
 	function include_sources() {
 		require_once( dirname( __FILE__ ) . '/includes/oauth/provider.php' );

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Media Manager Plus 1.5\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/Dev7studios/media-manager-plus/issues\n"
-"POT-Creation-Date: 2014-04-17 15:06:31+00:00\n"
+"POT-Creation-Date: 2014-04-17 16:14:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -194,11 +194,11 @@ msgstr ""
 msgid "Watch The Video"
 msgstr ""
 
-#: uber-media.php:289 uber-media.php:393
+#: uber-media.php:289 uber-media.php:399
 msgid "Disconnect"
 msgstr ""
 
-#: uber-media.php:290 uber-media.php:391
+#: uber-media.php:290 uber-media.php:397
 msgid "Connect"
 msgstr ""
 
@@ -238,79 +238,79 @@ msgstr ""
 msgid "images"
 msgstr ""
 
-#: uber-media.php:399 uber-media.php:403
+#: uber-media.php:405 uber-media.php:409
 msgid "API Unavailable"
 msgstr ""
 
-#: uber-media.php:416
+#: uber-media.php:422
 msgid "No available sources"
 msgstr ""
 
-#: uber-media.php:462
+#: uber-media.php:456
 msgid "Requires Version %s"
 msgstr ""
 
-#: uber-media.php:464
+#: uber-media.php:458
 msgid "Buy the %s extension for $%s"
 msgstr ""
 
-#: uber-media.php:464
+#: uber-media.php:458
 msgid "$%s Buy"
 msgstr ""
 
-#: uber-media.php:471
-msgid "No new extensions available, you must have installed them all. Nice work."
+#: uber-media.php:464
+msgid "No new extensions available, you must have installed them all. Nice."
 msgstr ""
 
-#: uber-media.php:700
+#: uber-media.php:723
 msgid "Insert from "
 msgstr ""
 
-#: uber-media.php:749
+#: uber-media.php:772
 msgid "Caption"
 msgstr ""
 
-#: uber-media.php:754
+#: uber-media.php:777
 msgid "Title"
 msgstr ""
 
-#: uber-media.php:759
+#: uber-media.php:782
 msgid "Alt Text"
 msgstr ""
 
-#: uber-media.php:763
+#: uber-media.php:786
 msgid "Align"
 msgstr ""
 
-#: uber-media.php:765
+#: uber-media.php:788
 msgid "Left"
 msgstr ""
 
-#: uber-media.php:766
+#: uber-media.php:789
 msgid "Center"
 msgstr ""
 
-#: uber-media.php:767
+#: uber-media.php:790
 msgid "Right"
 msgstr ""
 
-#: uber-media.php:768 uber-media.php:776
+#: uber-media.php:791 uber-media.php:799
 msgid "None"
 msgstr ""
 
-#: uber-media.php:772
+#: uber-media.php:795
 msgid "Link To"
 msgstr ""
 
-#: uber-media.php:774
+#: uber-media.php:797
 msgid "Image URL"
 msgstr ""
 
-#: uber-media.php:775
+#: uber-media.php:798
 msgid "Page URL"
 msgstr ""
 
-#: uber-media.php:821
+#: uber-media.php:844
 msgid "Settings"
 msgstr ""
 
