@@ -51,6 +51,10 @@ module.exports = function (grunt) {
 			po2mo: {
 				files: 'languages/*.po',
 				tasks: ['po2mo']
+			},
+			makepot: {
+				files: '**/*.php',
+				tasks: ['makepot']
 			}
 		},
 		makepot: {
