@@ -124,7 +124,7 @@ class uber_media {
 	 */
 	public function admin_enqueue_scripts( $hook ) {
 
-		$pages       = array( 'media_page_uber-media', 'post.php', 'post-new.php' );
+		$pages       = array( 'dashboard_page_mmp-welcome', 'media_page_uber-media', 'post.php', 'post-new.php' );
 		$admin_pages = apply_filters( 'uber_media_enqueue_pages', $pages );
 		$dev         = apply_filters( 'uber_media_debug_mode', SCRIPT_DEBUG ) ? '' : '.min';
 
