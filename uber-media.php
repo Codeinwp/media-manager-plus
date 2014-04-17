@@ -468,7 +468,7 @@ class uber_media {
 			$html .= '</div>';
 		}
 		if ( $html == '' || $count == 0 ) {
-			$html = __( 'No new extensions available, you must have installed them all. Nice.', 'media-manager-plus' );
+			$html = __( 'No new extensions available, you must have installed them all. Nice work.', 'media-manager-plus' );
 		}
 		echo $html;
 	} // END
@@ -493,7 +493,7 @@ class uber_media {
 		if ( $load_sources ) {
 			foreach ( $load_sources as $source => $source_details ) {
 				$source_data['url']      = '#';
-				$source_data['name']     = ucfirst( $source );
+				$source_data['name']     = isset( $source_details['name'] ) ? $source_details['name'] : ucfirst( $source );
 				$var                     = 'media_manager_plus_source_' . $source;
 				$obj                     = new $var();
 				$source_data['settings'] = $obj->show_details();
