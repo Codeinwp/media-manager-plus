@@ -86,6 +86,7 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 				self::$instance->sources  		= new Media_Manager_Plus_Sources;
 				self::$instance->extensions  	= new Media_Manager_Plus_Extensions;
 				self::$instance->settings	  	= new Media_Manager_Plus_Settings;
+				self::$instance->templates	  	= new Media_Manager_Plus_Templates;
 			}
 
 			return self::$instance;
@@ -171,6 +172,7 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 			require_once MMP_PLUGIN_DIR . 'includes/admin/class-media.php';
 			require_once MMP_PLUGIN_DIR . 'includes/admin/class-extensions.php';
 			require_once MMP_PLUGIN_DIR . 'includes/admin/class-settings.php';
+			require_once MMP_PLUGIN_DIR . 'includes/admin/class-templates.php';
 			require_once MMP_PLUGIN_DIR . 'includes/functions.php';
 		} // END includes()
 

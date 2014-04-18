@@ -96,35 +96,7 @@ class Media_Manager_Plus_Admin {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( 'You do not have sufficient permissions to access this page.' );
 		}
-		global $wpsf_ubermedia_settings;
-		$wpsf_ubermedia_settings = apply_filters( 'uber_media_settings', $wpsf_ubermedia_settings );
-		$active_tab              = isset( $_GET['tab'] ) ? $_GET['tab'] : 'sources';
-		?>
-		<div class="wrap">
-			<div id="icon-upload" class="icon32"></div>
-			<h2>
-				<?php _e( 'Media Manager Plus', 'media-manager-plus' ); ?>
-				<?php echo apply_filters( 'uber_media_title_version', "<span class='uber-version'>v ". MMP_VERSION . "</span>" ); ?>
-			</h2>
-
-			<h2 class="nav-tab-wrapper">
-				<?php foreach ( $wpsf_ubermedia_settings as $tab ) {
-					// Hide Extensions tab if none available
-					$extensions = media_manager_plus()->extensions->available_extensions();
-					if ( count( $extensions ) == 0 && $tab['section_id'] == 'extensions' ) {
-						continue;
-					}
-					?>
-					<a href="?page=<?php echo $_GET['page']; ?>&tab=<?php echo $tab['section_id']; ?>" class="nav-tab<?php echo( $active_tab == $tab['section_id'] ? ' nav-tab-active' : '' ); ?>"><?php echo $tab['section_title']; ?></a>
-				<?php } ?>
-			</h2>
-
-			<form action="options.php" method="post">
-				<?php settings_fields( media_manager_plus()->settings->wpsf->get_option_group() ); ?>
-				<?php media_manager_plus()->settings->do_settings_sections( media_manager_plus()->settings->wpsf->get_option_group() ); ?>
-			</form>
-		</div>
-	<?php
+		media_manager_plus()->templates->get_template_part( 'settings' );
 	} // END settings_page()
 
 	/**
@@ -134,30 +106,7 @@ class Media_Manager_Plus_Admin {
 	 * @access public
 	 */
 	public function welcome_screen() {
-		?>
-		<div class="wrap about-wrap mmp-welcome">
-			<h1><?php printf( __( 'Welcome to Media Manager Plus', 'media-manager-plus' ), MMP_VERSION ); ?></h1>
-
-			<div class="about-text"><?php printf( __( 'Thank you for updating to the latest version! Media Manager Plus %s upgrades the WordPress media manager with third party image sources.', 'media-manager-plus' ), MMP_VERSION ); ?></div>
-
-			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab nav-tab-active" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-welcome' ), 'index.php' ) ) ); ?>">
-					<?php _e( "What's New", 'media-manager-plus' ); ?>
-				</a>
-				<a class="nav-tab" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-support' ), 'index.php' ) ) ); ?>">
-					<?php _e( 'Support', 'media-manager-plus' ); ?>
-				</a>
-			</h2>
-
-			<div class="changelog">
-				<h3><?php _e( 'Introducing Extensions', 'media-manager-plus' ); ?></h3>
-				<?php media_manager_plus()->extensions->get_extensions(); ?>
-			</div>
-			<div class="return-to-dashboard">
-				<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'uber-media' ), 'upload.php' ) ) ); ?>"><?php _e( 'Go to Media Manager Plus Settings', 'media-manager-plus' ); ?></a>
-			</div>
-		</div>
-	<?php
+		media_manager_plus()->templates->get_template_part( 'welcome' );
 	} // END welcome()
 
 	/**
@@ -167,66 +116,7 @@ class Media_Manager_Plus_Admin {
 	 * @access public
 	 */
 	public function support_screen() {
-		?>
-		<div class="wrap about-wrap">
-			<h1><?php printf( __( 'Welcome to Media Manager Plus', 'media-manager-plus' ), MMP_VERSION ); ?></h1>
-
-			<div class="about-text"><?php printf( __( 'Thank you for updating to the latest version! Media Manager Plus %s upgrades the WordPress media manager with third party image sources.', 'media-manager-plus' ), MMP_VERSION ); ?></div>
-
-			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-welcome' ), 'index.php' ) ) ); ?>">
-					<?php _e( "What's New", 'media-manager-plus' ); ?>
-				</a>
-				<a class="nav-tab nav-tab-active" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-support' ), 'index.php' ) ) ); ?>">
-					<?php _e( 'Support', 'media-manager-plus' ); ?>
-				</a>
-			</h2>
-
-			<div class="changelog">
-				<h3><?php _e( 'Get Some Help', 'media-manager-plus' ); ?></h3>
-
-				<div class="feature-section col three-col">
-					<div>
-						<h4><?php _e( 'Website', 'media-manager-plus' ); ?></h4>
-
-						<p>
-							<a target="_blank" href="http://dev7studios.com/media-manager-plus">Media Manager Plus</a>
-						</p>
-						<h4><?php _e( 'Created by', 'media-manager-plus' ); ?></h4>
-
-						<p>
-							<a target="_blank" href="http://dev7studios.com">Dev7studios</a>
-						</p>
-						<h4><?php _e( 'Support', 'media-manager-plus' ); ?></h4>
-
-						<p>
-							<a target="_blank" href="http://support.dev7studios.com/discussions/media-manager-plus-wordpress-plugin"><?php _e( 'Support Forums', 'media-manager-plus' ); ?></a>
-						</p>
-						<h4><?php _e( 'Changelog', 'media-manager-plus' ); ?></h4>
-
-						<p>
-							<a target="_blank" href="http://wordpress.org/extend/plugins/uber-media/changelog"><?php _e( 'Changelog', 'media-manager-plus' ); ?></a>
-						</p>
-					</div>
-					<div>
-						<h4><?php _e( 'Watch The Video', 'media-manager-plus' ); ?></h4>
-
-						<div class='video'>
-							<object width='532' height='325'>
-								<param name='movie' value='http://www.youtube.com/v/dR0sPNSICfk?fs=1'></param>
-								<param name='allowFullScreen' value='true'></param>
-								<param name='allowscriptaccess' value='never'></param>
-								<embed src='http://www.youtube.com/v/dR0sPNSICfk?fs=1' type='application/x-shockwave-flash' allowscriptaccess='never' allowfullscreen='true' width='532' height='325'></embed>
-							</object>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="return-to-dashboard">
-				<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'uber-media' ), 'upload.php' ) ) ); ?>"><?php _e( 'Go to Media Manager Plus Settings', 'media-manager-plus' ); ?></a>
-			</div>
-		</div>
-	<?php
+		media_manager_plus()->templates->get_template_part( 'support' );
 	} // END support_screen()
 
 	/**
