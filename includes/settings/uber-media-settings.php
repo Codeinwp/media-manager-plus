@@ -66,7 +66,7 @@ $wpsf_ubermedia_settings['support'] = array(
 			'type'  => 'custom',
 			'std'   => 'Website: <a href="http://dev7studios.com/media-manager-plus" target="_blank">Media Manager Plus</a><br />
             Created by: <a href="http://dev7studios.com" target="_blank">Dev7studios</a><br />
-            Support: <a href="http://support.dev7studios.com/discussions/media-manager-plus-wordpress-plugin" target="_blank">Support Forums</a><br />
+            Support: <a href="https://github.com/Dev7studios/media-manager-plus/issues" target="_blank">Support Forum</a><br />
             Changelog: <a href="http://wordpress.org/extend/plugins/uber-media/changelog" target="_blank">Changelog</a><br />'
 		)
 	)

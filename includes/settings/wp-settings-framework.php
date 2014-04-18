@@ -8,11 +8,11 @@
  * @license MIT
  */
 
-if ( ! class_exists( 'ubermediaWordPressSettingsFramework' ) ) {
+if ( ! class_exists( 'mmpWordPressSettingsFramework' ) ) {
 	/**
 	 * WordPressSettingsFramework class
 	 */
-	class ubermediaWordPressSettingsFramework {
+	class mmpWordPressSettingsFramework {
 
 		/**
 		 * @access private
