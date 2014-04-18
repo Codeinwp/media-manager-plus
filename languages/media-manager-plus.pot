@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Media Manager Plus 1.5\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/Dev7studios/media-manager-plus/issues\n"
-"POT-Creation-Date: 2014-04-17 16:14:08+00:00\n"
+"POT-Creation-Date: 2014-04-18 17:29:18+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,6 +23,123 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-Searchpath-0: .\n"
 "X-Textdomain-Support: yes\n"
+
+#. Plugin Name of the plugin/theme
+msgid "Media Manager Plus"
+msgstr ""
+
+#: includes/admin/class-admin.php:63 includes/admin/class-admin.php:70
+#: templates/support.php:2 templates/welcome.php:2
+msgid "Welcome to Media Manager Plus"
+msgstr ""
+
+#: includes/admin/class-admin.php:137
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-extensions.php:44
+msgid "Requires Version %s"
+msgstr ""
+
+#: includes/admin/class-extensions.php:46
+msgid "Buy the %s extension for $%s"
+msgstr ""
+
+#: includes/admin/class-extensions.php:46
+msgid "$%s Buy"
+msgstr ""
+
+#: includes/admin/class-extensions.php:52
+msgid "No new extensions available, you must have installed them all. Nice."
+msgstr ""
+
+#: includes/admin/class-media.php:50
+msgid "Insert from "
+msgstr ""
+
+#: includes/admin/class-media.php:77 includes/admin/class-settings.php:100
+msgid "Disconnect"
+msgstr ""
+
+#: includes/admin/class-media.php:78 includes/admin/class-settings.php:98
+msgid "Connect"
+msgstr ""
+
+#: includes/admin/class-media.php:79
+msgid "Connecting"
+msgstr ""
+
+#: includes/admin/class-media.php:80
+msgid "Importing"
+msgstr ""
+
+#: includes/admin/class-media.php:81
+msgid "Inserting"
+msgstr ""
+
+#: includes/admin/class-media.php:82
+msgid "Insert into page"
+msgstr ""
+
+#: includes/admin/class-media.php:82
+msgid "Insert into post"
+msgstr ""
+
+#: includes/admin/class-media.php:83
+msgid "imported"
+msgstr ""
+
+#: includes/admin/class-media.php:84
+msgid "Import"
+msgstr ""
+
+#: includes/admin/class-media.php:85
+msgid "image"
+msgstr ""
+
+#: includes/admin/class-media.php:86
+msgid "images"
+msgstr ""
+
+#: includes/admin/class-settings.php:106 includes/admin/class-settings.php:110
+msgid "API Unavailable"
+msgstr ""
+
+#: includes/admin/class-settings.php:123
+msgid "No available sources"
+msgstr ""
+
+#: includes/settings/uber-media-settings.php:7
+msgid "Available Sources"
+msgstr ""
+
+#: includes/settings/uber-media-settings.php:22
+msgid "Extensions"
+msgstr ""
+
+#: includes/settings/uber-media-settings.php:37
+msgid "General Settings"
+msgstr ""
+
+#: includes/settings/uber-media-settings.php:42
+msgid "Show Connected Sources"
+msgstr ""
+
+#: includes/settings/uber-media-settings.php:43
+msgid "Only show connected sources in side menu of the media popup"
+msgstr ""
+
+#: includes/settings/uber-media-settings.php:49
+msgid "Safe Mode"
+msgstr ""
+
+#: includes/settings/uber-media-settings.php:50
+msgid "Safe mode filters sources for nude, explicit or NSFW media"
+msgstr ""
+
+#: includes/settings/wp-settings-framework.php:321
+msgid "Save All Changes"
+msgstr ""
 
 #: includes/sources/500px.php:31
 msgid "Any License"
@@ -108,210 +225,98 @@ msgstr ""
 msgid "Enter a latitude and longitude, eg. 51.4638, 0.1677"
 msgstr ""
 
-#: includes/uber-media-settings.php:7
-msgid "Available Sources"
+#: templates/media.php:23
+msgid "Caption"
 msgstr ""
 
-#: includes/uber-media-settings.php:22
-msgid "Extensions"
+#: templates/media.php:28
+msgid "Title"
 msgstr ""
 
-#: includes/uber-media-settings.php:37
-msgid "General Settings"
+#: templates/media.php:33
+msgid "Alt Text"
 msgstr ""
 
-#: includes/uber-media-settings.php:42
-msgid "Show Connected Sources"
+#: templates/media.php:37
+msgid "Align"
 msgstr ""
 
-#: includes/uber-media-settings.php:43
-msgid "Only show connected sources in side menu of the media popup"
+#: templates/media.php:39
+msgid "Left"
 msgstr ""
 
-#: includes/uber-media-settings.php:49
-msgid "Safe Mode"
+#: templates/media.php:40
+msgid "Center"
 msgstr ""
 
-#: includes/uber-media-settings.php:50
-msgid "Safe mode filters sources for nude, explicit or NSFW media"
+#: templates/media.php:41
+msgid "Right"
 msgstr ""
 
-#: includes/wp-settings-framework.php:321
-msgid "Save All Changes"
+#: templates/media.php:42 templates/media.php:50
+msgid "None"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "Media Manager Plus"
+#: templates/media.php:46
+msgid "Link To"
 msgstr ""
 
-#: uber-media.php:161 uber-media.php:168 uber-media.php:196 uber-media.php:223
-msgid "Welcome to Media Manager Plus"
+#: templates/media.php:48
+msgid "Image URL"
 msgstr ""
 
-#: uber-media.php:198 uber-media.php:225
+#: templates/media.php:49
+msgid "Page URL"
+msgstr ""
+
+#: templates/support.php:4 templates/welcome.php:4
 msgid ""
 "Thank you for updating to the latest version! Media Manager Plus %s "
 "upgrades the WordPress media manager with third party image sources."
 msgstr ""
 
-#: uber-media.php:202 uber-media.php:229
+#: templates/support.php:8 templates/welcome.php:8
 msgid "What's New"
 msgstr ""
 
-#: uber-media.php:205 uber-media.php:232 uber-media.php:251
+#: templates/support.php:11 templates/support.php:30 templates/welcome.php:11
 msgid "Support"
 msgstr ""
 
-#: uber-media.php:210
-msgid "Introducing Extensions"
-msgstr ""
-
-#: uber-media.php:214 uber-media.php:277
-msgid "Go to Media Manager Plus Settings"
-msgstr ""
-
-#: uber-media.php:237
+#: templates/support.php:16
 msgid "Get Some Help"
 msgstr ""
 
-#: uber-media.php:241
+#: templates/support.php:20
 msgid "Website"
 msgstr ""
 
-#: uber-media.php:246
+#: templates/support.php:25
 msgid "Created by"
 msgstr ""
 
-#: uber-media.php:254
+#: templates/support.php:33
 msgid "Support Forums"
 msgstr ""
 
-#: uber-media.php:256 uber-media.php:259
+#: templates/support.php:35 templates/support.php:38
 msgid "Changelog"
 msgstr ""
 
-#: uber-media.php:263
+#: templates/support.php:42
 msgid "Watch The Video"
 msgstr ""
 
-#: uber-media.php:289 uber-media.php:399
-msgid "Disconnect"
+#: templates/support.php:56 templates/welcome.php:20
+msgid "Go to Media Manager Plus Settings"
 msgstr ""
 
-#: uber-media.php:290 uber-media.php:397
-msgid "Connect"
+#: templates/welcome.php:16
+msgid "Introducing Extensions"
 msgstr ""
 
-#: uber-media.php:291
-msgid "Connecting"
-msgstr ""
-
-#: uber-media.php:292
-msgid "Importing"
-msgstr ""
-
-#: uber-media.php:293
-msgid "Inserting"
-msgstr ""
-
-#: uber-media.php:294
-msgid "Insert into page"
-msgstr ""
-
-#: uber-media.php:294
-msgid "Insert into post"
-msgstr ""
-
-#: uber-media.php:295
-msgid "imported"
-msgstr ""
-
-#: uber-media.php:296
-msgid "Import"
-msgstr ""
-
-#: uber-media.php:297
-msgid "image"
-msgstr ""
-
-#: uber-media.php:298
-msgid "images"
-msgstr ""
-
-#: uber-media.php:405 uber-media.php:409
-msgid "API Unavailable"
-msgstr ""
-
-#: uber-media.php:422
-msgid "No available sources"
-msgstr ""
-
-#: uber-media.php:456
-msgid "Requires Version %s"
-msgstr ""
-
-#: uber-media.php:458
-msgid "Buy the %s extension for $%s"
-msgstr ""
-
-#: uber-media.php:458
-msgid "$%s Buy"
-msgstr ""
-
-#: uber-media.php:464
-msgid "No new extensions available, you must have installed them all. Nice."
-msgstr ""
-
-#: uber-media.php:723
-msgid "Insert from "
-msgstr ""
-
-#: uber-media.php:772
-msgid "Caption"
-msgstr ""
-
-#: uber-media.php:777
-msgid "Title"
-msgstr ""
-
-#: uber-media.php:782
-msgid "Alt Text"
-msgstr ""
-
-#: uber-media.php:786
-msgid "Align"
-msgstr ""
-
-#: uber-media.php:788
-msgid "Left"
-msgstr ""
-
-#: uber-media.php:789
-msgid "Center"
-msgstr ""
-
-#: uber-media.php:790
-msgid "Right"
-msgstr ""
-
-#: uber-media.php:791 uber-media.php:799
-msgid "None"
-msgstr ""
-
-#: uber-media.php:795
-msgid "Link To"
-msgstr ""
-
-#: uber-media.php:797
-msgid "Image URL"
-msgstr ""
-
-#: uber-media.php:798
-msgid "Page URL"
-msgstr ""
-
-#: uber-media.php:844
-msgid "Settings"
+#: uber-media.php:107 uber-media.php:119
+msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
