@@ -2,7 +2,14 @@
 
 class Media_Manager_Plus_Settings {
 
+	/**
+	 * @var array
+	 */
 	public $settings;
+
+	/**
+	 * @var mmpWordPressSettingsFramework
+	 */
 	public $wpsf;
 
 	function __construct() {
@@ -10,12 +17,16 @@ class Media_Manager_Plus_Settings {
 		$this->wpsf = new mmpWordPressSettingsFramework( MMP_PLUGIN_DIR . 'includes/settings/uber-media-settings.php', '' );
 		add_filter( $this->wpsf->get_option_group() . '_settings_validate', array( $this, 'validate_settings' ) );
 		$this->settings = wpsf_get_settings( MMP_PLUGIN_DIR . 'includes/settings/uber-media-settings.php' );
-	}
+	} // END __construct()
 
-	public function get_settings() {
-		return $this->settings;
-	}
-
+	/**
+	 * Process the settings section for display
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @param $page
+	 */
 	public function do_settings_sections( $page ) {
 		global $wp_settings_sections, $wp_settings_fields;
 		$active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'sources';
@@ -29,7 +40,7 @@ class Media_Manager_Plus_Settings {
 				$this->setting_image_sources();
 			} else {
 				if ( $section['id'] == 'extensions' ) {
-					$this->setting_extensions();
+					media_manager_plus()->extensions->get_extensions();
 				} else {
 					call_user_func( $section['callback'], $section );
 					if ( ! isset( $wp_settings_fields ) || ! isset( $wp_settings_fields[$page] ) || ! isset( $wp_settings_fields[$page][$section['id']] ) ) {
@@ -48,6 +59,16 @@ class Media_Manager_Plus_Settings {
 		}
 	} // END do_settings_sections()
 
+	/**
+	 * Validate settings on save
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @param $input
+	 *
+	 * @return mixed
+	 */
 	function validate_settings( $input ) {
 		if ( isset( $input['sources'] ) ) {
 			$sources = mmp_default_val( 'ubermediasettings_sources_available', array() );
@@ -58,6 +79,12 @@ class Media_Manager_Plus_Settings {
 		return $input;
 	} // END validate_settings()
 
+	/**
+	 * Renders the image sources
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	function setting_image_sources() {
 		$sources = media_manager_plus()->sources->get_sources();
 		$html    = '';
@@ -98,10 +125,4 @@ class Media_Manager_Plus_Settings {
 		echo $html;
 	} // END setting_image_sources()
 
-	function setting_extensions() {
-		media_manager_plus()->extensions->get_extensions();
-	} // END setting_extensions()
-
-
-
-}
+} // END Media_Manager_Plus_Settings

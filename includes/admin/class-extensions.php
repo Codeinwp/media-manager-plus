@@ -2,8 +2,14 @@
 
 class Media_Manager_Plus_Extensions {
 
-	function __construct() {}
-
+	/**
+	 * Get the installed extension
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return array of insstalled extensions
+	 */
 	public function get_installed_extensions() {
 		$extensions = array();
 		$plugins    = wp_get_active_and_valid_plugins();
@@ -17,6 +23,12 @@ class Media_Manager_Plus_Extensions {
 		return $extensions;
 	} // END get_installed_extensions()
 
+	/**
+	 * Render the extensions display
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function get_extensions() {
 		$html = '';
 		$extensions = $this->available_extensions();
@@ -43,6 +55,14 @@ class Media_Manager_Plus_Extensions {
 		echo $html;
 	} // END get_extensions
 
+	/**
+	 * Retrieve extensions from external json file or site transient
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return array|mixed of available extensions
+	 */
 	public function available_extensions() {
 		if ( false === ( $available_extensions = get_transient( 'mmp_available_extensions' ) ) ) {
 			$result     = wp_remote_get( MMP_EXTENSIONS_URL );
@@ -72,6 +92,4 @@ class Media_Manager_Plus_Extensions {
 		return $available_extensions;
 	} // END available_extensions
 
-
-
-}
+} // END Media_Manager_Plus_Extensions

@@ -9,8 +9,14 @@ class Media_Manager_Plus_Sources {
 		add_action( 'wp_ajax_uber_check', array( $this, 'connect_check' ) );
 		add_action( 'wp_ajax_uber_load_images', array( $this, 'load_images' ) );
 		add_action( 'wp_ajax_uber_param_choices', array( $this, 'param_choices' ) );
-	}
+	} // END  __construct()
 
+	/**
+	 * Load all the sources
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function include_sources() {
 		require_once MMP_PLUGIN_DIR . 'includes/oauth/provider.php';
 		$source_dir = glob( MMP_PLUGIN_DIR . 'includes/sources/*.php' );
@@ -21,6 +27,12 @@ class Media_Manager_Plus_Sources {
 		}
 	} // END get_extensions()
 
+	/**
+	 * Control the connecting of image sources
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function image_sources_header() {
 		if ( isset( $_GET['page'] ) && $_GET['page'] == 'uber-media' && isset( $_GET['type'] ) ) {
 			$options = mmp_default_val( 'ubermediasettings_sources_available', array() );
@@ -63,6 +75,14 @@ class Media_Manager_Plus_Sources {
 		}
 	} // END image_sources_header()
 
+	/**
+	 * Disconnect image sources
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return int
+	 */
 	public function disconnect_source() {
 		if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'uber_media' ) ) {
 			return 0;
@@ -86,6 +106,14 @@ class Media_Manager_Plus_Sources {
 		die;
 	} // END disconnect_source()
 
+	/**
+	 * Check which sources are connected
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return int
+	 */
 	public function connect_check() {
 		if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'uber_media' ) ) {
 			return 0;
@@ -104,6 +132,14 @@ class Media_Manager_Plus_Sources {
 		die;
 	} // END connect_check()
 
+	/**
+	 * Load the images for a source
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return int
+	 */
 	public function load_images() {
 		if ( ! isset( $_POST['param'] ) || ! isset( $_POST['method'] ) || ! isset( $_POST['source'] ) ) {
 			return 0;
@@ -159,6 +195,14 @@ class Media_Manager_Plus_Sources {
 		die;
 	} // END load_images()
 
+	/**
+	 * Return parameter choices for the image source
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return int
+	 */
 	public function param_choices() {
 		if ( ! isset( $_POST['method'] ) || ! isset( $_POST['source'] ) ) {
 			return 0;
@@ -191,6 +235,16 @@ class Media_Manager_Plus_Sources {
 		die;
 	} // END param_choices()
 
+	/**
+	 * Return images sources
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @param bool $popup
+	 *
+	 * @return array
+	 */
 	public function get_sources( $popup = false ) {
 		$options        = mmp_default_val( 'ubermediasettings_sources_available', array() );
 		$show_connected = mmp_default_val( 'ubermediasettings_general_show-connected', 0 );
@@ -233,4 +287,4 @@ class Media_Manager_Plus_Sources {
 		return $sources;
 	} // END get_sources()
 
-}
+} // END Media_Manager_Plus_Sources

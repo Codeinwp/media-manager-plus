@@ -7,7 +7,7 @@ class Media_Manager_Plus_Admin {
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( MMP_PLUGIN_FILE ), array( $this, 'add_action_links' ) );
-	}
+	} // END __construct()
 
 	/**
 	 * Register and enqueue admin-specific assets.
@@ -16,7 +16,6 @@ class Media_Manager_Plus_Admin {
 	 * @access public
 	 *
 	 * @param string $hook Current page hook
-	 * @return void
 	 */
 	public function admin_enqueue_scripts( $hook ) {
 
@@ -45,6 +44,13 @@ class Media_Manager_Plus_Admin {
 
 	} // END admin_enqueue_scripts()
 
+	/**
+	 * Adds the MMP menu under the media top level page
+	 * Adds the welcome screen sub pages
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	function admin_menu() {
 		add_media_page(
 			__( 'Media Manager Plus', 'media-manager-plus' ),
@@ -69,11 +75,23 @@ class Media_Manager_Plus_Admin {
 		);
 	} // END admin_menu()
 
+	/**
+	 * Removes the welcome sub pages from the menus
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function admin_head() {
 		remove_submenu_page( 'index.php', 'mmp-welcome' );
 		remove_submenu_page( 'index.php', 'mmp-support' );
 	} // END admin_head()
 
+	/**
+	 * Renders the MMP settings page
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function settings_page() {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( 'You do not have sufficient permissions to access this page.' );
@@ -109,6 +127,12 @@ class Media_Manager_Plus_Admin {
 	<?php
 	} // END settings_page()
 
+	/**
+	 * Renders the MMP welcome page
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function welcome_screen() {
 		?>
 		<div class="wrap about-wrap mmp-welcome">
@@ -136,6 +160,12 @@ class Media_Manager_Plus_Admin {
 	<?php
 	} // END welcome()
 
+	/**
+	 * Renders the MMP welcome support page
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function support_screen() {
 		?>
 		<div class="wrap about-wrap">
@@ -221,6 +251,6 @@ class Media_Manager_Plus_Admin {
 
 	} // END add_action_links()
 
-}
+} // END Media_Manager_Plus_Admin
 
 new Media_Manager_Plus_Admin;

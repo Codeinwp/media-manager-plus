@@ -6,7 +6,7 @@ class Media_Manager_Plus_Install {
 		register_activation_hook( MMP_PLUGIN_FILE, array( $this, 'activate' ) );
 		add_action( 'admin_init', array( $this, 'upgrade_check' ) );
 		add_action( 'admin_init', array( $this, 'welcome' ) );
-	}
+	} // END __construct()
 
 	/**
 	 * Fired when plugin is activated
@@ -21,6 +21,12 @@ class Media_Manager_Plus_Install {
 		set_transient( '_mmp_activation_redirect', true, 30 );
 	} // END activate()
 
+	/**
+	 * Upgrade checker
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function upgrade_check() {
 		if ( ! get_option( 'mmp_version' ) ) {
 			add_option( 'mmp_version', MMP_VERSION );
@@ -37,6 +43,12 @@ class Media_Manager_Plus_Install {
 		}
 	} // END upgrade_check()
 
+	/**
+	 * Display Welcome screen if needed
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
 	public function welcome() {
 		if ( ! get_transient( '_mmp_activation_redirect' ) ) {
 			return;
@@ -49,6 +61,6 @@ class Media_Manager_Plus_Install {
 		exit;
 	} // END welcome()
 
-}
+} // END Media_Manager_Plus_Install
 
 new Media_Manager_Plus_Install;

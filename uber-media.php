@@ -207,6 +207,7 @@ endif; // END class_exists()
  */
 function media_manager_plus() {
 	return Media_Manager_Plus::instance();
-}
+} // END media_manager_plus()
+
 // Start it up!
 media_manager_plus();
