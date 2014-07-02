@@ -127,35 +127,42 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 		 * @return void
 		 */
 		private function setup_constants() {
-			// Plugin version
-			if ( ! defined( 'MMP_VERSION' ) ) {
-				define( 'MMP_VERSION', $this->version );
-			}
 
-			// Plugin Folder Path
-			if ( ! defined( 'MMP_PLUGIN_DIR' ) ) {
-				define( 'MMP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-			}
+			$this->plugin_file    = __FILE__;
+			$this->plugin_dir     = plugin_dir_path( __FILE__ );
+			$this->plugin_url     = plugin_dir_url( __FILE__ );
+			$this->extensions_url = 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1';
+			$this->callback_url   = get_admin_url() . 'upload.php?page=uber-media';
 
-			// Plugin Folder URL
-			if ( ! defined( 'MMP_PLUGIN_URL' ) ) {
-				define( 'MMP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-			}
-
-			// Plugin Root File
-			if ( ! defined( 'MMP_PLUGIN_FILE' ) ) {
-				define( 'MMP_PLUGIN_FILE', __FILE__ );
-			}
-
-			// Extensions URL
-			if ( ! defined( 'MMP_EXTENSIONS_URL' ) ) {
-				define( 'MMP_EXTENSIONS_URL', 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1' );
-			}
-
-			// oAuth Callback URL
-			if ( ! defined( 'MMP_CALLBACK_URL' ) ) {
-				define( 'MMP_CALLBACK_URL', get_admin_url() . 'upload.php?page=uber-media' );
-			}
+//			// Plugin version
+//			if ( ! defined( 'MMP_VERSION' ) ) {
+//				define( 'MMP_VERSION', $this->version );
+//			}
+//
+//			// Plugin Folder Path
+//			if ( ! defined( 'MMP_PLUGIN_DIR' ) ) {
+//				define( 'MMP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+//			}
+//
+//			// Plugin Folder URL
+//			if ( ! defined( 'MMP_PLUGIN_URL' ) ) {
+//				define( 'MMP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+//			}
+//
+//			// Plugin Root File
+//			if ( ! defined( 'MMP_PLUGIN_FILE' ) ) {
+//				define( 'MMP_PLUGIN_FILE', __FILE__ );
+//			}
+//
+//			// Extensions URL
+//			if ( ! defined( 'MMP_EXTENSIONS_URL' ) ) {
+//				define( 'MMP_EXTENSIONS_URL', 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1' );
+//			}
+//
+//			// oAuth Callback URL
+//			if ( ! defined( 'MMP_CALLBACK_URL' ) ) {
+//				define( 'MMP_CALLBACK_URL', get_admin_url() . 'upload.php?page=uber-media' );
+//			}
 		} // END setup_constants()
 
 		/**
@@ -175,6 +182,18 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 			require_once MMP_PLUGIN_DIR . 'includes/admin/class-templates.php';
 			require_once MMP_PLUGIN_DIR . 'includes/functions.php';
 		} // END includes()
+
+		public static function get_value( $variable ) {
+			$whitelist = array( 'version', 'plugin_file', 'plugin_dir', 'plugin_url', 'extensions_url', 'callback_url', );
+
+			if ( ! in_array( $variable, $whitelist ) ) {
+				return;
+			}
+
+			$value = self::$instance->$variable;
+
+			return $value;
+		} // END get_value()
 
 		/**
 		 * Loads the plugin language files
