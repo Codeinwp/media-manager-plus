@@ -7,14 +7,14 @@ $wpsf_ubermedia_settings['sources'] = array(
 	'section_title' => __( 'Available Sources', 'media-manager-plus' ),
 	'section_order' => 1,
 	'fields'        => array(
-		array(
+		'available' => array(
 			'id'    => 'available',
 			'title' => '',
 			'desc'  => '',
 			'type'  => 'custom',
-			'std'   => ''
+			'std'   => '',
 		),
-	)
+	),
 );
 
 $wpsf_ubermedia_settings['extensions'] = array(
@@ -22,14 +22,14 @@ $wpsf_ubermedia_settings['extensions'] = array(
 	'section_title' => __( 'Extensions', 'media-manager-plus' ),
 	'section_order' => 2,
 	'fields'        => array(
-		array(
+		'useful-links' => array(
 			'id'    => 'useful-links',
 			'title' => '',
 			'desc'  => '',
 			'type'  => 'custom',
-			'std'   => ''
-		)
-	)
+			'std'   => '',
+		),
+	),
 );
 
 $wpsf_ubermedia_settings['general'] = array(
@@ -37,21 +37,21 @@ $wpsf_ubermedia_settings['general'] = array(
 	'section_title' => __( 'General Settings', 'media-manager-plus' ),
 	'section_order' => 3,
 	'fields'        => array(
-		array(
+		'show-connected' => array(
 			'id'    => 'show-connected',
 			'title' => __( 'Show Connected Sources', 'media-manager-plus' ),
 			'desc'  => __( 'Only show connected sources in side menu of the media popup', 'media-manager-plus' ),
 			'type'  => 'checkbox',
-			'std'   => 0
+			'std'   => 0,
 		),
-		array(
+		'safe-mode' => array(
 			'id'    => 'safe-mode',
 			'title' => __( 'Safe Mode', 'media-manager-plus' ),
 			'desc'  => __( 'Safe mode filters sources for nude, explicit or NSFW media', 'media-manager-plus' ),
 			'type'  => 'checkbox',
-			'std'   => 1
+			'std'   => 1,
 		),
-	)
+	),
 );
 
 $wpsf_ubermedia_settings['support'] = array(
@@ -59,7 +59,7 @@ $wpsf_ubermedia_settings['support'] = array(
 	'section_title' => 'Support',
 	'section_order' => 4,
 	'fields'        => array(
-		array(
+		'useful-links' => array(
 			'id'    => 'useful-links',
 			'title' => 'Useful Links',
 			'desc'  => '',
@@ -67,7 +67,7 @@ $wpsf_ubermedia_settings['support'] = array(
 			'std'   => 'Website: <a href="http://dev7studios.com/media-manager-plus" target="_blank">Media Manager Plus</a><br />
             Created by: <a href="http://dev7studios.com" target="_blank">Dev7studios</a><br />
             Support: <a href="https://github.com/Dev7studios/media-manager-plus/issues" target="_blank">Support Forum</a><br />
-            Changelog: <a href="http://wordpress.org/extend/plugins/uber-media/changelog" target="_blank">Changelog</a><br />'
-		)
-	)
+            Changelog: <a href="http://wordpress.org/extend/plugins/uber-media/changelog" target="_blank">Changelog</a><br />',
+		),
+	),
 );

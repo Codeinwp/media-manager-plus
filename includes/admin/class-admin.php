@@ -134,7 +134,7 @@ class Media_Manager_Plus_Admin {
 
 		return array_merge(
 			array(
-				'settings' => '<a href="' . add_query_arg( array( 'page' => 'uber-media' ), admin_url( 'upload.php' ) ) . '">' . __( 'Settings', 'media-manager-plus' ) . '</a>'
+				'settings' => '<a href="' . add_query_arg( array( 'page' => 'uber-media' ), admin_url( 'upload.php' ) ) . '">' . __( 'Settings' ) . '</a>'
 			),
 			$links
 		);
