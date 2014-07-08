@@ -87,6 +87,10 @@ Take a look at more sources as premium extensions available here - [http://dev7s
 
 ## Changelog ##
 
+**1.4.3 (2014.02.05)**
+
+ * [Fixed] Flickr connection issue due to API HTTPS change
+
 **1.4.2 (2014.02.05)**
 
  * [Fixed] Script loading errors, fixing conflicts with other plugins
