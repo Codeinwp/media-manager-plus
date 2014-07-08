@@ -3,7 +3,7 @@
 Plugin Name: Media Manager Plus
 Plugin URI: http://dev7studios.com/media-manager-plus
 Description: Upgrade the WordPress Media Manager and add support for Flickr, Instagram, 500px etc.
-Version: 1.4.2
+Version: 1.4.3
 Author: Dev7studios
 Author URI: http://dev7studios.com
 */
@@ -22,7 +22,7 @@ class uber_media {
 	
 	function __construct() {	
        	
-       	$this->plugin_version = '1.4.2';
+       	$this->plugin_version = '1.4.3';
        	$this->plugin_folder = basename(plugin_dir_path(__FILE__));
        	$this->plugin_path = plugin_dir_path( __FILE__ );
        	$this->plugin_l10n = 'uber-media';

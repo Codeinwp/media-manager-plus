@@ -2,8 +2,8 @@
 Contributors: dev7studios, polevaultweb
 Tags: media, manager, image, images, 500px, Behance, DeviantArt, Dribbble, Dropbox, EyeEm, Facebook, Flickr, Forrst, Instagram, Picasa, Twitter
 Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 1.4.2
+Tested up to: 3.9.1
+Stable tag: 1.4.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,7 +84,11 @@ Take a look at more sources as premium extensions available here - [http://dev7s
 
 == Changelog ==
 
-**1.4.2 (2014.02.05)**
+**1.4.3 (2014.02.05)**
+
+ * [Fixed] Flickr connection issue due to API HTTPS change
+
+**1.4.2 (2014.07.08)**
 
  * [Fixed] Script loading errors, fixing conflicts with other plugins
 
