@@ -47,12 +47,12 @@ add_filter( 'uber_media_settings' , 'flickr_mmp_settings' );
 
 class media_manager_plus_source_flickr extends media_manager_plus_source {
   
-	public 	$host = 'http://api.flickr.com/services/rest/';
+	public 	$host = 'https://api.flickr.com/services/rest/';
 	public  $format = 'json';
-	private $access_token_url = 'http://www.flickr.com/services/oauth/access_token';
-	private $authenticate_token_url = 'http://www.flickr.com/services/oauth/authorize';
-	private $authorize_url = 'http://www.flickr.com/services/oauth/authorize';
-	private $request_token_url = 'http://www.flickr.com/services/oauth/request_token';
+	private $access_token_url = 'https://www.flickr.com/services/oauth/access_token';
+	private $authenticate_token_url = 'https://www.flickr.com/services/oauth/authorize';
+	private $authorize_url = 'https://www.flickr.com/services/oauth/authorize';
+	private $request_token_url = 'https://www.flickr.com/services/oauth/request_token';
  	
  	private $consumer_key = 'd95b51541ae40a9950bea98e24a27cfd';
  	private $consumer_secret = 'ae1b30477cc1bdfb';
