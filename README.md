@@ -87,6 +87,17 @@ Take a look at more sources as premium extensions available here - [http://dev7s
 
 ## Changelog ##
 
+**1.5 (2014.xx.xx)**
+
+ * [New] Compatible with WordPress 3.9
+ * [Fixed] Loading image sources now only looks for PHP files in sources folder
+ * [Fixed] Language domain as a variable
+ * [Changed] Coded changed to WP coding standards
+
+**1.4.3 (2014.02.05)**
+
+ * [Fixed] Flickr connection issue due to API HTTPS change
+
 **1.4.2 (2014.02.05)**
 
  * [Fixed] Script loading errors, fixing conflicts with other plugins
