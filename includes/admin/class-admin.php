@@ -6,7 +6,7 @@ class Media_Manager_Plus_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-		add_filter( 'plugin_action_links_' . plugin_basename( MMP_PLUGIN_FILE ), array( $this, 'add_action_links' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( Media_Manager_Plus::get_value('plugin_file') ), array( $this, 'add_action_links' ) );
 	} // END __construct()
 
 	/**
