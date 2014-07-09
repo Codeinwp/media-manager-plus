@@ -34,7 +34,7 @@ class Media_Manager_Plus_Sources {
 	 * @access public
 	 */
 	public function image_sources_header() {
-		if ( isset( $_GET['page'] ) && $_GET['page'] == 'uber-media' && isset( $_GET['type'] ) ) {
+		if ( isset( $_GET['page'] ) && $_GET['page'] == 'mmp' && isset( $_GET['type'] ) ) {
 			$options = mmp_default_val( 'ubermediasettings_sources_available', array() );
 			$source  = $_GET['type'];
 
