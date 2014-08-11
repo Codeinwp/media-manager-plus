@@ -3,10 +3,14 @@
 class Media_Manager_Plus_Admin {
 
 	function __construct() {
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-		add_action( 'admin_head', array( $this, 'admin_head' ) );
+		add_action( 'admin_menu', array( $this, 'admin_menu' ) );	
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( MMP_PLUGIN_FILE ), array( $this, 'add_action_links' ) );
+
+		if ( apply_filters( 'mmp_welcome', true ) ) {
+			add_action( 'admin_menu', array( $this, 'welcome_pages' ) );
+			add_action( 'admin_head', array( $this, 'admin_head' ) );
+		}
 	} // END __construct()
 
 	/**
@@ -46,12 +50,11 @@ class Media_Manager_Plus_Admin {
 
 	/**
 	 * Adds the MMP menu under the media top level page
-	 * Adds the welcome screen sub pages
 	 *
 	 * @since 1.0.0
 	 * @access public
 	 */
-	function admin_menu() {
+	public function admin_menu() {
 		add_media_page(
 			__( 'Media Manager Plus', 'media-manager-plus' ),
 			__( 'Media Manager Plus', 'media-manager-plus' ),
@@ -59,6 +62,15 @@ class Media_Manager_Plus_Admin {
 			'uber-media',
 			array( $this, 'settings_page' )
 		);
+	} // END admin_menu()
+
+	/**
+	 * Adds the welcome screen sub pages
+	 *
+	 * @since 1.5.0
+	 * @access public
+	 */
+	public function welcome_pages() {
 		add_dashboard_page(
 			__( 'Welcome to Media Manager Plus', 'media-manager-plus' ),
 			__( 'Media Manager Plus', 'media-manager-plus' ),
@@ -73,7 +85,7 @@ class Media_Manager_Plus_Admin {
 			'mmp-support',
 			array( $this, 'support_screen' )
 		);
-	} // END admin_menu()
+	} // END welcome_pages()
 
 	/**
 	 * Removes the welcome sub pages from the menus

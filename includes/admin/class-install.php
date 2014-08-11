@@ -5,7 +5,10 @@ class Media_Manager_Plus_Install {
 	function __construct() {
 		register_activation_hook( MMP_PLUGIN_FILE, array( $this, 'activate' ) );
 		add_action( 'admin_init', array( $this, 'upgrade_check' ) );
-		add_action( 'admin_init', array( $this, 'welcome' ) );
+
+		if ( apply_filters( 'mmp_welcome', true ) ) {
+			add_action( 'admin_init', array( $this, 'welcome' ) );
+		}
 	} // END __construct()
 
 	/**
@@ -30,7 +33,6 @@ class Media_Manager_Plus_Install {
 	public function upgrade_check() {
 		if ( ! get_option( 'mmp_version' ) ) {
 			add_option( 'mmp_version', MMP_VERSION );
-
 			return;
 		}
 		$current_version = get_option( 'mmp_version' );
