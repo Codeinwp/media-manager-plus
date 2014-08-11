@@ -23,7 +23,7 @@ class Media_Manager_Plus_Admin {
 	 */
 	public function admin_enqueue_scripts( $hook ) {
 
-		$pages       = array( 'dashboard_page_mmp-welcome', 'media_page_uber-media', 'post.php', 'post-new.php' );
+		$pages       = array( 'dashboard_page_mmp-welcome', 'media_page_mmp', 'post.php', 'post-new.php' );
 		$admin_pages = apply_filters( 'mmp_enqueue_pages', $pages );
 		$dev         = apply_filters( 'mmp_debug_mode', SCRIPT_DEBUG ) ? '' : '.min';
 
@@ -59,7 +59,7 @@ class Media_Manager_Plus_Admin {
 			__( 'Media Manager Plus', 'media-manager-plus' ),
 			__( 'Media Manager Plus', 'media-manager-plus' ),
 			'read',
-			'uber-media',
+			'mmp',
 			array( $this, 'settings_page' )
 		);
 	} // END admin_menu()
@@ -146,7 +146,7 @@ class Media_Manager_Plus_Admin {
 
 		return array_merge(
 			array(
-				'settings' => '<a href="' . add_query_arg( array( 'page' => 'uber-media' ), admin_url( 'upload.php' ) ) . '">' . __( 'Settings' ) . '</a>'
+				'settings' => '<a href="' . add_query_arg( array( 'page' => 'mmp' ), admin_url( 'upload.php' ) ) . '">' . __( 'Settings' ) . '</a>'
 			),
 			$links
 		);
