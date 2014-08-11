@@ -151,7 +151,6 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 			require_once $plugin_dir . 'includes/admin/class-extensions.php';
 			require_once $plugin_dir . 'includes/admin/class-settings.php';
 			require_once $plugin_dir . 'includes/admin/class-templates.php';
-			require_once $plugin_dir . 'includes/functions.php';
 		} // END includes()
 
 		/**
@@ -174,6 +173,25 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 
 			return $value;
 		} // END get_value()
+
+		/**
+		 * Default settings helper method
+		 *
+		 * @access public
+		 * @since 1.5
+		 * @static
+		 * @param        $value
+		 * @param string $default
+		 * @return string
+		 */
+		public static function default_val( $value, $default = '' ) {
+			$options = self::$instance->settings->settings;
+			if ( ! isset( $options[$value] ) ) {
+				return $default;
+			} else {
+				return $options[$value];
+			}
+		} // END default_val()
 
 		/**
 		 * Loads the plugin language files

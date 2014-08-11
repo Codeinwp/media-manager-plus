@@ -72,7 +72,7 @@ class Media_Manager_Plus_Settings {
 	 */
 	function validate_settings( $input ) {
 		if ( isset( $input['sources'] ) ) {
-			$sources = mmp_default_val( 'ubermediasettings_sources_available', array() );
+			$sources = Media_Manager_Plus::default_val( 'ubermediasettings_sources_available', array() );
 			$input['ubermediasettings_sources_available'] = $sources;
 			unset( $input['sources'] );
 		}
