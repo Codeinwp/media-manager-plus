@@ -154,7 +154,7 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 
 			// oAuth Callback URL
 			if ( ! defined( 'MMP_CALLBACK_URL' ) ) {
-				define( 'MMP_CALLBACK_URL', get_admin_url() . 'upload.php?page=uber-media' );
+				define( 'MMP_CALLBACK_URL', get_admin_url() . 'upload.php?page=mmp' );
 			}
 		} // END setup_constants()
 

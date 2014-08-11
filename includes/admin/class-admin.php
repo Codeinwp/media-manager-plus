@@ -59,7 +59,7 @@ class Media_Manager_Plus_Admin {
 			__( 'Media Manager Plus', 'media-manager-plus' ),
 			__( 'Media Manager Plus', 'media-manager-plus' ),
 			'read',
-			'uber-media',
+			'mmp',
 			array( $this, 'settings_page' )
 		);
 	} // END admin_menu()
@@ -146,7 +146,7 @@ class Media_Manager_Plus_Admin {
 
 		return array_merge(
 			array(
-				'settings' => '<a href="' . add_query_arg( array( 'page' => 'uber-media' ), admin_url( 'upload.php' ) ) . '">' . __( 'Settings' ) . '</a>'
+				'settings' => '<a href="' . add_query_arg( array( 'page' => 'mmp' ), admin_url( 'upload.php' ) ) . '">' . __( 'Settings' ) . '</a>'
 			),
 			$links
 		);

@@ -17,6 +17,6 @@
 		<?php media_manager_plus()->extensions->get_extensions(); ?>
 	</div>
 	<div class="return-to-dashboard">
-		<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'uber-media' ), 'upload.php' ) ) ); ?>"><?php _e( 'Go to Media Manager Plus Settings', 'media-manager-plus' ); ?></a>
+		<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp' ), 'upload.php' ) ) ); ?>"><?php _e( 'Go to Media Manager Plus Settings', 'media-manager-plus' ); ?></a>
 	</div>
 </div>
