@@ -13,10 +13,11 @@ class Media_Manager_Plus_Settings {
 	public $wpsf;
 
 	function __construct() {
-		require_once MMP_PLUGIN_DIR . 'includes/settings/wp-settings-framework.php';
-		$this->wpsf = new mmpWordPressSettingsFramework( MMP_PLUGIN_DIR . 'includes/settings/uber-media-settings.php', '' );
+		$plugin_dir = Media_Manager_Plus::get_value('plugin_dir');
+		require_once $plugin_dir . 'includes/settings/wp-settings-framework.php';
+		$this->wpsf = new mmpWordPressSettingsFramework( $plugin_dir . 'includes/settings/uber-media-settings.php', '' );
 		add_filter( $this->wpsf->get_option_group() . '_settings_validate', array( $this, 'validate_settings' ) );
-		$this->settings = wpsf_get_settings( MMP_PLUGIN_DIR . 'includes/settings/uber-media-settings.php' );
+		$this->settings = wpsf_get_settings( $plugin_dir . 'includes/settings/uber-media-settings.php' );
 	} // END __construct()
 
 	/**

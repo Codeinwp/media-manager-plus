@@ -3,7 +3,7 @@
 class Media_Manager_Plus_Install {
 
 	function __construct() {
-		register_activation_hook( MMP_PLUGIN_FILE, array( $this, 'activate' ) );
+		register_activation_hook( Media_Manager_Plus::get_value('plugin_file'), array( $this, 'activate' ) );
 		add_action( 'admin_init', array( $this, 'upgrade_check' ) );
 
 		if ( apply_filters( 'mmp_welcome', true ) ) {
@@ -31,17 +31,19 @@ class Media_Manager_Plus_Install {
 	 * @access public
 	 */
 	public function upgrade_check() {
+		$version = Media_Manager_Plus::get_value('version');
 		if ( ! get_option( 'mmp_version' ) ) {
-			add_option( 'mmp_version', MMP_VERSION );
+			add_option( 'mmp_version', $version );
+
 			return;
 		}
 		$current_version = get_option( 'mmp_version' );
-		if ( version_compare( $current_version, MMP_VERSION, '!=' ) ) {
+		if ( version_compare( $current_version, $version, '!=' ) ) {
 			// Large upgrade to v1.2
 			if ( version_compare( $current_version, '1.2', '<' ) ) {
 				set_transient( '_mmp_activation_redirect', true, 30 );
 			}
-			update_option( 'mmp_version', MMP_VERSION );
+			update_option( 'mmp_version', $version );
 		}
 	} // END upgrade_check()
 

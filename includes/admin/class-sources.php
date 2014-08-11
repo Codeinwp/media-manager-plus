@@ -18,8 +18,9 @@ class Media_Manager_Plus_Sources {
 	 * @access public
 	 */
 	public function include_sources() {
-		require_once MMP_PLUGIN_DIR . 'includes/oauth/provider.php';
-		$source_dir = glob( MMP_PLUGIN_DIR . 'includes/sources/*.php' );
+		$plugin_dir = Media_Manager_Plus::get_value('plugin_dir');
+		require_once $plugin_dir . 'includes/oauth/provider.php';
+		$source_dir = glob( $plugin_dir . 'includes/sources/*.php' );
 		if ( $source_dir ) {
 			foreach ( $source_dir as $dir ) {
 				include_once( $dir );
@@ -45,7 +46,7 @@ class Media_Manager_Plus_Sources {
 				$auth_token        = $_SESSION[$source . '_oauth_token'];
 				$auth_token_secret = $_SESSION[$source . '_oauth_token_secret'];
 
-				$callback = MMP_CALLBACK_URL;
+				$callback = Media_Manager_Plus::get_value('callback_url');
 				$var      = 'media_manager_plus_source_' . $source;
 				$obj      = new $var( $auth_token, $auth_token_secret );
 
@@ -248,7 +249,7 @@ class Media_Manager_Plus_Sources {
 	public function get_sources( $popup = false ) {
 		$options        = mmp_default_val( 'ubermediasettings_sources_available', array() );
 		$show_connected = mmp_default_val( 'ubermediasettings_general_show-connected', 0 );
-		$callback       = MMP_CALLBACK_URL;
+		$callback       = Media_Manager_Plus::get_value('callback_url');
 		$load_sources   = apply_filters( 'uber_media_sources', array() );
 		$sources        = array();
 		if ( $load_sources ) {
@@ -260,7 +261,7 @@ class Media_Manager_Plus_Sources {
 				$source_data['settings'] = $obj->show_details();
 
 				if ( isset( $source_details['core'] ) ) {
-					$source_data['imgsrc'] = MMP_PLUGIN_URL . 'assets/img/' . $source . '.png';
+					$source_data['imgsrc'] = Media_Manager_Plus::get_value('plugin_url') . 'assets/img/' . $source . '.png';
 				} else {
 					$source_data['imgsrc'] = $source_details['imgsrc'];
 				}
