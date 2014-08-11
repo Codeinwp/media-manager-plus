@@ -23,7 +23,7 @@ class Media_Manager_Plus_Admin {
 	 */
 	public function admin_enqueue_scripts( $hook ) {
 
-		$pages       = array( 'dashboard_page_mmp-welcome', 'media_page_uber-media', 'post.php', 'post-new.php' );
+		$pages       = array( 'dashboard_page_mmp-welcome', 'media_page_mmp', 'post.php', 'post-new.php' );
 		$admin_pages = apply_filters( 'mmp_enqueue_pages', $pages );
 		$dev         = apply_filters( 'mmp_debug_mode', SCRIPT_DEBUG ) ? '' : '.min';
 
