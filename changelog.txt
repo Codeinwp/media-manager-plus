@@ -1,7 +1,7 @@
 *** Media Manager Plus WordPress Plugin Changelog ***
 
 2014.xx.xx - version 1.5
- * [New] Compatible with WordPress 3.9
+ * [New] Compatible with WordPress 3.9.2
  * [Fixed] Loading image sources now only looks for PHP files in sources folder
  * [Fixed] Language domain as a variable
  * [Changed] Coded changed to WP coding standards
