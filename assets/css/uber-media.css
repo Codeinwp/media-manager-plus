@@ -136,6 +136,7 @@ ul#uberimages li {
   position: relative;
   margin: 8px 8px 8px;
   line-height: 0;
+  max-width: 120px;
 }
 ul#uberimages li img {
   cursor: pointer;
