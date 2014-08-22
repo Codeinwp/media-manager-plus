@@ -13,7 +13,7 @@ class Media_Manager_Plus_Settings {
 	public $wpsf;
 
 	function __construct() {
-		$plugin_dir = Media_Manager_Plus::get_value('plugin_dir');
+		$plugin_dir = media_manager_plus()->get_value('plugin_dir');
 		require_once $plugin_dir . 'includes/settings/wp-settings-framework.php';
 		$this->wpsf = new mmpWordPressSettingsFramework( $plugin_dir . 'includes/settings/uber-media-settings.php', '' );
 		add_filter( $this->wpsf->get_option_group() . '_settings_validate', array( $this, 'validate_settings' ) );
@@ -72,7 +72,7 @@ class Media_Manager_Plus_Settings {
 	 */
 	function validate_settings( $input ) {
 		if ( isset( $input['sources'] ) ) {
-			$sources = Media_Manager_Plus::default_val( 'ubermediasettings_sources_available', array() );
+			$sources = media_manager_plus()->default_val( 'ubermediasettings_sources_available', array() );
 			$input['ubermediasettings_sources_available'] = $sources;
 			unset( $input['sources'] );
 		}

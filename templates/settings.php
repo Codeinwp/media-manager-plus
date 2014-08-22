@@ -7,7 +7,7 @@ $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'sources';
 	<div id="icon-upload" class="icon32"></div>
 	<h2>
 		<?php _e( 'Media Manager Plus', 'media-manager-plus' ); ?>
-		<?php echo apply_filters( 'uber_media_title_version', "<span class='uber-version'>v " . Media_Manager_Plus::get_value('version') . "</span>" ); ?>
+		<?php echo apply_filters( 'uber_media_title_version', "<span class='uber-version'>v " . media_manager_plus()->get_value('version') . "</span>" ); ?>
 	</h2>
 
 	<h2 class="nav-tab-wrapper">

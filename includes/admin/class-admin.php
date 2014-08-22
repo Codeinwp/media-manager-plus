@@ -3,9 +3,9 @@
 class Media_Manager_Plus_Admin {
 
 	function __construct() {
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );	
+		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-		add_filter( 'plugin_action_links_' . plugin_basename( Media_Manager_Plus::get_value('plugin_file') ), array( $this, 'add_action_links' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( media_manager_plus()->get_value('plugin_file') ), array( $this, 'add_action_links' ) );
 
 		if ( apply_filters( 'mmp_welcome', true ) ) {
 			add_action( 'admin_menu', array( $this, 'welcome_pages' ) );
@@ -30,7 +30,7 @@ class Media_Manager_Plus_Admin {
 		if ( in_array( $hook, $admin_pages ) ) {
 
 			wp_enqueue_media();
-			wp_register_script( 'uber-media-js', Media_Manager_Plus::get_value('plugin_url') . "assets/js/uber-media{$dev}.js", array( 'media-views' ), Media_Manager_Plus::get_value('version') );
+			wp_register_script( 'uber-media-js', media_manager_plus()->get_value('plugin_url') . "assets/js/uber-media{$dev}.js", array( 'media-views' ), media_manager_plus()->get_value('version') );
 			wp_enqueue_script( 'uber-media-js' );
 
 			wp_localize_script(
@@ -41,7 +41,7 @@ class Media_Manager_Plus_Admin {
 				)
 			);
 
-			wp_register_style( 'uber-media-css', Media_Manager_Plus::get_value('plugin_url') . "assets/css/uber-media{$dev}.css", array(), Media_Manager_Plus::get_value('version') );
+			wp_register_style( 'uber-media-css', media_manager_plus()->get_value('plugin_url') . "assets/css/uber-media{$dev}.css", array(), media_manager_plus()->get_value('version') );
 			wp_enqueue_style( 'uber-media-css' );
 
 		} // END if

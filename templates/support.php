@@ -1,7 +1,7 @@
 <div class="wrap about-wrap">
-	<h1><?php printf( __( 'Welcome to Media Manager Plus', 'media-manager-plus' ), Media_Manager_Plus::get_value('version') ); ?></h1>
+	<h1><?php printf( __( 'Welcome to Media Manager Plus', 'media-manager-plus' ), media_manager_plus()->get_value('version') ); ?></h1>
 
-	<div class="about-text"><?php printf( __( 'Thank you for updating to the latest version! Media Manager Plus %s upgrades the WordPress media manager with third party image sources.', 'media-manager-plus' ), Media_Manager_Plus::get_value('version') ); ?></div>
+	<div class="about-text"><?php printf( __( 'Thank you for updating to the latest version! Media Manager Plus %s upgrades the WordPress media manager with third party image sources.', 'media-manager-plus' ), media_manager_plus()->get_value('version') ); ?></div>
 
 	<h2 class="nav-tab-wrapper">
 		<a class="nav-tab" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'mmp-welcome' ), 'index.php' ) ) ); ?>">

@@ -9,7 +9,7 @@ class Media_Manager_Plus_Templates {
 	 * @return string
 	 */
 	public function get_templates_dir() {
-		return Media_Manager_Plus::get_value('plugin_dir') . 'templates';
+		return media_manager_plus()->get_value('plugin_dir') . 'templates';
 	} // get_templates_dir()
 
 	/**
@@ -19,7 +19,7 @@ class Media_Manager_Plus_Templates {
 	 * @return string
 	 */
 	public function get_templates_url() {
-		return Media_Manager_Plus::get_value('plugin_url') . 'templates';
+		return media_manager_plus()->get_value('plugin_url') . 'templates';
 	} // END get_templates_url()
 
 	/**
