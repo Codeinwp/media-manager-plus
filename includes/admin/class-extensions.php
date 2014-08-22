@@ -65,7 +65,7 @@ class Media_Manager_Plus_Extensions {
 	 */
 	public function available_extensions() {
 		if ( false === ( $available_extensions = get_transient( 'mmp_available_extensions' ) ) ) {
-			$result     = wp_remote_get( Media_Manager_Plus::get_value('callback_url') );
+			$result     = wp_remote_get( Media_Manager_Plus::get_value('extensions_url') );
 			$extensions = array();
 			$available_extensions = array();
 			if ( 200 == $result['response']['code'] ) {
