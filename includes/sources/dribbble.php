@@ -127,7 +127,7 @@ class media_manager_plus_source_dribbble extends media_manager_plus_source {
 					'id'        => $shot->id,
 					'full'      => ( isset( $shot->image_400_url ) ? $shot->image_400_url : $shot->image_url ),
 					'thumbnail' => $shot->image_teaser_url,
-					'link'      => $shot->url,
+					'link'      => set_url_scheme( $shot->url, 'https' ),
 					'caption'   => ( isset( $shot->title ) ? $this->filter_text( $shot->title ) : '' )
 				);
 			}
