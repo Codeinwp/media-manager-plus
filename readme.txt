@@ -2,7 +2,7 @@
 Contributors: dev7studios, polevaultweb
 Tags: media, manager, image, images, 500px, Behance, DeviantArt, Dribbble, Dropbox, EyeEm, Facebook, Flickr, Forrst, Instagram, Picasa, Twitter
 Requires at least: 3.5
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: 1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -86,10 +86,13 @@ Take a look at more sources as premium extensions available here - [http://dev7s
 
 **1.5 (2014.xx.xx)**
 
- * [New] Compatible with WordPress 3.9
+ * [New] Compatible with WordPress 4.0
+ * [New] Full translation .pot file - translations welcome!
+ * [New] German de_DE translation, props cfoellmann
  * [Fixed] Loading image sources now only looks for PHP files in sources folder
  * [Fixed] Language domain as a variable
  * [Changed] Coded changed to WP coding standards
+ * [New] Lots of under the hood improvements
 
 **1.4.3 (2014.02.05)**
 
