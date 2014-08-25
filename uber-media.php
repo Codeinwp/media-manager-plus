@@ -142,7 +142,7 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 		 * @return void
 		 */
 		private function includes() {
-			$plugin_dir = Media_Manager_Plus::get_value('plugin_dir');
+			$plugin_dir = media_manager_plus()->get_value('plugin_dir');
 
 			require_once $plugin_dir . 'includes/admin/class-install.php';
 			require_once $plugin_dir . 'includes/admin/class-admin.php';
@@ -155,14 +155,14 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 
 		/**
 		 * Returns constants defined in main class
-		 * 
+		 *
 		 * @access public
 		 * @since 1.5
 		 * @static
 		 * @param string $variable
 		 * @return string
 		 */
-		public static function get_value( $variable ) {
+		public function get_value( $variable ) {
 			$whitelist = array( 'version', 'plugin_file', 'plugin_dir', 'plugin_url', 'extensions_url', 'callback_url', );
 
 			if ( ! in_array( $variable, $whitelist ) ) {

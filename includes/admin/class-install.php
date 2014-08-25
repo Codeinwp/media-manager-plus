@@ -3,7 +3,7 @@
 class Media_Manager_Plus_Install {
 
 	function __construct() {
-		register_activation_hook( Media_Manager_Plus::get_value('plugin_file'), array( $this, 'activate' ) );
+		register_activation_hook( media_manager_plus()->get_value('plugin_file'), array( $this, 'activate' ) );
 		add_action( 'admin_init', array( $this, 'upgrade_check' ) );
 
 		if ( apply_filters( 'mmp_welcome', true ) ) {
@@ -31,7 +31,7 @@ class Media_Manager_Plus_Install {
 	 * @access public
 	 */
 	public function upgrade_check() {
-		$version = Media_Manager_Plus::get_value('version');
+		$version = media_manager_plus()->get_value('version');
 		if ( ! get_option( 'mmp_version' ) ) {
 			add_option( 'mmp_version', $version );
 

@@ -18,7 +18,7 @@ class Media_Manager_Plus_Sources {
 	 * @access public
 	 */
 	public function include_sources() {
-		$plugin_dir = Media_Manager_Plus::get_value('plugin_dir');
+		$plugin_dir = media_manager_plus()->get_value('plugin_dir');
 		require_once $plugin_dir . 'includes/oauth/provider.php';
 		$source_dir = glob( $plugin_dir . 'includes/sources/*.php' );
 		if ( $source_dir ) {
@@ -36,7 +36,7 @@ class Media_Manager_Plus_Sources {
 	 */
 	public function image_sources_header() {
 		if ( isset( $_GET['page'] ) && $_GET['page'] == 'mmp' && isset( $_GET['type'] ) ) {
-			$options = Media_Manager_Plus::default_val( 'ubermediasettings_sources_available', array() );
+			$options = media_manager_plus()->default_val( 'ubermediasettings_sources_available', array() );
 			$source  = $_GET['type'];
 
 			$request_code = $_GET['oauth_verifier'];
@@ -46,7 +46,7 @@ class Media_Manager_Plus_Sources {
 				$auth_token        = $_SESSION[$source . '_oauth_token'];
 				$auth_token_secret = $_SESSION[$source . '_oauth_token_secret'];
 
-				$callback = Media_Manager_Plus::get_value('callback_url');
+				$callback = media_manager_plus()->get_value('callback_url');
 				$var      = 'media_manager_plus_source_' . $source;
 				$obj      = new $var( $auth_token, $auth_token_secret );
 
@@ -94,7 +94,7 @@ class Media_Manager_Plus_Sources {
 		$response['error']   = false;
 		$response['message'] = '';
 		$source              = $_POST['source'];
-		$options             = Media_Manager_Plus::default_val( 'ubermediasettings_sources_available', array() );
+		$options             = media_manager_plus()->default_val( 'ubermediasettings_sources_available', array() );
 		if ( isset( $options[$source . '-settings'] ) ) {
 			unset( $options[$source . '-settings'] );
 			$save_options = media_manager_plus()->settings->settings;
@@ -125,7 +125,7 @@ class Media_Manager_Plus_Sources {
 		$response['error']   = false;
 		$response['message'] = '';
 		$source              = $_POST['source'];
-		$options             = Media_Manager_Plus::default_val( 'ubermediasettings_sources_available', array() );
+		$options             = media_manager_plus()->default_val( 'ubermediasettings_sources_available', array() );
 		if ( isset( $options[$source . '-settings'] ) ) {
 			$response['message'] = 'success';
 		}
@@ -151,7 +151,7 @@ class Media_Manager_Plus_Sources {
 		$images              = array();
 
 		$image_source = $_POST['source'];
-		$options      = Media_Manager_Plus::default_val( 'ubermediasettings_sources_available', array() );
+		$options      = media_manager_plus()->default_val( 'ubermediasettings_sources_available', array() );
 		if ( isset( $options[$image_source . '-settings'] ) ) {
 			$source_settings = $options[$image_source . '-settings'];
 			$access_token    = $source_settings['access-token'];
@@ -166,7 +166,7 @@ class Media_Manager_Plus_Sources {
 			if ( $count != '' ) {
 				$params['count'] = $count;
 			}
-			$safemode           = Media_Manager_Plus::default_val( 'ubermediasettings_general_safe-mode', 1 );
+			$safemode           = media_manager_plus()->default_val( 'ubermediasettings_general_safe-mode', 1 );
 			$params['safemode'] = $safemode;
 			if ( isset( $_POST['page'] ) && $_POST['page'] != '' ) {
 				$params['page'] = $_POST['page'];
@@ -214,7 +214,7 @@ class Media_Manager_Plus_Sources {
 		$choices             = array();
 
 		$image_source = $_POST['source'];
-		$options      = Media_Manager_Plus::default_val( 'ubermediasettings_sources_available', array() );
+		$options      = media_manager_plus()->default_val( 'ubermediasettings_sources_available', array() );
 		if ( isset( $options[$image_source . '-settings'] ) ) {
 			$source_settings = $options[$image_source . '-settings'];
 			$access_token    = $source_settings['access-token'];
@@ -247,9 +247,9 @@ class Media_Manager_Plus_Sources {
 	 * @return array
 	 */
 	public function get_sources( $popup = false ) {
-		$options        = Media_Manager_Plus::default_val( 'ubermediasettings_sources_available', array() );
-		$show_connected = Media_Manager_Plus::default_val( 'ubermediasettings_general_show-connected', 0 );
-		$callback       = Media_Manager_Plus::get_value('callback_url');
+		$options        = media_manager_plus()->default_val( 'ubermediasettings_sources_available', array() );
+		$show_connected = media_manager_plus()->default_val( 'ubermediasettings_general_show-connected', 0 );
+		$callback       = media_manager_plus()->get_value('callback_url');
 		$load_sources   = apply_filters( 'uber_media_sources', array() );
 		$sources        = array();
 		if ( $load_sources ) {
@@ -261,7 +261,7 @@ class Media_Manager_Plus_Sources {
 				$source_data['settings'] = $obj->show_details();
 
 				if ( isset( $source_details['core'] ) ) {
-					$source_data['imgsrc'] = Media_Manager_Plus::get_value('plugin_url') . 'assets/img/' . $source . '.png';
+					$source_data['imgsrc'] = media_manager_plus()->get_value('plugin_url') . 'assets/img/' . $source . '.png';
 				} else {
 					$source_data['imgsrc'] = $source_details['imgsrc'];
 				}
