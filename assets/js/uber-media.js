@@ -1,4 +1,13 @@
 jQuery(document).ready(function($){
+	$('.nav-tab-wrapper').on('click','a.mmp-tab', function(e){
+		e.preventDefault();
+		if ( ! $(this).hasClass('nav-tab-active') ) {
+			$('.ubermedia-section').hide();
+			$('.mmp-tab').removeClass('nav-tab-active');
+			$(this).addClass('nav-tab-active');
+			$('#section-' + $(this).attr('id')).show();
+		}
+	});
 	$('#uber-media-settings').on('click', '.uber-connect.connect', function(e) {
 		e.preventDefault();
 		if ($(this).is('.connect')) {

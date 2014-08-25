@@ -18,7 +18,7 @@ $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'sources';
 				continue;
 			}
 			?>
-			<a href="?page=<?php echo $_GET['page']; ?>&tab=<?php echo $tab['section_id']; ?>" class="nav-tab<?php echo( $active_tab == $tab['section_id'] ? ' nav-tab-active' : '' ); ?>"><?php echo $tab['section_title']; ?></a>
+			<a href="?page=<?php echo $_GET['page']; ?>&tab=<?php echo $tab['section_id']; ?>" id="<?php echo $tab['section_id']; ?>" class="mmp-tab nav-tab<?php echo( $active_tab == $tab['section_id'] ? ' nav-tab-active' : '' ); ?>"><?php echo $tab['section_title']; ?></a>
 		<?php } ?>
 	</h2>
 
