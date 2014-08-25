@@ -132,9 +132,9 @@ class media_manager_plus_source_flickr extends media_manager_plus_source {
 			foreach ( $images->photos->photo as $photo ) {
 				$new_images[] = array(
 					'id'        => $photo->id,
-					'full'      => 'http://farm' . $photo->farm . '.static.flickr.com/' . $photo->server . '/' . $photo->id . '_' . $photo->secret . '_b.jpg',
-					'thumbnail' => 'http://farm' . $photo->farm . '.static.flickr.com/' . $photo->server . '/' . $photo->id . '_' . $photo->secret . '_q.jpg',
-					'link'      => 'http://www.flickr.com/photos/' . $photo->owner . '/' . $photo->id,
+					'full'      => '//farm' . $photo->farm . '.static.flickr.com/' . $photo->server . '/' . $photo->id . '_' . $photo->secret . '_b.jpg',
+					'thumbnail' => '//farm' . $photo->farm . '.static.flickr.com/' . $photo->server . '/' . $photo->id . '_' . $photo->secret . '_q.jpg',
+					'link'      => 'https://secure.flickr.com/photos/' . $photo->owner . '/' . $photo->id,
 					'caption'   => ( isset( $photo->title ) ? $this->filter_text( $photo->title ) : '' )
 				);
 			}
