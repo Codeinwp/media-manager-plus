@@ -65,7 +65,7 @@ class Media_Manager_Plus_Extensions {
 	 * @return array|mixed of available extensions
 	 */
 	public function available_extensions() {
-		if ( false === ( $available_extensions = get_transient( 'mmp_a1vailable_extensions' ) ) ) {
+		if ( false === ( $available_extensions = get_transient( 'mmp_available_extensions' ) ) ) {
 			$result     = wp_remote_get( media_manager_plus()->get_value('extensions_url') );
 			$extensions = array();
 			$available_extensions = array();
