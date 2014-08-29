@@ -36,9 +36,10 @@ class Media_Manager_Plus_Extensions {
 			$html .= '<div id="uber-media-extensions">';
 			$html .= '<ul>';
 			foreach ( $extensions as $extension_data ) {
+				$image_src = media_manager_plus()->get_value('extensions_base') . strtolower( $extension_data->name ) . '.png';
 				$html .= '<li>';
 				$html .= '<h3><a href="' . $extension_data->link . '" target="_blank">' . $extension_data->name . '</a></h3>';
-				$html .= '<a href="' . $extension_data->link . '" target="_blank"><img src="' . $extension_data->image . '" alt="' . $extension_data->name . ' logo"></a>';
+				$html .= '<a href="' . $extension_data->link . '" target="_blank"><img src="' . $image_src . '" alt="' . $extension_data->name . ' logo"></a>';
 				$html .= '<p>' . $extension_data->description . '</p>';
 				if ( version_compare( media_manager_plus()->get_value('version'), $extension_data->requires, '<' ) ) {
 					$html .= '<p><strong>'. sprintf( __( 'Requires Version %s', 'media-manager-plus' ), $extension_data->requires ) .'</strong></p>';
@@ -64,7 +65,7 @@ class Media_Manager_Plus_Extensions {
 	 * @return array|mixed of available extensions
 	 */
 	public function available_extensions() {
-		if ( false === ( $available_extensions = get_transient( 'mmp_available_extensions' ) ) ) {
+		if ( false === ( $available_extensions = get_transient( 'mmp_a1vailable_extensions' ) ) ) {
 			$result     = wp_remote_get( media_manager_plus()->get_value('extensions_url') );
 			$extensions = array();
 			$available_extensions = array();
