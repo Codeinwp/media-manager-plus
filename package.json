@@ -3,11 +3,13 @@
   "version": "1.5.0",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "grunt-checktextdomain": "^0.1.1",
     "grunt-contrib-uglify": "~0.2.4",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-sass": "~0.7.3",
     "grunt-wp-i18n": ">=0.4.3",
-    "grunt-po2mo": "~0.1.0"
+    "grunt-po2mo": "~0.1.0",
+    "load-grunt-tasks": "^0.6.0"
   },
   "engines": {
     "node": ">=0.8.0"
