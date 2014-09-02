@@ -1121,7 +1121,7 @@ jQuery(document).ready(function($){
 		                id:         source,
 		                menu:       wp.media.view.l10n.mmp_menu, // menu event = menu:render:default
 		                content:    source + '-custom',
-						title:      wp.media.view.l10n.mmp_menu_prefix + source_details.name,
+						title:      wp.media.view.l10n.mmp_menu_prefix + ' ' + source_details.name,
 						priority:   priority + 100,
 						toolbar:    source + '-action', // toolbar event = toolbar:create:main-my-action
 						type:       'link'

@@ -47,7 +47,7 @@ class Media_Manager_Plus_Media {
 	public function custom_media_string( $strings, $post ) {
 		$strings['mmp_sources']     = media_manager_plus()->sources->get_sources( true );
 		$strings['mmp_menu']        = apply_filters( 'mmp_default_menu', 'default' );
-		$strings['mmp_menu_prefix'] = apply_filters( 'mmp_menu_prefix', __( 'Insert from ', 'media-manager-plus' ) );
+		$strings['mmp_menu_prefix'] = apply_filters( 'mmp_menu_prefix', __( 'Insert from', 'media-manager-plus' ) );
 		$strings['mmp_defaults']    = apply_filters( 'mmp_default_settings', array() );
 		$strings['mmp_extensions']  = media_manager_plus()->extensions->get_installed_extensions();
 		$strings['mmp_l10n']		= $this->get_js_l10n( $post );
