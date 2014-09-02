@@ -48,14 +48,6 @@ module.exports = function (grunt) {
 			sass: {
 				files: 'assets/css/scss/*.scss',
 				tasks: ['sass']
-			},
-			po2mo: {
-				files: 'languages/*.po',
-				tasks: ['po2mo']
-			},
-			makepot: {
-				files: '**/*.php',
-				tasks: ['makepot']
 			}
 		},
 		// Check plugin text domain
