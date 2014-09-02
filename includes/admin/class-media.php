@@ -74,16 +74,18 @@ class Media_Manager_Plus_Media {
 	public function get_js_l10n( $post ){
 		$hier = $post && is_post_type_hierarchical( $post->post_type );
 		return array(
-			'disconnect'	=>	__( 'Disconnect', 'media-manager-plus' ),
-			'connect'		=> 	__( 'Connect', 'media-manager-plus' ),
-			'connecting'	=>	__( 'Connecting', 'media-manager-plus' ),
-			'importing'		=>	__( 'Importing', 'media-manager-plus' ),
-			'inserting'		=>	__( 'Inserting', 'media-manager-plus' ),
-			'insert'		=>	$hier ? __( 'Insert into page', 'media-manager-plus' ) : __( 'Insert into post', 'media-manager-plus' ),
-			'imported'		=>	__( 'imported', 'media-manager-plus' ),
-			'import'		=>	__( 'Import', 'media-manager-plus' ),
-			'image'			=>	__( 'image', 'media-manager-plus' ),
-			'images'		=>	__( 'images', 'media-manager-plus' )
+			'disconnect' => __( 'Disconnect', 'media-manager-plus' ),
+			'connect'    => __( 'Connect', 'media-manager-plus' ),
+			'connecting' => __( 'Connecting', 'media-manager-plus' ),
+			'importing'  => __( 'Importing', 'media-manager-plus' ),
+			'inserting'  => __( 'Inserting', 'media-manager-plus' ),
+			'insert'     => $hier ? __( 'Insert into page', 'media-manager-plus' ) : __( 'Insert into post', 'media-manager-plus' ),
+			'imported'   => __( 'imported', 'media-manager-plus' ),
+			'import'     => __( 'Import', 'media-manager-plus' ),
+			'image'      => __( 'image', 'media-manager-plus' ),
+			'images'     => __( 'images', 'media-manager-plus' ),
+			'load_more'  => __( 'Load More', 'media-manager-plus' ),
+			'loading'    => __( 'Loading', 'media-manager-plus' ),
 		);
 	} // END get_js_l10n()
 
