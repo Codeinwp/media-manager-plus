@@ -127,11 +127,12 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 		 * @return void
 		 */
 		private function setup_constants() {
-			$this->plugin_file    = __FILE__;
-			$this->plugin_dir     = plugin_dir_path( __FILE__ );
-			$this->plugin_url     = plugin_dir_url( __FILE__ );
-			$this->extensions_url = 'http://cdn.dev7studios.com/media-manager-plus/extensions.json?v=1.1';
-			$this->callback_url   = get_admin_url() . 'upload.php?page=mmp';
+			$this->plugin_file     = __FILE__;
+			$this->plugin_dir      = plugin_dir_path( __FILE__ );
+			$this->plugin_url      = plugin_dir_url( __FILE__ );
+			$this->extensions_base = 'd39ewx539944qs.cloudfront.net/media-manager-plus/';
+			$this->extensions_url  = $this->extensions_base . 'extensions.json?v=1.1';
+			$this->callback_url    = get_admin_url() . 'upload.php?page=mmp';
 		} // END setup_constants()
 
 		/**
@@ -163,13 +164,19 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 		 * @return string
 		 */
 		public function get_value( $variable ) {
-			$whitelist = array( 'version', 'plugin_file', 'plugin_dir', 'plugin_url', 'extensions_url', 'callback_url', );
+			$whitelist = array( 'version', 'plugin_file', 'plugin_dir', 'plugin_url', 'extensions_base', 'extensions_url', 'callback_url', );
 
 			if ( ! in_array( $variable, $whitelist ) ) {
 				return;
 			}
 
-			$value = self::$instance->$variable;
+			if ( in_array( $variable, array( 'extensions_base', 'extensions_url' ) ) ) {
+				$protocol = is_SSL() ? 'https://' : 'http://';
+				$value = $protocol . self::$instance->$variable;
+			} else {
+				$value = self::$instance->$variable;
+			}
+
 
 			return $value;
 		} // END get_value()
