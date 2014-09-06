@@ -171,7 +171,7 @@ if ( ! class_exists( 'Media_Manager_Plus' ) ) :
 			}
 
 			if ( in_array( $variable, array( 'extensions_base', 'extensions_url' ) ) ) {
-				$protocol = is_SSL() ? 'https://' : 'http://';;
+				$protocol = is_SSL() ? 'https://' : 'http://';
 				$value = $protocol . self::$instance->$variable;
 			} else {
 				$value = self::$instance->$variable;
