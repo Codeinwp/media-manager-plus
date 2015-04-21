@@ -1,4 +1,5 @@
 module.exports = function (grunt) {
+	require( 'load-grunt-tasks' )( grunt );
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
@@ -47,14 +48,37 @@ module.exports = function (grunt) {
 			sass: {
 				files: 'assets/css/scss/*.scss',
 				tasks: ['sass']
+			}
+		},
+		// Check plugin text domain
+		checktextdomain: {
+			options:{
+				text_domain: 'media-manager-plus',
+				keywords: [
+					'__:1,2d',
+					'_e:1,2d',
+					'_x:1,2c,3d',
+					'esc_html__:1,2d',
+					'esc_html_e:1,2d',
+					'esc_html_x:1,2c,3d',
+					'esc_attr__:1,2d',
+					'esc_attr_e:1,2d',
+					'esc_attr_x:1,2c,3d',
+					'_ex:1,2c,3d',
+					'_n:1,2,4d',
+					'_nx:1,2,4c,5d',
+					'_n_noop:1,2,3d',
+					'_nx_noop:1,2,3c,4d'
+				],
+				report_missing: true
 			},
-			po2mo: {
-				files: 'languages/*.po',
-				tasks: ['po2mo']
-			},
-			makepot: {
-				files: '**/*.php',
-				tasks: ['makepot']
+			files: {
+				src:  [
+					'**/*.php',
+					'!node_modules/**',
+					'!build/**'
+				],
+				expand: true
 			}
 		},
 		makepot: {
@@ -83,13 +107,6 @@ module.exports = function (grunt) {
 		}
 	});
 
-// load plugins
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-wp-i18n');
-	grunt.loadNpmTasks('grunt-po2mo');
-
-// register at least this one task
+	// register at least this one task
 	grunt.registerTask('default', [ 'watch' ]);
 };

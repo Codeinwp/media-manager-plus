@@ -581,7 +581,7 @@ jQuery(document).ready(function($){
 		        id: 'pagination',
 		        type: 'button',
 		        class: 'button',
-		        value: 'Load More'
+		        value: wp.media.view.l10n.mmp_l10n.load_more
 		    });
 		    $(paginli).append( pagin );
 		    this.$el.find("#uberimages").append( paginli );
@@ -890,7 +890,7 @@ jQuery(document).ready(function($){
 		getImages: function(collection, source, method, param, page, altpage) {
 			this.$el.find("#uberspin").show();
 			this.$el.find("#uber-msg").hide();
-			this.$el.find("#pagination").val('Loading...');
+			this.$el.find("#pagination").val( wp.media.view.l10n.mmp_l10n.loading + '...' );
 			this.$el.find("#pagination").attr('disabled', 'disabled');
 			if (page == 1) {
 				this.$el.find("#pagination").hide();
@@ -931,7 +931,7 @@ jQuery(document).ready(function($){
 					        }, this);
 	               		}
 	               		collection.displayPag(method);
-	               		collection.$el.find("#pagination").val('Load More');
+	               		collection.$el.find("#pagination").val( wp.media.view.l10n.mmp_l10n.load_more );
 	               		collection.$el.find("#uberspin").hide();
 	               		if (response.pagin == 'end') collection.model.set( 'pagin', 'end');
 	               		else {
@@ -1083,7 +1083,7 @@ jQuery(document).ready(function($){
 			this.setButtonStates('');
 
 		    this.$el.find("#uberspin").hide();
-		    this.$el.find("#pagination").val('Load More');
+		    this.$el.find("#pagination").val( wp.media.view.l10n.mmp_l10n.load_more );
 		    this.$el.find("#page").val('1');
 		    this.$el.find("#altpage").val('');
 		    stream = this.sourceDetails.settings[this.filterType];
@@ -1121,7 +1121,7 @@ jQuery(document).ready(function($){
 		                id:         source,
 		                menu:       wp.media.view.l10n.mmp_menu, // menu event = menu:render:default
 		                content:    source + '-custom',
-						title:      wp.media.view.l10n.mmp_menu_prefix + source_details.name,
+						title:      wp.media.view.l10n.mmp_menu_prefix + ' ' + source_details.name,
 						priority:   priority + 100,
 						toolbar:    source + '-action', // toolbar event = toolbar:create:main-my-action
 						type:       'link'

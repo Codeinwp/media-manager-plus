@@ -1,347 +1,352 @@
-# Copyright (C) 2014 Dev7studios
+# Copyright (C) 2014 Media Manager Plus
 # This file is distributed under the same license as the Media Manager Plus package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Media Manager Plus 1.5\n"
-"Report-Msgid-Bugs-To: "
-"https://github.com/Dev7studios/media-manager-plus/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/Dev7studios/media-manager-plus/"
+"issues\n"
 "POT-Creation-Date: 2014-09-02 13:27:53+00:00\n"
+"PO-Revision-Date: 2014-09-02 15:30+0100\n"
+"Last-Translator: Christian Foellmann <foellmann@foe-services.de>\n"
+"Language-Team: cfoellmann <foellmann@foe-services.de>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
-"Last-Translator: polevaultweb <iain@polevaultweb.com>\n"
-"Language-Team: polevaultweb <iain@polevaultweb.com>\n"
-"X-Generator: grunt-wp-i18n 0.4.7\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED STATES\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_"
-"x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Bookmarks: \n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Sourcecharset: utf-8\n"
+"X-Poedit-Keywordslist: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Searchpath-0: .\n"
 "X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #. Plugin Name of the plugin/theme
 msgid "Media Manager Plus"
-msgstr ""
+msgstr "Media Manager Plus"
 
 #: includes/admin/class-admin.php:75 includes/admin/class-admin.php:82
 #: templates/support.php:2 templates/welcome.php:2
 msgid "Welcome to Media Manager Plus"
-msgstr ""
+msgstr "Willkommen beim Media Manager Plus"
 
 #: includes/admin/class-admin.php:149
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: includes/admin/class-extensions.php:44
 msgid "Requires Version %s"
-msgstr ""
+msgstr "Setzt Version %s voraus"
 
 #: includes/admin/class-extensions.php:46
 msgid "Buy the %s extension for $%s"
-msgstr ""
+msgstr "Kaufe die %s Extension für $%s"
 
 #: includes/admin/class-extensions.php:46
 msgid "$%s Buy"
-msgstr ""
+msgstr "$%s Kaufen"
 
 #: includes/admin/class-extensions.php:52
 msgid "No new extensions available, you must have installed them all. Nice."
 msgstr ""
+"Keine neuen Extensions verfügbar, es scheinen alle installiert zu sein. "
+"Bestens."
 
 #: includes/admin/class-media.php:50
 msgid "Insert from"
-msgstr ""
+msgstr "Einfügen von"
 
 #: includes/admin/class-media.php:77 includes/admin/class-settings.php:101
 msgid "Disconnect"
-msgstr ""
+msgstr "Trennen"
 
 #: includes/admin/class-media.php:78 includes/admin/class-settings.php:99
 msgid "Connect"
-msgstr ""
+msgstr "Verbinden"
 
 #: includes/admin/class-media.php:79
 msgid "Connecting"
-msgstr ""
+msgstr "Verbinde"
 
 #: includes/admin/class-media.php:80
 msgid "Importing"
-msgstr ""
+msgstr "Importiere"
 
 #: includes/admin/class-media.php:81
 msgid "Inserting"
-msgstr ""
+msgstr "Einfügen"
 
 #: includes/admin/class-media.php:82
 msgid "Insert into page"
-msgstr ""
+msgstr "In Seite einfügen"
 
 #: includes/admin/class-media.php:82
 msgid "Insert into post"
-msgstr ""
+msgstr "In Beitrag einfügen"
 
 #: includes/admin/class-media.php:83
 msgid "imported"
-msgstr ""
+msgstr "importiert"
 
 #: includes/admin/class-media.php:84
 msgid "Import"
-msgstr ""
+msgstr "Import"
 
 #: includes/admin/class-media.php:85
 msgid "image"
-msgstr ""
+msgstr "Bild"
 
 #: includes/admin/class-media.php:86
 msgid "images"
-msgstr ""
+msgstr "Bilder"
 
 #: includes/admin/class-media.php:87
 msgid "Load More"
-msgstr ""
+msgstr "Weitere Elemente laden"
 
 #: includes/admin/class-media.php:88
 msgid "Loading"
-msgstr ""
+msgstr "Lade"
 
 #: includes/admin/class-settings.php:107 includes/admin/class-settings.php:111
 msgid "API Unavailable"
-msgstr ""
+msgstr "API nicht erreichbar"
 
 #: includes/admin/class-settings.php:124
 msgid "No available sources"
-msgstr ""
+msgstr "Keine Quellen verfügbar"
 
 #: includes/settings/uber-media-settings.php:7
 msgid "Available Sources"
-msgstr ""
+msgstr "Verfügbare Quellen"
 
 #: includes/settings/uber-media-settings.php:22
 msgid "Extensions"
-msgstr ""
+msgstr "Extensions"
 
 #: includes/settings/uber-media-settings.php:37
 msgid "General Settings"
-msgstr ""
+msgstr "Allgemeine Einstellungen"
 
 #: includes/settings/uber-media-settings.php:42
 msgid "Show Connected Sources"
-msgstr ""
+msgstr "Verbundene Quellen anzeigen"
 
 #: includes/settings/uber-media-settings.php:43
 msgid "Only show connected sources in side menu of the media popup"
-msgstr ""
+msgstr "Nur verbundene Quellen im Seitenmenü des Media Popups anzeigen"
 
 #: includes/settings/uber-media-settings.php:49
 msgid "Safe Mode"
-msgstr ""
+msgstr "Safe Mode"
 
 #: includes/settings/uber-media-settings.php:50
 msgid "Safe mode filters sources for nude, explicit or NSFW media"
 msgstr ""
+"'Safe Mode' filtert Bilder aus, die Markierungen für Nacktheit, Gewalt oder "
+"NSFW aufweisen"
 
 #: includes/settings/wp-settings-framework.php:321
 msgid "Save All Changes"
-msgstr ""
+msgstr "Alle Änderungen speichern"
 
 #: includes/sources/500px.php:31
 msgid "Any License"
-msgstr ""
+msgstr "Jede Lizenz"
 
 #: includes/sources/500px.php:43
 msgid "500px License Options"
-msgstr ""
+msgstr "500px Lizenz-Optionen"
 
 #: includes/sources/500px.php:44
 msgid "Select the license type of images returned from 500px"
-msgstr ""
+msgstr "Wähle alle gewünschten Lizenzen für Bilder von 500px"
 
 #: includes/sources/500px.php:104 includes/sources/flickr.php:99
 #: includes/sources/instagram.php:86
 msgid "Tagged Images"
-msgstr ""
+msgstr "Bilder mit Schlagwort"
 
 #: includes/sources/500px.php:107 includes/sources/flickr.php:102
 #: includes/sources/instagram.php:89
 msgid "Enter a hashtag without the #"
-msgstr ""
+msgstr "Schlagwort (Hashtag) ohne '#' eingeben"
 
 #: includes/sources/500px.php:110 includes/sources/flickr.php:105
 #: includes/sources/instagram.php:80
 msgid "User Images"
-msgstr ""
+msgstr "Benutzer-Bilder"
 
 #: includes/sources/500px.php:113 includes/sources/flickr.php:108
 #: includes/sources/instagram.php:83
 msgid "Enter a username"
-msgstr ""
+msgstr "Benutzername eingeben"
 
 #: includes/sources/500px.php:116 includes/sources/instagram.php:98
 msgid "Popular Images"
-msgstr ""
+msgstr "Beliebte Bilder"
 
 #: includes/sources/dribbble.php:54
 msgid "Popular Shots"
-msgstr ""
+msgstr "Beliebte Aufnahmen"
 
 #: includes/sources/dribbble.php:58
 msgid "Everyone's Shots"
-msgstr ""
+msgstr "Alle Aufnahmen"
 
 #: includes/sources/dribbble.php:62
 msgid "Debut Shots"
-msgstr ""
+msgstr "Debüt-Aufnahmen"
 
 #: includes/sources/dribbble.php:66
 msgid "Player's Shots"
-msgstr ""
+msgstr "Designer-Aufnahmen"
 
 #: includes/sources/dribbble.php:69 includes/sources/dribbble.php:75
 msgid "Enter a player's name"
-msgstr ""
+msgstr "Designer-Benutzername eingeben"
 
 #: includes/sources/dribbble.php:72
 msgid "Player's Liked Shots"
-msgstr ""
+msgstr "Designer-Favoriten"
 
 #: includes/sources/flickr.php:39
 msgid "Flickr License Options"
-msgstr ""
+msgstr "Flickr Lizenz-Optionen"
 
 #: includes/sources/flickr.php:40
 msgid "Select the license types of images returned from Flickr"
-msgstr ""
+msgstr "Wähle alle gewünschten Lizenzen für Bilder von Flickr"
 
 #: includes/sources/flickr.php:111
 msgid "Recent Images (All Licenses)"
-msgstr ""
+msgstr "Neueste Bilder (Alle Lizenzen)"
 
 #: includes/sources/instagram.php:76
 msgid "My Images"
-msgstr ""
+msgstr "Meine Bilder"
 
 #: includes/sources/instagram.php:92
 msgid "Location Images"
-msgstr ""
+msgstr "Orts-Aufnahmen"
 
 #: includes/sources/instagram.php:95
 msgid "Enter a latitude and longitude, eg. 51.4638, 0.1677"
-msgstr ""
+msgstr "Gib Breiten- und Längengrad an (Format: 51.4638, 0.1677)"
 
 #: templates/media.php:23
 msgid "Caption"
-msgstr ""
+msgstr "Beschreibung"
 
 #: templates/media.php:28
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: templates/media.php:33
 msgid "Alt Text"
-msgstr ""
+msgstr "Alternativtext"
 
 #: templates/media.php:37
 msgid "Align"
-msgstr ""
+msgstr "Ausrichtung"
 
 #: templates/media.php:39
 msgid "Left"
-msgstr ""
+msgstr "Links"
 
 #: templates/media.php:40
 msgid "Center"
-msgstr ""
+msgstr "Zentriert"
 
 #: templates/media.php:41
 msgid "Right"
-msgstr ""
+msgstr "Rechts"
 
 #: templates/media.php:42 templates/media.php:50
 msgid "None"
-msgstr ""
+msgstr "Keine"
 
 #: templates/media.php:46
 msgid "Link To"
-msgstr ""
+msgstr "Link zur"
 
 #: templates/media.php:48
 msgid "Image URL"
-msgstr ""
+msgstr "Bild-URL"
 
 #: templates/media.php:49
 msgid "Page URL"
-msgstr ""
+msgstr "Seiten-URL"
 
 #: templates/support.php:4 templates/welcome.php:4
 msgid ""
-"Thank you for updating to the latest version! Media Manager Plus %s "
-"upgrades the WordPress media manager with third party image sources."
+"Thank you for updating to the latest version! Media Manager Plus %s upgrades "
+"the WordPress media manager with third party image sources."
 msgstr ""
+"Danke für das Updaten auf die aktuelle Version! Media Manager Plus %s "
+"erweitert den WordPress Media Manager um externe Bild-Quellen."
 
 #: templates/support.php:8 templates/welcome.php:8
 msgid "What's New"
-msgstr ""
+msgstr "Unsere Neuerungen"
 
 #: templates/support.php:11 templates/support.php:30 templates/welcome.php:11
 msgid "Support"
-msgstr ""
+msgstr "Support"
 
 #: templates/support.php:16
 msgid "Get Some Help"
-msgstr ""
+msgstr "Finde Hilfe"
 
 #: templates/support.php:20
 msgid "Website"
-msgstr ""
+msgstr "Webseite"
 
 #: templates/support.php:25
 msgid "Created by"
-msgstr ""
+msgstr "Created by"
 
 #: templates/support.php:33
 msgid "Support Forums"
-msgstr ""
+msgstr "Support-Forum"
 
 #: templates/support.php:35 templates/support.php:38
 msgid "Changelog"
-msgstr ""
+msgstr "Changelog"
 
 #: templates/support.php:42
 msgid "Watch The Video"
-msgstr ""
+msgstr "Sieh dir das Video an [EN]"
 
 #: templates/support.php:56 templates/welcome.php:20
 msgid "Go to Media Manager Plus Settings"
-msgstr ""
+msgstr "Zu den Media Manager Plus Einstellungen"
 
 #: templates/welcome.php:16
 msgid "Introducing Extensions"
-msgstr ""
+msgstr "NEU: Extensions"
 
 #: uber-media.php:107 uber-media.php:119
 msgid "Cheatin&#8217; huh?"
-msgstr ""
+msgstr "Nicht mogeln!"
 
 #. Plugin URI of the plugin/theme
 msgid "http://dev7studios.com/plugins/media-manager-plus/"
-msgstr ""
+msgstr "http://dev7studios.com/plugins/media-manager-plus/"
 
 #. Description of the plugin/theme
 msgid ""
 "Upgrade the WordPress Media Manager and add support for Flickr, Instagram, "
 "500px etc."
 msgstr ""
+"Erweitere den WordPress Media Manager und füge Quellen wie Flickr, Instagram "
+"und 500px hinzu"
 
 #. Author of the plugin/theme
 msgid "Dev7studios"
-msgstr ""
+msgstr "Dev7studios"
 
 #. Author URI of the plugin/theme
 msgid "http://dev7studios.com"
-msgstr ""
+msgstr "http://dev7studios.com"
